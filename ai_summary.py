@@ -33,12 +33,11 @@ def summarize_answers(input_question, json_file_path):
     # Summarize answers for each "Hierarchical Name"
     summaries = {}
     for name, texts in coded_texts_by_name.items():
-        prompt = "Summarize the following answers related to '{name}':\n" + "\n".join(texts)
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": prompt}
+                {"role": "system", "content": "You are a helpful assistant for generating summaries. Please generate a one-sentence summary for given text. Use the same concise format for each summary, focusing on the main idea of the text. Each summary should be brief and direct."},
+                {"role": "user", "content": "\n".join(texts)}
             ]
         )
         summaries[name] = response.choices[0].message.content
@@ -51,7 +50,7 @@ def summarize_answers(input_question, json_file_path):
 
 # Test
 if __name__ == "__main__":
-    input_question = "What salinity management strategies do you think are most important or relevant to explore in future scenarios?"
+    input_question = "What would you rank as having the greatest potential influence/impact?"
     json_file_path = relative_path(dirname, "Q&A.json")
     summary = summarize_answers(input_question, json_file_path)
     print(summary)
