@@ -1,0 +1,2192 @@
+[
+    {
+        "question": ["age (How old are you)?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Demographics\\Age",
+                "summary": "The text consists of various ages, years, and the statement 'I'm Jurassic,' indicating a playful reference to being significantly older."
+            }
+        ],
+        "code_names": ["Demographics\\Age"],
+        "participants": 45,
+        "total_answers": 45
+    },
+    {
+        "question": ["What is the zip code where you live?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Demographics\\Zip",
+                "summary": "The text seems to present various sets of numbers, possibly indicating postal codes or sequences."
+            },
+            {
+                "code_name": "Demographics\\Zip\\zip.res",
+                "summary": "The author describes their residences across various California cities, including Sacramento, Stockton, and Orangeville, while mentioning their main offices in Eugene, Oregon, and San Francisco."
+            },
+            {
+                "code_name": "Demographics\\Zip\\zip.work",
+                "summary": "The speaker works for Buena Vista Rancheria, overseeing areas in multiple counties in California, while also mentioning their organization’s offices located in Eugene, Oregon and San Francisco."
+            }
+        ],
+        "code_names": 
+        [
+            "Demographics\\Zip", 
+            "Demographics\\Zip\\zip.res", 
+            "Demographics\\Zip\\zip.work"
+        ],
+        "participants": 45,
+        "total_answers": 50
+    },
+    {
+        "question": ["Which of the following best describes your ethnicity or racial background?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Demographics\\Background",
+                "summary": "The speaker describes their mixed heritage, noting their Italian family roots and their father's birth in Argentina, ultimately identifying as White."
+            },
+            {
+                "code_name": "Demographics\\Background\\American Indian or Alaska Native",
+                "summary": "The text describes an individual's mixed heritage, which includes Native American and Black, as well as White American ancestry."
+            },
+            {
+                "code_name": "Demographics\\Background\\Asian",
+                "summary": "The term 'Asian' refers to individuals or cultures originating from the continent of Asia, which encompasses a diverse range of countries and ethnic groups."
+            },
+            {
+                "code_name": "Demographics\\Background\\Black or African American",
+                "summary": "The text references the identities and experiences of individuals who are both American Native/Indigenous and Black."
+            },
+            {
+                "code_name": "Demographics\\Background\\Hispanic", 
+                "summary": "The text presents two racial or ethnic categories: Hispanic and white."
+            },
+            {
+                "code_name": "Demographics\\Background\\Something else, please specify",
+                "summary": "The author identifies as coming from a mixed racial and ethnic background."
+            },
+            {
+                "code_name": "Demographics\\Background\\white",
+                "summary": "The text features various individuals identifying predominantly as 'white' while expressing awareness of diverse backgrounds within the white ethnicity."
+            }
+        ],
+        "code_names": 
+        [
+            "Demographics\\Background", 
+            "Demographics\\Background\\American Indian or Alaska Native", 
+            "Demographics\\Background\\Asian", 
+            "Demographics\\Background\\Black or African American", 
+            "Demographics\\Background\\Hispanic", 
+            "Demographics\\Background\\Something else, please specify", 
+            "Demographics\\Background\\white"
+        ],
+        "participants": 30,
+        "total_answers": 35
+    },
+    {
+        "question": ["How would you describe your relationship to the Delta or your identity with respect to it?  (single word or two, e.g., public steward, farmer, resident, etc.)"],
+        "summaries": 
+        [
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\family connection",
+                "summary": "The speaker reflects on their distant family connection to the Delta, recalling childhood visits and their efforts to reacquaint themselves with the area."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\home",
+                "summary": "The Miwok people's deep cultural connection to the delta is central to their identity, embodying a sense of home through the surrounding landscape features."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\integral to identity",
+                "summary": "The speaker identifies the Delta as integral to their identity as a Harbormaster and protector, emphasizing its significance for both their professional and personal life as a native resident."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\recreator",
+                "summary": "The narrative reflects a deep, multifaceted connection to the Delta through recreation, scientific research, stewardship, and advocacy, demonstrating its integral role in the identities and professions of the individuals involved."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\steward", 
+                "summary": "The author identifies as a steward and policy advocate who is passionate about the Delta's natural resources, enjoying both recreation and scientific engagement in the area."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Personal.Emotional Connection\\volunteer", 
+                "summary": "The speaker is a deeply altruistic scientist who dedicates extensive volunteer hours to environmental activism and conservation efforts in the Delta, particularly focused on protecting Sand Hill Cranes and advocating for local ecological concerns."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\advocate", 
+                "summary": "The text discusses various individuals' deep connections to the Delta region, highlighting their roles as advocates, volunteers, and professionals focused on environmental justice, conservation, and the preservation of its unique ecosystem."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\decision maker", 
+                "summary": "The individual holds a multifaceted relationship with the Sacramento-San Joaquin Delta as a resident, recreationist, state water regulator, and county supervisor, advocating for environmental health and water quality while actively engaging in recreational activities."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\farmer", 
+                "summary": "The speaker is a fifth-generation farmer from the Delta who has dedicated recent years to running the Fish Friendly Farming program, emphasizing the unique and highly productive agricultural practices in the region."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\land.resource manager", 
+                "summary": "The preserve manager at Cosumnes River Preserve oversees wildlife habitat management at the confluence of the Cosumnes and Mokelumne Rivers in the Delta region."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\ag business", 
+                "summary": "The individual has extensive experience in agricultural operations, business and workforce development, and policy work, while serving as the chairperson of the National Women in Ag and being involved in environmental justice communities."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\community violence intervention",
+                "summary": "The text indicates that the individual is involved in community violence intervention initiatives."
+            }, 
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\cultural practitioner", 
+                "summary": "The speaker expresses a desire to identify or communicate their role as a cultural practitioner."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\EJ work", 
+                "summary": "The text indicates involvement in environmental justice advocacy."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\fishing industry", 
+                "summary": "The text discusses the critical role of the Sacramento San Joaquin Delta as a key source for the fishing industry, particularly for salmon, and highlights the author's representation of both commercial and recreational fishermen."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\observer", 
+                "summary": "The observer is monitoring the situation with Delta without being actively involved."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\MISC\\tribal representative", 
+                "summary": "The speaker oversees and protects tribal members' interests in Buena Vista's ancestral territory, actively engaging with the Delta through personal and professional activities related to fishing, cultural practices, and community representation."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\naturalist", 
+                "summary": "A career naturalist involves studying and interpreting natural environments, educating the public about ecosystems, and promoting conservation efforts."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\researcher.scientist", 
+                "summary": "The speaker, a dedicated scientist with a protector mentality, emphasizes their deep connection to the Delta, where they use scientific knowledge to advocate for the community and the environment while engaging in teaching and recreational activities."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\professional connection\\teacher", 
+                "summary": "The author discusses their multifaceted role as an educator, researcher, and advocate for regenerative agriculture and water management in the Delta, emphasizing the importance of stewardship and public education."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Resident", 
+                "summary": "The speaker describes themselves as an extreme altruist and protector, dedicating significant time to advocating for the Delta's welfare while combining their scientific expertise with a deep personal connection to the land and its community."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Resident\\no.resident", 
+                "summary": "The text consists of various zip codes and mentions that the author does not reside in the Delta but lives in Southern California."
+            },
+            {
+                "code_name": "Demographics\\Delta Relationship\\Resident\\yes.resident",
+                "summary": "The text features individuals from the Delta region who share their personal connections and roles in advocating for and managing the Delta's natural resources."
+            }
+        ],
+        "code_names": 
+        [
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\family connection", 
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\home", 
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\integral to identity", 
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\recreator",
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\steward", 
+            "Demographics\\Delta Relationship\\Personal.Emotional Connection\\volunteer", 
+            "Demographics\\Delta Relationship\\professional connection\\advocate", 
+            "Demographics\\Delta Relationship\\professional connection\\decision maker", 
+            "Demographics\\Delta Relationship\\professional connection\\farmer", 
+            "Demographics\\Delta Relationship\\professional connection\\land.resource manager", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\ag business", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\community violence intervention", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\cultural practitioner", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\EJ work", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\fishing industry", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\observer", 
+            "Demographics\\Delta Relationship\\professional connection\\MISC\\tribal representative", 
+            "Demographics\\Delta Relationship\\professional connection\\naturalist", 
+            "Demographics\\Delta Relationship\\professional connection\\researcher.scientist", 
+            "Demographics\\Delta Relationship\\professional connection\\teacher", 
+            "Demographics\\Delta Relationship\\Resident", 
+            "Demographics\\Delta Relationship\\Resident\\no.resident", 
+            "Demographics\\Delta Relationship\\Resident\\yes.resident"
+        ],
+        "participants": 45,
+        "total_answers": 146
+    },
+    {
+        "question": ["What is the type and duration of your engagement with the Delta?"],
+        "summaries": 
+        [ 
+            { 
+                "code_name": "Demographics\\Engagement Duration\\10-15 years", 
+                "summary": "The speaker has over 15 years of experience working as a researcher in the Delta, with significant engagement over the past 12 years after retiring in 2008."
+            },
+            {
+                "code_name": "Demographics\\Engagement Duration\\16-19 years", 
+                "summary": "The speaker discusses their extensive engagement with the Delta region over nearly 17 years, detailing their roles in wildlife management, educational outreach, tribal representation, and conservation efforts."
+            },
+            {
+                "code_name": "Demographics\\Engagement Duration\\20+ years", 
+                "summary": "The text discusses the extensive involvement of various individuals in studying, advocating for, and managing the Delta ecosystem, covering their professional and personal experiences spanning several decades."
+            },
+            {
+                "code_name": "Demographics\\Engagement Duration\\less than 10 years", 
+                "summary": "The speaker has actively engaged with Delta-related work for approximately five years, transitioning from a research role to a policy regulatory position, and emphasizes the need for governmental support to revitalize the struggling recreation economy in the Delta."
+            },
+            {
+                "code_name": "Demographics\\Engagement Duration\\lifelong",
+                "summary": "The speaker reflects on their lifelong connection to the Delta, emphasizing their deep familiarity with the area's environment, agriculture, and their active involvement in initiatives like Fish Friendly Farming."
+            }
+        ],
+        "code_names": 
+        [
+            "Demographics\\Engagement Duration\\10-15 years", 
+            "Demographics\\Engagement Duration\\16-19 years", 
+            "Demographics\\Engagement Duration\\20+ years", 
+            "Demographics\\Engagement Duration\\less than 10 years", 
+            "Demographics\\Engagement Duration\\lifelong"
+        ],
+        "participants": 36,
+        "total_answers": 36
+    },
+    {
+        "question": 
+        [
+            "What have you learned over time in your work in the Delta?",
+            "What do you see as the future of [__recreation___] in the Delta (20 years from now? 50 years from now?)",
+            "How do you think the Delta is changing and will change?",
+            "How have you been impacted by salinity in the Delta (professionally and/or personally)?",
+            "Are there particular things or phenomena you would like to see protected in the Delta?",
+            "What do you think is most important to protect in the delta?",
+            "What would you rank as having the greatest potential influence/impact?",
+            "Second most influential? Third?",
+            "If climate change impacts are not mentioned by interviewee, ask: How do you anticipate climate change impacting salinity in the Delta?",
+            "What is most at risk if salinity increases in the Delta?"
+        ],
+        "summaries": 
+        [
+            {
+                "code_name": "Value\\Eco impacts\\ecosystem-wide changes", 
+                "summary": "The Colorado River's crisis highlights the risk of ecosystem collapse due to water mismanagement and climate change, threatening diverse species and the water supply for millions."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\fish migration pathways", 
+                "summary": "The changing salinity and environmental conditions in the Delta threaten the migratory patterns and survival of fish and wildlife, which could ultimately collapse the local economy reliant on these species."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\flow", 
+                "summary": "The discussion emphasizes the need to protect water flows in the Delta to sustain both the ecosystem and tribal cultural practices, while addressing issues of salinity and the impacts of climate change on water quality and fish habitats."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\freshwater pathway", 
+                "summary": "The primary focus should be on investing in the upgrade of the levee network to benefit both farmers and the freshwater pathway."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\habitat changes", 
+                "summary": "The text emphasizes the critical need to balance habitat preservation, particularly in freshwater and delta ecosystems, with human safety and community needs, while addressing the long-term consequences of habitat loss and the challenges of effective restoration amidst environmental changes."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\habitat changes\\bird habitat impacts", 
+                "summary": "The text discusses the challenges facing migratory waterfowl and shorebirds due to changes in water quality and habitat loss from factors like salinity and sea level rise, emphasizing the need for dedicated conservation efforts to protect these species and the ecosystems they rely on."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\habitat changes\\fish habitat impacts", 
+                "summary": "The speaker emphasizes that the health of fish and wildlife, which evolved to thrive in specific environments, is crucial for economic stability, as their decline will ultimately jeopardize agriculture and the local economy."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\HABs", 
+                "summary": "Harmful algal blooms in the Delta are exacerbated by insufficient water flows, rising temperatures, and increasing salinity, posing serious risks to public health, ecosystem balance, and recreational opportunities."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\HABs\\HAB prevention", 
+                "summary": "The text discusses the impact of salinity on water quality in the Delta ecosystem, highlighting its role in mitigating harmful algal blooms and the need for better water management practices to protect both the environment and agricultural interests."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\invasive species", 
+                "summary": "The speaker expresses concerns about the environmental changes in the Delta, particularly due to invasive species and salinity intrusion, which threaten native wildlife, water quality, recreational opportunities, and agricultural practices."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\invasive species\\native species disruption", 
+                "summary": "Invasive species may continue to decline native species and alter ecosystems significantly."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\ecosystem", 
+                "summary": "The text emphasizes the critical need to protect the Delta's freshwater ecosystem from increasing salinity and ecological degradation, highlighting the interconnectedness of environmental health, agricultural reliance on water, and the importance of sustainable management practices."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\estuary", 
+                "summary": "The speaker advocates for restoring the Delta as a vibrant freshwater estuary to support both ecological health and agricultural needs while emphasizing the urgent need to address declining shorebird populations amidst competing management priorities."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\flush wastewater", 
+                "summary": "The text emphasizes the critical need for sustainable water supply in the Delta to manage salinity, address toxic algae blooms, and ensure the overall health of the ecosystem, particularly during drought conditions."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\flyway", 
+                "summary": "The changing migratory patterns of fish and birds in the Delta, exacerbated by drought and management choices, threaten biodiversity, particularly for shorebirds, and highlight the urgent need for protective measures against saltwater intrusion and climate change impacts."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\meadows", 
+                "summary": "The speaker emphasizes the importance of maintaining high stream flows and recognizing the ecological significance of water within ecosystems, arguing that prioritizing instream flows and wetlands is more effective for water storage than relying solely on snowpack."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\native fish", 
+                "summary": "The speaker expresses deep concern over the declining health of native fish species in California, emphasizing the need for increased conservation efforts and proper water flow to support their survival against competing non-native species."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\primary productivity", 
+                "summary": "The Delta's primary productivity is the lowest among estuaries, negatively impacted by invasive clams and water management, leading to unfavorable ecosystem shifts and threatening species like the Delta smelt."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\reservoir operations", 
+                "summary": "Salinity influences water management decisions, and currently, summer releases from the American River create a unique year-round flow beneficial for both ecological and recreational purposes."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\reverse dead zones", 
+                "summary": "The discussion highlights the need to address local circulation issues in dead zones, particularly along the Stockton waterfront, where existing solutions like bubblers have proven ineffective."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\snow pack", 
+                "summary": "Meadows emphasizes that while snowpack is important for water storage discussions, it should be considered a secondary aspect."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\water temperature", 
+                "summary": "The text highlights the challenges of addressing the impacts of climate change on water ecosystems, particularly regarding harmful algal blooms, water temperature regulations, and insufficient management standards to protect aquatic life."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\MISC\\wetlands", 
+                "summary": "Salinity changes in the delta will adversely affect the environment, altering habitats and impacting biodiversity, plant life, and wetlands."
+            },
+            {
+                "code_name": "Value\\Eco impacts\\water quality", 
+                "summary": "The text discusses the critical challenges of water quality management in the Delta, emphasizing the impacts of harmful algal blooms, salinity intrusion, and climate change on fisheries, agriculture, the local economy, and community health, while calling for a holistic and science-based approach to address these interconnected issues."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts", 
+                "summary": "The speaker emphasizes the conflict between human water needs and environmental conservation in the Southern San Joaquin Valley, arguing that urban demands often overshadow ecological priorities, and stresses the necessity of taking proactive measures to protect both human interests and the health of the Delta amid challenges like salinity and climate change."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts\\agriculture", 
+                "summary": "The text emphasizes the critical importance of maintaining fresh water quality in the Delta to sustain agriculture, local communities, and ecosystems, while addressing the challenges posed by rising salinity, climate change, and competing water demands."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts\\agriculture\\ag economy", 
+                "summary": "Increased salinity in the Delta threatens agricultural productivity, leading to economic devastation and negative impacts on local ecosystems and communities reliant on farming."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts\\agriculture\\crop export", 
+                "summary": "The text questions the sustainability of using California's limited water resources to produce crops, like almonds and hay, that are primarily consumed globally rather than locally, contemplating the trade-offs between agricultural exports and local resource conservation."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts\\agriculture\\farm viability", 
+                "summary": "The viability of agriculture depends on factors such as sustainability, economic feasibility, and environmental impact."
+            },
+            {
+                "code_name": "Value\\Human well-being impacts\\agriculture\\production", 
+                "summary": "Increasing salinity in agricultural soils is threatening crop yields and overall agricultural productivity in the Delta, posing risks to food security and local economies."
+            }
+        ],        
+        "code_names": 
+        [
+            "Value", "Value\\Eco impacts\\ecosystem-wide changes", 
+            "Value\\Eco impacts\\fish migration pathways", 
+            "Value\\Eco impacts\\flow", 
+            "Value\\Eco impacts\\freshwater pathway", 
+            "Value\\Eco impacts\\habitat changes", 
+            "Value\\Eco impacts\\habitat changes\\bird habitat impacts", 
+            "Value\\Eco impacts\\habitat changes\\fish habitat impacts", 
+            "Value\\Eco impacts\\HABs", 
+            "Value\\Eco impacts\\HABs\\HAB prevention", 
+            "Value\\Eco impacts\\invasive species", 
+            "Value\\Eco impacts\\invasive species\\native species disruption", 
+            "Value\\Eco impacts\\MISC\\ecosystem", 
+            "Value\\Eco impacts\\MISC\\estuary", 
+            "Value\\Eco impacts\\MISC\\flush wastewater", 
+            "Value\\Eco impacts\\MISC\\flyway", 
+            "Value\\Eco impacts\\MISC\\meadows", 
+            "Value\\Eco impacts\\MISC\\native fish", 
+            "Value\\Eco impacts\\MISC\\primary productivity", 
+            "Value\\Eco impacts\\MISC\\reservoir operations", 
+            "Value\\Eco impacts\\MISC\\reverse dead zones", 
+            "Value\\Eco impacts\\MISC\\snow pack", 
+            "Value\\Eco impacts\\MISC\\water temperature", 
+            "Value\\Eco impacts\\MISC\\wetlands", 
+            "Value\\Eco impacts\\water quality", 
+            "Value\\Human well-being impacts", 
+            "Value\\Human well-being impacts\\agriculture", 
+            "Value\\Human well-being impacts\\agriculture\\ag economy", 
+            "Value\\Human well-being impacts\\agriculture\\crop export", 
+            "Value\\Human well-being impacts\\agriculture\\farm viability", 
+            "Value\\Human well-being impacts\\agriculture\\production", 
+            "Value\\Human well-being impacts\\cultural resources", 
+            "Value\\Human well-being impacts\\disadvantaged communities", 
+            "Value\\Human well-being impacts\\drinking water", 
+            "Value\\Human well-being impacts\\economy", 
+            "Value\\Human well-being impacts\\fisheries", 
+            "Value\\Human well-being impacts\\fisheries\\fishery health", 
+            "Value\\Human well-being impacts\\health", 
+            "Value\\Human well-being impacts\\interest overrides", 
+            "Value\\Human well-being impacts\\local surface water supply", 
+            "Value\\Human well-being impacts\\MISC\\aesthetics enjoyment", 
+            "Value\\Human well-being impacts\\MISC\\boating", 
+            "Value\\Human well-being impacts\\MISC\\environmental justice", 
+            "Value\\Human well-being impacts\\MISC\\equity", 
+            "Value\\Human well-being impacts\\MISC\\flooding", 
+            "Value\\Human well-being impacts\\MISC\\local beneficial uses", 
+            "Value\\Human well-being impacts\\MISC\\photography", 
+            "Value\\Human well-being impacts\\MISC\\recreational hiking", 
+            "Value\\Human well-being impacts\\MISC\\recreational hunting", 
+            "Value\\Human well-being impacts\\MISC\\subsistence fishing",
+            "Value\\Human well-being impacts\\MISC\\tribal - western collaboration", 
+            "Value\\Human well-being impacts\\quality of life", 
+            "Value\\Human well-being impacts\\recreation", 
+            "Value\\Human well-being impacts\\recreation\\bird watching", 
+            "Value\\Human well-being impacts\\recreation\\recreational fishing", 
+            "Value\\Human well-being impacts\\tribal communities", 
+            "Value\\Human well-being impacts\\tribal communities\\tribal beneficial uses", 
+            "Value\\Human well-being impacts\\tribal communities\\tribal perspectives", 
+            "Value\\Human well-being impacts\\way of life", 
+            "Value\\Misc\\CO River system-like consequences", 
+            "Value\\Misc\\Delta (as a whole)", 
+            "Value\\Misc\\emergency declarations", 
+            "Value\\Misc\\MISC\\social-technical intersection", 
+            "Value\\System Operations\\CO River supply", 
+            "Value\\System Operations\\existing infrastructure", 
+            "Value\\System Operations\\exports", 
+            "Value\\System Operations\\MISC\\impacts of existing water programs", 
+            "Value\\System Operations\\salinity duration in-system", 
+            "Value\\System Operations\\water quantity", 
+            "Value\\System Operations\\water use"
+        ],
+        "participants": 44,
+        "total_answers": 697
+    },
+    {
+        "question": ["What factors do you think have the most influence on Delta Salinity management?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Drivers\\Climate Change",
+                "summary": "The discussion emphasizes that climate change is exacerbating ongoing mismanagement of water resources in the Delta, which is primarily driven by diversions and extractions, and highlights the need for improved management and adaptation strategies to address the ecological and hydrological challenges posed by climate change."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\extreme dry years",
+                "summary": "The ongoing and compounded impacts of extreme droughts and climate change on water management result in increased salinity intrusion in the Delta, adversely affecting both the ecosystem and agricultural needs."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\extreme wet years",
+                "summary": "Climate change is significantly altering precipitation patterns, leading to increased extremes in both droughts and floods, while also exacerbating salinity issues in water systems like the Delta."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\heat waves",
+                "summary": "Climate change is expected to exacerbate harmful algal blooms in the Delta by influencing a complex set of factors, including extreme weather, sea level rise, and changes in land and water management."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\MISC\\evaporation",
+                "summary": "Rising temperatures will lead to increased water absorption in the ground and higher evaporation rates in watersheds before reaching the Delta."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\MISC\\evapotranspiration",
+                "summary": "Increasing temperatures in watersheds will lead to more water absorption and evaporation, resulting in higher salinity levels in the Delta due to increased salt from the Central Valley and changes in evapotranspiration."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\sea-level rise",
+                "summary": "The text discusses the complex interplay between climate change, sea level rise, and water management, emphasizing the urgent need for improved strategies to address water quality, salinity issues, and the impacts on ecosystems in the Delta region as these environmental challenges intensify over time."
+            },
+            {
+                "code_name": "Drivers\\Climate Change\\wildfires",
+                "summary": "The text describes the cumulative impacts of climate change, including altered water flow, droughts, wildfires, sediment changes, and sea level rise, creating significant challenges for water systems."
+            },
+            {
+                "code_name": "Drivers\\Flow",
+                "summary": "Saltwater intrusion in the Delta is primarily driven by decreased freshwater flows, exacerbated by groundwater depletion, climate change, and mismanagement of water resources, requiring significant structural changes in water flow management for ecological restoration."
+            },
+            {
+                "code_name": "Drivers\\Flow\\Delta Conveyance ('tunnel')",
+                "summary": "The passage discusses concerns about the potential ecological impacts of a proposed Delta tunnel project, which may increase salinity, reduce freshwater flow, and threaten agriculture and ecosystems in regions such as San Joaquin County."
+            },
+            {
+                "code_name": "Drivers\\Flow\\environmental yield",
+                "summary": "The speaker expresses concern that water resource management is outdated and insufficiently addresses factors like increasing evaporation and ecosystem needs, which significantly impact runoff and water availability in the context of climate change and extreme weather events."
+            },
+            {
+                "code_name": "Drivers\\Flow\\exports",
+                "summary": "The ongoing debate about California's water management highlights the tension between agricultural and municipal water exports and the ecological health of the Delta, exacerbated by outdated policies, climate change, and increased demand for water."
+            },
+            {
+                "code_name": "Drivers\\Flow\\in-Delta diversions",
+                "summary": "Delta diversions significantly impact salinity management due to increasing upstream and in-Delta water demands coupled with climate change effects, necessitating improved monitoring and accounting practices."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\adequate storage",
+                "summary": "Insufficient storage capacity exists to manage rainfall during wet years, especially when it falls as rain instead of snow."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\carryover storage requirements",
+                "summary": "Insufficient water for maintaining salinity standards in the Delta is leading to negative biological impacts and calls for reevaluating water management practices and contractual agreements to ensure better preservation of water for ecosystems and cities during droughts."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\diversions",
+                "summary": "The primary factors impacting Delta water quality and salinity management are significant water diversions and extractions, compounded by climate change, which exacerbates issues such as drought and sea level rise."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\diversions\\upstream diversions",
+                "summary": "The discussion highlights the interconnected issues of upstream water diversions, exports, and climate change, stressing that increasing demands on water resources are exacerbating salinity control challenges in the Delta."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\exports during drought",
+                "summary": "The discussion focuses on the complex relationship between water exports, salinity, and drought conditions, emphasizing the need for careful monitoring and management of water resources during times of scarcity."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\flood control",
+                "summary": "Flood control projects in the Delta, including deepening channels, contribute to increased salinity by allowing saltier water to move more freely along the bottom, complicating salinity management efforts."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\flooding",
+                "summary": "The discussion emphasizes the need for a conservative land use approach in the Delta to manage climate vulnerabilities, addressing both flood and drought extremes while considering their impact on natural systems, agriculture, and water quality."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\freshwater pathway",
+                "summary": "The focus is on the availability and distribution of fresh water resources."
+            },
+            {
+                "code_name": "Drivers\\Flow\\MISC\\pump water redirection",
+                "summary": "The author speculates that excessive water flow from the canal's valve and the operation of export pumps may be reversing the natural tide, causing salt concentrations to build up in the Delta rather than dispersing."
+            },
+            {
+                "code_name": "Drivers\\Flow\\quantity of water",
+                "summary": "The text discusses the critical issues surrounding water management in California's Delta, focusing on the impacts of over-extraction, drought, climate change, and salinity control on both environmental and agricultural needs."
+            },
+            {
+                "code_name": "Drivers\\Flow\\reservoir operations - storage",
+                "summary": "The management of water flow in the Delta is critically affected by upstream dam operations, climate change, and competing water use demands, necessitating improved coordination and analysis to address salinity control and long-term sustainability."
+            },
+            {
+                "code_name": "Drivers\\Flow\\seasonal precipitation",
+                "summary": "Climate change is leading to altered precipitation patterns, increased salinity in the Delta due to sea level rise, and the need for improved water management strategies to cope with these changes."
+            },
+            {
+                "code_name": "Drivers\\Flow\\snow pack",
+                "summary": "The text discusses the critical role of snowpack in California's water supply, emphasizing the impacts of climate change on water availability, precipitation patterns, salinity levels, and the need for better water management strategies to adapt to these changing conditions."
+            },
+            {
+                "code_name": "Drivers\\Flow\\upstream management",
+                "summary": "Upstream management practices and levee systems have significantly altered Delta salinity dynamics and reduced floodplains, impacting groundwater replenishment and flood risk management in the region."
+            },
+            {
+                "code_name": "Drivers\\Information Sources",
+                "summary": "The text emphasizes the importance of inclusivity in utilizing the knowledge resources available through Co-op Extension and UC Davis, highlighting that these experts should not have to seek access to contribute their insights."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\MISC\\consumptive use reporting",
+                "summary": "California's SB 88 in 2014 aimed to improve water rights record-keeping and reporting methods, particularly concerning the Delta, which had previously suffered from ambiguous data."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\MISC\\Public Trust evaluation",
+                "summary": "The speaker advocates for a comprehensive public trust evaluation of water flows to address environmental issues in estuaries, emphasizing the need for action over debate on salinity and pollution."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\modeling",
+                "summary": "The text discusses the need for improved climate modeling and adaptation strategies to better account for current and future water availability and management challenges in the context of climate change, particularly focusing on drought and sea level rise in California's Delta region."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\monitoring",
+                "summary": "OpenET technology enhances the understanding of water consumption for irrigation by providing a reliable measurement of evaporative transpiration, addressing challenges posed by traditional gauging methods and contributing to better water management practices in the Delta region."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\real-time consumptive use",
+                "summary": "The text discusses the need for a reliable methodology to accurately measure real-time consumptive water use in the Delta, highlighting the effectiveness of the Open ET"
+            },        
+            {
+                "code_name": "Drivers\\Information Sources\\sound science", 
+                "summary": "The text criticizes the California State Board for relying on outdated, politically influenced science in water management, arguing for a new public trust evaluation and better adaptation to changing environmental conditions."
+            },
+            {
+                "code_name": "Drivers\\Information Sources\\traditional ecological knowledge - Indigenous knowledge", 
+                "summary": "The text emphasizes the importance of integrating traditional ecological knowledge or indigenous knowledge into modern environmental practices and decision-making."
+            },
+            {
+                "code_name": "Drivers\\Misc\\earthquake", 
+                "summary": "The text discusses the negative impacts of drought and potential earthquakes on the Delta's salinity levels, ecosystem health, and levee stability, while highlighting the varying vulnerability of different stakeholders and the need for more research on the relationship between earthquakes and levee integrity."
+            },
+            {
+                "code_name": "Drivers\\Misc\\earthquake\\levee damage", 
+                "summary": "The complexity and expense of building and reinforcing levees, particularly in earthquake-prone areas, raises questions about the impact of seismic events on levee stability and their broader implications for salinity management."
+            },
+            {
+                "code_name": "Drivers\\Misc\\invasive species", 
+                "summary": "The conversation highlights concerns about overpopulation and inadequate planning in housing development, particularly regarding water supply and the impact of invasive species in freshwater ecosystems."
+            },
+            {
+                "code_name": "Drivers\\Misc\\MISC\\awareness - education", 
+                "summary": "Education awareness is crucial for understanding the impact of salinity on ecosystems and fostering engagement with environmental issues among people."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment", 
+                "summary": "The text outlines the critical issues surrounding water management in California, emphasizing that outdated policies, regulatory failures, and the neglect of ecological impacts are leading to increasing salinity problems and ecological decline in the Delta region."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\Bay-Delta Plan", 
+                "summary": "The changes in salinity requirements in the Southern Delta, as outlined in the 2018 Water Quality Control Plan update, will likely affect both Delta farmers and local ecosystems, necessitating a more detailed analysis of water management strategies and policies to balance water storage and releases effectively."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\current water rights", 
+                "summary": "The discussion emphasizes the complexity of water rights and exports in California, highlighting the necessity for improved management strategies and legal frameworks to address sustainability, salinity control, and the competing demands of various water users amid climate change and population growth."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\D-1641", 
+                "summary": "Salinity management in the Delta is crucial for water quality protection and is influenced by various factors, including project operations, climate change, and specific policies, though current regulations may lack clarity and flexibility."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\decision-making process", 
+                "summary": "California's water management issues stem from political influence and conflicting interests, leading to inconsistent decision-making that hampers long-term solutions amid climate challenges such as frequent and intense droughts."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\economic value of water", 
+                "summary": "The text discusses the economic valuation of water, emphasizing that monetary considerations often overshadow environmental and agricultural values, particularly in light of challenges posed by climate change and depletion of vital water sources like the Colorado River."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\drought management planning", 
+                "summary": "Climate change is altering water availability, necessitating a shift in planning to account for extreme dry periods, increased flooding, and the need for better floodplain management."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\drought management planning\\inadequate drought management planning", 
+                "summary": "The text argues that both state and federal governments are inadequately planning for long-term droughts, relying on temporary solutions and waivers instead of developing a comprehensive strategy for changing climatic conditions."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\economics", 
+                "summary": "The text discusses the conflict between resource preservation and economic development driven by a commodified culture, highlighting the adverse effects on quality of life and natural resource management in America, particularly in relation to extensive agriculture in California."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\emergency response", 
+                "summary": "Low flow regimes and levy maintenance are crucial for managing water resources in the Delta, with potential emergency measures impacting salinity and habitat during droughts and uncertain policy changes regarding conveyance operations."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\endangered species management", 
+                "summary": "Endangered species protections are crucial in shaping the policies related to incidental take permits and biological opinions that influence Delta water operations management."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\tribal ecological knowledge", 
+                "summary": "The text highlights the importance of integrating tribal ecological knowledge with Western scientific methods to improve water quality and salinity management on tribal homelands, emphasizing collaboration and the role of tribal practices in environmental mitigation."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\MISC\\value of water", 
+                "summary": "The text discusses the challenges in valuing water, emphasizing that economic interests often overshadow environmental and agricultural values, particularly in water management decisions."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\policy changes", 
+                "summary": "Changing water policies and increasing conservation measures may reduce demand in some areas, while equity allocations could increase demand south of the Delta, highlighting the complexities of managing water resources during drought."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\policy changes\\negative sentiment", 
+                "summary": "The ongoing water management conflict in California highlights the struggle between agricultural demands and water conservation efforts, especially regarding the impact on fisheries and water quality from Delta water exports."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\politics", 
+                "summary": "The management of salinity in California is heavily influenced by political and economic factors, particularly during droughts, where decisions often prioritize short-term human needs over environmental concerns, and where the voices of industry overpower the demands for effective ecological solutions."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\rights changes", 
+                "summary": "Policy changes regarding water rights and conservation measures may lead to reduced demand for water in certain areas, while equity allocations could increase demand south of the Delta during droughts, complicating water management and prioritization."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\Tribal representation", 
+                "summary": "There is optimism for upcoming protections for the Delta as community groups and tribes seek meaningful involvement in decision-making processes, advocating for direct representation on the state waterboard."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\Tribal representation\\lack of Tribal representation", 
+                "summary": "Tribal leaders express concerns over the lack of meaningful participation in the negotiation of Delta Voluntary Agreements, highlighting that these agreements, perceived as rushed and lacking ecological benefits, threaten both environmental health and tribal cultural practices."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\TUCP", 
+                "summary": "The text discusses how California's reliance on temporary urgency change petitions to manage water salinity standards, primarily to benefit agriculture and business interests, exacerbates environmental concerns and reflects inadequate long-term planning for drought and climate change impacts."
+            },
+            {
+                "code_name": "Drivers\\Policy & Regulatory Environment\\Water as property", 
+                "summary": "The text discusses the tension between California's approach to water as a property right and the federal courts' movement toward recognizing water as an inherent property right, highlighting concerns about legal implications and conflicts with historical management practices."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management", 
+                "summary": "Flow management in the Delta is crucial for maintaining salinity standards, which significantly impact the ecosystem's health, and while climate change complicates these challenges, improved management practices are essential for adapting to environmental shifts and achieving consistency amidst political fluctuations."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\farming practices", 
+                "summary": "The text discusses the need for structural changes in agricultural practices and water management in the Delta to improve water quality and address the issues of salinity and turbidity caused by modern farming methods and environmental factors."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\farming practices\\agricultural water application", 
+                "summary": "The text discusses the critical overuse of freshwater resources in California, particularly for agriculture, and the resulting environmental impacts, highlighting the need for better water management strategies to balance demands between urban and agricultural needs while safeguarding the Delta ecosystem."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\groundwater use", 
+                "summary": "Freshwater flow is the primary factor in Elk Grove's growth, while reliance on groundwater is depleting resources and is unsustainable for future development, exacerbating challenges in Delta water quality and availability."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\managed groundwater storage",
+                "summary": "The text discusses the impact of flood management practices on Delta salinity and emphasizes the need for improved water storage solutions to balance supply during droughts and wet years."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\MISC\\farming practices that lessen subsidence",
+                "summary": "To convince a farmer to reduce subsidence, enhance their infrastructure while providing financial support for transitioning from traditional agriculture to practices like restored wetlands or aquaculture, highlighting the associated benefits."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\MISC\\recreation",
+                "summary": "Improving water quality in the Delta may require better upstream land use stewardship to address seasonal turbidity changes and harmful algal blooms, which are exacerbated by recreation and insufficient flow."
+            },
+            {
+                "code_name": "Drivers\\Resource Use & Management\\water demand",
+                "summary": "The discussion highlights the complex interplay between California's growing population, increasing water demand, and environmental sustainability challenges, emphasizing the need for policy changes to balance human water needs and ecological preservation in the face of climate change."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources",
+                "summary": "The main influences on salt movement are its sources and the effects of tides and freshwater flows that circulate it."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\MISC\\Sacramento River",
+                "summary": "The main drivers of water dynamics in the Delta are the tidal inflow and outflow, with wind and weather also impacting salinity levels, particularly in the Southern Delta where agricultural practices contribute to salt accumulation."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\Pacific Ocean",
+                "summary": "Salinity intrusion in the Delta occurs primarily from ocean salts and San Joaquin River inflows, driven by tidal movements, with climate change potentially impacting these dynamics."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\salt accumulation",
+                "summary": "Levee failures in the Delta can have mixed effects, allowing salmon access to floodplains while threatening long-term salinity control, which is impacted by factors like drainage, agricultural practices, and changing climate conditions that lead to salt accumulation and reduced agricultural productivity."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\salt recycling",
+                "summary": "The movement of water in California involves a cycle where water from the Delta is used for irrigation in the Central Valley, which may lead to potential recycling of salts, although this aspect is outside the speaker's research focus."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\San Joaquin River water quality",
+                "summary": "Salinity in the Delta is primarily driven by high nitrate loads and inadequate freshwater flow from the San Joaquin River, exacerbated by agricultural runoff and water management practices that prioritize human interests over ecological needs."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\tidal influence",
+                "summary": "The text discusses the interplay between drought, salinity intrusion, tidal influences, and climate change in the Delta, highlighting the complex management challenges posed by water flow, reservoir management, and agricultural practices."
+            },
+            {
+                "code_name": "Drivers\\Salinity Sources\\uncapped mines",
+                "summary": "The speaker argues that effectively cleaning up abandoned mines in the Bay Area requires direct action on the mines themselves rather than insufficient funding for surface-level cleanup efforts."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)",
+                "summary": "The discussion centers on the effectiveness of structural barriers for salinity management in the Delta, with a preference for more balanced alternatives that consider broader stakeholder impacts and habitat restoration efforts."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\barriers",
+                "summary": "The discussion highlights the complex impacts of false river barriers on salinity management in the Delta, emphasizing the need for integrating tribal ecological knowledge and monitoring the effects of these structural measures on the environment and local communities."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\bathymetry",
+                "summary": "Flood control projects and channel deepening in the Delta have significantly influenced salinity intrusion dynamics, with ongoing dredging necessary to manage these effects amidst changing hydrology and environmental conditions."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\inadequate infrastructure",
+                "summary": "The text discusses the challenges of managing infrastructure and ecosystems in the face of climate change, emphasizing the inadequacy of existing tools to handle more frequent and intense droughts, as well as the influence of fluctuating political economies on management consistency."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\levees",
+                "summary": "Levee failures in the Delta, influenced by climate change and storm patterns, can have both detrimental effects on salinity control and unexpected benefits for salmon populations, highlighting the need for maintenance and investment in levee systems."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\draining water",
+                "summary": "The Westlands Water District relies on water pumped from the Delta without a significant watershed, leading to salt balance issues in the soils and potential contamination from selenium buildup in Kesterson Reservoir due to the lack of a drainage system."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\infrastructure maintenance",
+                "summary": "The text highlights concerns about conservative sea level rise predictions threatening the Delta's infrastructure, leading to saltwater intrusion and negative impacts on local species and ecosystems."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\levee maintenance",
+                "summary": "Dave Shuster highlighted concerns over levee stability due to subsidence in the delta, advocating for a combination of state-funded fortifications, modified farming practices, and the integration of tribal ecological knowledge to address water quality and manage salinity efficiently."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\pressure",
+                "summary": "The main drivers of salinity in the Delta are tidal inflow and outflow, as well as the accumulation of agricultural drainage, which varies significantly with weather and pumping actions from State and Federal sources."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\siltation",
+                "summary": "The South Delta is facing significant siltation, affecting salinity intrusion and water availability for fish and agriculture, necessitating a reevaluation of existing studies on sea level rise and deepening channels."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\MISC\\wind",
+                "summary": "The main drivers of water dynamics in the Delta include tidal inflow and outflow, the impact of wind and pressure on water levels, and the accumulation of salt from agricultural drainage, particularly in the Southern Delta."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\operable gates",
+                "summary": "The text discusses the impacts of water management projects on salinity control in the Sacramento-San Joaquin Delta, emphasizing the importance of integrating tribal ecological knowledge with traditional scientific approaches to address environmental issues and enhance water quality."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\restoration",
+                "summary": "Restoration projects aim to enhance tidal range and increase saltwater influx."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\subsidence",
+                "summary": "The discussion highlights various factors, including sea level rise, subsidence, and extreme weather, that influence environmental conditions affecting coastal areas."
+            },
+            {
+                "code_name": "Drivers\\Structure (physical geography)\\tidal marsh restoration",
+                "summary": "The text discusses the importance of using tidal marsh restoration to combat salinity intrusion in the Delta, while also identifying various environmental and policy factors that influence the region's ecosystem."
+            },
+            {
+                "code_name": "Drivers\\Urbanization",
+                "summary": "The text discusses how agricultural and developmental changes have prioritized large-scale farming and water dependency, neglecting the basic drinking water needs of affected communities and leading to potential water quality issues."
+            },
+            {
+                "code_name": "Drivers\\Urbanization\\consumerism",
+                "summary": "The speaker emphasizes that rising consumerism and outdated water policies in California, coupled with the priority of urban human needs over environmental concerns, complicate efforts to manage water resources effectively amid ongoing challenges like drought and sea level rise."
+            },
+            {
+                "code_name": "Drivers\\Urbanization\\housing",
+                "summary": "The text discusses the challenges of prioritizing freshwater use for agriculture and housing in California, highlighting outdated policies, overpopulation, and the impact of burgeoning housing developments on natural water resources."
+            },
+            {
+                "code_name": "Drivers\\Urbanization\\MISC\\industry",
+                "summary": "Climate change is significantly influenced by industry and politics, with the former having a notable impact and the latter needing to prioritize environmental concerns over monetary interests."
+            },
+            {
+                "code_name": "Drivers\\Urbanization\\population increase",
+                "summary": "California's outdated water policies struggle to meet the demands of a growing population and housing developments, exacerbating water scarcity and highlighting the need for sustainable solutions like recycled water."
+            },
+            {
+                "code_name": "Drivers\\Urbanization\\zoning",
+                "summary": "The discussion highlights the challenges of overpopulation and regulatory constraints affecting housing development, particularly in the Delta region where agricultural preservation and water availability are critical issues."
+            }
+        ],
+        "code_names": 
+        [
+            "Drivers\\Climate Change",
+            "Drivers\\Climate Change\\extreme dry years",
+            "Drivers\\Climate Change\\extreme wet years",
+            "Drivers\\Climate Change\\heat waves",
+            "Drivers\\Climate Change\\MISC\\evaporation",
+            "Drivers\\Climate Change\\MISC\\evapotranspiration",
+            "Drivers\\Climate Change\\sea-level rise",
+            "Drivers\\Climate Change\\wildfires",
+            "Drivers\\Flow",
+            "Drivers\\Flow\\Delta Conveyance ('tunnel')",
+            "Drivers\\Flow\\environmental yield",
+            "Drivers\\Flow\\exports",
+            "Drivers\\Flow\\in-Delta diversions",
+            "Drivers\\Flow\\MISC\\adequate storage",
+            "Drivers\\Flow\\MISC\\carryover storage requirements",
+            "Drivers\\Flow\\MISC\\diversions",
+            "Drivers\\Flow\\MISC\\diversions\\upstream diversions",
+            "Drivers\\Flow\\MISC\\exports during drought",
+            "Drivers\\Flow\\MISC\\flood control",
+            "Drivers\\Flow\\MISC\\flooding",
+            "Drivers\\Flow\\MISC\\freshwater pathway",
+            "Drivers\\Flow\\MISC\\pump water redirection",
+            "Drivers\\Flow\\quantity of water",
+            "Drivers\\Flow\\reservoir operations - storage",
+            "Drivers\\Flow\\seasonal precipitation",
+            "Drivers\\Flow\\snow pack",
+            "Drivers\\Flow\\upstream management",
+            "Drivers\\Information Sources",
+            "Drivers\\Information Sources\\MISC\\consumptive use reporting",
+            "Drivers\\Information Sources\\MISC\\Public Trust evaluation",
+            "Drivers\\Information Sources\\modeling",
+            "Drivers\\Information Sources\\monitoring",
+            "Drivers\\Information Sources\\real-time consumptive use",
+            "Drivers\\Information Sources\\sound science",
+            "Drivers\\Information Sources\\traditional ecological knowledge - Indigenous knowledge",
+            "Drivers\\Misc\\earthquake",
+            "Drivers\\Misc\\earthquake\\levee damage",
+            "Drivers\\Misc\\invasive species",
+            "Drivers\\Misc\\MISC\\awareness - education",
+            "Drivers\\Policy & Regulatory Environment",
+            "Drivers\\Policy & Regulatory Environment\\Bay-Delta Plan",
+            "Drivers\\Policy & Regulatory Environment\\current water rights",
+            "Drivers\\Policy & Regulatory Environment\\D-1641",
+            "Drivers\\Policy & Regulatory Environment\\decision-making process",
+            "Drivers\\Policy & Regulatory Environment\\economic value of water",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\drought management planning",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\drought management planning\\inadequate drought management planning",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\economics",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\emergency response",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\endangered species management",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\tribal ecological knowledge",
+            "Drivers\\Policy & Regulatory Environment\\MISC\\value of water",
+            "Drivers\\Policy & Regulatory Environment\\policy changes",
+            "Drivers\\Policy & Regulatory Environment\\policy changes\\negative sentiment",
+            "Drivers\\Policy & Regulatory Environment\\politics",
+            "Drivers\\Policy & Regulatory Environment\\rights changes",
+            "Drivers\\Policy & Regulatory Environment\\Tribal representation",
+            "Drivers\\Policy & Regulatory Environment\\Tribal representation\\lack of Tribal representation",
+            "Drivers\\Policy & Regulatory Environment\\TUCP",
+            "Drivers\\Policy & Regulatory Environment\\Water as property",
+            "Drivers\\Resource Use & Management",
+            "Drivers\\Resource Use & Management\\farming practices",
+            "Drivers\\Resource Use & Management\\farming practices\\agricultural water application",
+            "Drivers\\Resource Use & Management\\groundwater use",
+            "Drivers\\Resource Use & Management\\managed groundwater storage",
+            "Drivers\\Resource Use & Management\\MISC\\farming practices that lessen subsidence",
+            "Drivers\\Resource Use & Management\\MISC\\recreation",
+            "Drivers\\Resource Use & Management\\water demand",
+            "Drivers\\Salinity Sources",
+            "Drivers\\Salinity Sources\\MISC\\Sacramento River",
+            "Drivers\\Salinity Sources\\Pacific Ocean",
+            "Drivers\\Salinity Sources\\salt accumulation",
+            "Drivers\\Salinity Sources\\salt recycling",
+            "Drivers\\Salinity Sources\\San Joaquin River water quality",
+            "Drivers\\Salinity Sources\\tidal influence",
+            "Drivers\\Salinity Sources\\uncapped mines",
+            "Drivers\\Structure (physical geography)",
+            "Drivers\\Structure (physical geography)\\barriers",
+            "Drivers\\Structure (physical geography)\\bathymetry",
+            "Drivers\\Structure (physical geography)\\inadequate infrastructure",
+            "Drivers\\Structure (physical geography)\\levees",
+            "Drivers\\Structure (physical geography)\\MISC\\draining water",
+            "Drivers\\Structure (physical geography)\\MISC\\infrastructure maintenance",
+            "Drivers\\Structure (physical geography)\\MISC\\levee maintenance",
+            "Drivers\\Structure (physical geography)\\MISC\\pressure",
+            "Drivers\\Structure (physical geography)\\MISC\\siltation",
+            "Drivers\\Structure (physical geography)\\MISC\\wind",
+            "Drivers\\Structure (physical geography)\\operable gates",
+            "Drivers\\Structure (physical geography)\\restoration",
+            "Drivers\\Structure (physical geography)\\subsidence",
+            "Drivers\\Structure (physical geography)\\tidal marsh restoration",
+            "Drivers\\Urbanization",
+            "Drivers\\Urbanization\\consumerism",
+            "Drivers\\Urbanization\\housing",
+            "Drivers\\Urbanization\\MISC\\industry",
+            "Drivers\\Urbanization\\population increase",
+            "Drivers\\Urbanization\\zoning"
+        ],
+        "participants": 45,
+        "total_answers": 1028
+    },
+    {
+        "question": ["What salinity management strategies do you think are most important or relevant to explore in future scenarios?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Strategies\\Econ\\carbon market", 
+                "summary": "The author believes that integrating wetland farming for carbon markets could be beneficial, but immediate action is necessary rather than waiting for long-term solutions."
+            },
+            {
+                "code_name": "Strategies\\Econ\\carbon market\\support\\yes.support", 
+                "summary": "The speaker supports the idea of developing a market for wetland farming practices to contribute to the carbon market but is concerned about the lack of immediate action."
+            },
+            {
+                "code_name": "Strategies\\Econ\\Water cost", 
+                "summary": "The discussion revolves around the idea of charging water contractors the true cost of water, including environmental impacts, to incentivize more efficient water use while ensuring equitable pricing for consumers."
+            },
+            {
+                "code_name": "Strategies\\Econ\\Water cost\\support\\yes.support", 
+                "summary": "The discussion focuses on the need to charge the true cost of water, including environmental expenses, to incentivize greater efficiency among large water users without disproportionately impacting those who rely on water for drinking."
+            },
+            {
+                "code_name": "Strategies\\flow alterations", 
+                "summary": "To prevent saltwater intrusion in the Delta, it is essential to restore and maintain adequate freshwater flows through watershed management while addressing the complexities of water rights and climate change impacts."
+            },
+            {
+                "code_name": "Strategies\\flow alterations\\exports", 
+                "summary": "The discussion highlights the conflict between exporting California's water for agricultural use, particularly almonds, versus its necessity for local communities and ecological health, advocating for reduced water exports to prioritize local needs and sustainability."
+            },
+            {
+                "code_name": "Strategies\\flow alterations\\exports\\support\\yes.support", 
+                "summary": "The discussion highlights the need to restrict water exports from the Delta to improve salinity control and fishery flows, while also addressing the intricate balance of water needs between Northern and Southern California amidst ongoing climate challenges."
+            },
+            {
+                "code_name": "Strategies\\flow alterations\\reduced demand", 
+                "summary": "The discussion emphasizes the need for California to adopt efficient water management practices, balancing urban and agricultural demands, and implementing conservation strategies to ensure sustainable water supply amidst ongoing drought conditions."
+            },
+            {
+                "code_name": "Strategies\\flow alterations\\reservoir operations & storage", 
+                "summary": "The text discusses the need for improved water management strategies, including enhanced groundwater recharge and smarter reservoir operations, to address challenges such as salinity control, climate change, and the changing patterns of precipitation."
+            },
+            {
+                "code_name": "Strategies\\flow alterations\\reservoir operations & storage\\support\\yes.support", 
+                "summary": "The text emphasizes the need for improved groundwater recharge projects, conservative reservoir management, and creative water storage solutions to address increasing salinity and water consumption challenges in the Delta region."
+            },
+            {
+                "code_name": "Strategies\\Green Infrastructure & Nature-based Solutions", 
+                "summary": "The discussion centers on exploring green infrastructure and nature-based solutions for restoring California's Delta, emphasizing the need for adequate water flow to support ecological health while balancing agricultural interests and addressing challenges like salinity and sea level rise."
+            },
+            {
+                "code_name": "Strategies\\Green Infrastructure & Nature-based Solutions\\marsh restoration", 
+                "summary": "The speaker supports marsh restoration for its benefits but emphasizes the need for careful evaluation of water management and the limitations of such projects in truly addressing freshwater needs and ecological impacts."
+            },
+            {
+                "code_name": "Strategies\\Green Infrastructure & Nature-based Solutions\\wet meadows", 
+                "summary": "Restoring meadows and wetlands in the Sierra region is crucial for maintaining water levels, supporting ecosystems, and preventing negative impacts on the delta and salmon populations."
+            },
+            {
+                "code_name": "Strategies\\Green Infrastructure & Nature-based Solutions\\wet meadows\\support\\yes.support", 
+                "summary": "Restoring meadows and wetlands in the Sierras is essential for managing water flow and protecting the delta ecosystem, which includes the health of salmon populations."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering", 
+                "summary": "The discussion highlights the complexities of managing water rights and infrastructure in the Delta region, emphasizing the need for innovative solutions like salinity barriers and improved water management strategies to address ecological challenges while balancing urban and agricultural interests."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\barrier", 
+                "summary": "The discussion highlights the limitations and necessity of salinity barriers and other engineering solutions for managing salinity in water resources, emphasizing the need for integrated approaches, careful evaluation of impacts, and the consideration of nature-based resistance strategies to combat saltwater intrusion."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\levees", 
+                "summary": "The Delta's levee system requires significant fortification and innovative management to combat rising salinity and anticipated sea level rises, while addressing the interconnected risks of flooding and ecological impacts."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\levees\\support\\yes.support", 
+                "summary": "To preserve the Delta, a comprehensive plan is needed to fortify its levees against flooding and salinity intrusion while ensuring ongoing monitoring and management to address future challenges like sea level rise."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\managed groundwater storage", 
+                "summary": "The text emphasizes the need for enhanced groundwater recharge projects in California to manage water more effectively amidst climate change, less precipitation, and increasing agricultural demands, highlighting that traditional surface storage solutions like new reservoirs are insufficient."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\managed groundwater storage\\support",
+                "summary": "The text emphasizes the need to enhance groundwater recharge projects to manage water from peak flows and combat impending changes in precipitation patterns due to climate change."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\managed groundwater storage\\support\\yes.support",
+                "summary": "The discussion emphasizes the importance of managing groundwater recharge and exploring subsurface storage options in California, while expressing concerns about water quality, demand management, and the potential need for new storage strategies to address increasing water usage amidst changing climate conditions."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\managed groundwater storage\\want to explore\\no.explore",
+                "summary": "There is a lack of effective communication about why constructing multiple new reservoirs does not address the underlying issues."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\managed groundwater storage\\want to explore\\yes.explore",
+                "summary": "As climate change reduces snowfall and increases rainfall, effective management of water through groundwater recharge and innovative storage solutions, particularly in California's Central Valley, is essential to address groundwater depletion and ensure water availability during dry periods."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\operable gates",
+                "summary": "Operable gates are preferred over salinity barriers for managing fish migration and salinity issues, but concerns remain about their efficacy and impact on safety and water management amidst rising sea levels."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\operable gates\\support\\no.support",
+                "summary": "The speaker expresses their opposition to the installation of gates around Bethel Island, citing existing structures like dams and locks in the area."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\operable gates\\support\\yes.support",
+                "summary": "The speaker advocates for operable gates over permanent structures for their flexibility and adaptability to changes."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\operable gates\\want it explored\\yes.explore",
+                "summary": "Operable gates are preferred over salinity barriers for their ability to facilitate fish migration and adapt to changing environmental conditions, and all proposed solutions, including changes in water rights and nature-based infrastructure, should be considered to address current water management issues."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\san joaquin dredging",
+                "summary": "The text discusses the need for enhanced dredging and restoration efforts in the San Joaquin and South Delta to address siltation issues and improve flood protection, habitat, and water management by leveraging better scientific understanding of the region's hydrologic dynamics."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance",
+                "summary": "The discussion centers around the potential impacts and management of a proposed Delta tunnel conveyance project, with participants expressing concerns about its environmental implications, effects on water quality, and the need for realistic modeling and stakeholder engagement in decision-making."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance\\support",
+                "summary": "I am preparing to file a protest against the Delta conveyance project due to its significant impact on water rights."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance\\support\\no.support",
+                "summary": "The discussion revolves around the objections and concerns regarding the proposed Delta Conveyance project, with participants highlighting potential environmental impacts, the inadequacy of existing planning and modeling, and advocating for alternative approaches to water management that prioritize community and ecological health over costly infrastructure solutions."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance\\support\\yes.support",
+                "summary": "The discussion emphasizes the need to carefully evaluate the California tunnel project and its implications for freshwater resources and salinity control, advocating for delta conveyance alongside reduced water demand and enhanced groundwater recharge as potential solutions."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance\\want it explored\\no.explore",
+                "summary": "The text discusses the reliance on building new dams, such as the Sites reservoir, which is characterized as a high-cost, low-yield engineering project."
+            },
+            {
+                "code_name": "Strategies\\Hard Engineering\\tunnel-conveyance\\want it explored\\yes.explore",
+                "summary": "The discussion emphasizes the importance of exploring different tunnel conveyance scenarios to assess their operational impacts, especially regarding water quality and community safety, despite concerns about construction and stakeholder resistance."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management",
+                "summary": "The discussion emphasizes the need for innovative water management strategies in the Delta, including incentivizing farmers to flood land instead of growing crops, to improve water quality, manage climate vulnerability, and explore alternative agricultural practices like mariculture."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\agricultural land retirement",
+                "summary": "Farmers may need to adapt their water use strategies, potentially fallowing different land, recognizing that farming in desert areas is unsustainable and that changes in Delta agriculture alone may not significantly impact water flows or salinity levels."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\agricultural land retirement\\support\\yes.support",
+                "summary": "The speaker argues against farming in desert regions due to water scarcity and suggests land retirement as a more sustainable alternative."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\agricultural land retirement\\want to explore\\yes.explore",
+                "summary": "Reducing agricultural water use in the Delta does not significantly impact outflows or salinity due to natural seepage and the complexity of the ecosystem, suggesting that halting farming may not yield environmental benefits as often presumed."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\managed wetlands",
+                "summary": "The discussion emphasizes the complex trade-offs between wetland restoration and water management in the Delta, highlighting the need for strategic planning that considers economic impacts, salinity, and water supply while balancing ecological benefits and stakeholder interests."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\managed wetlands\\support\\no.support",
+                "summary": "Wetland mitigation in the Delta faces significant challenges, as stakeholders are unlikely to convert enough land to meet the ambitious goals needed to effectively combat salinity."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\managed wetlands\\support\\yes.support",
+                "summary": "The text emphasizes the importance of strategic wetland restoration in the Delta to address environmental challenges, improve water quality, and mitigate agricultural issues while considering the concerns of local landowners."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\managed wetlands\\want to explore\\no.explore",
+                "summary": "Stopping or reversing wetland mitigation in the Delta could improve efforts to combat salinity intrusion."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\managed wetlands\\want to explore\\yes.explore",
+                "summary": "The text discusses the complexities and economic implications of wetland restoration in the Delta, emphasizing the need for careful planning and sensitivity to local concerns while addressing challenges such as salinity and agricultural viability."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\sustainable agriculture",
+                "summary": "The discussion emphasizes the need for sustainable agriculture practices in the Delta, highlighting the limitations of current crop choices like rice, and the importance of increasing water efficiency and diversifying crop types to mitigate environmental impacts and support both agricultural viability and ecological health."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\sustainable agriculture\\support\\no.support",
+                "summary": "The sustainability of rice agriculture is in question due to increasing drought conditions requiring farmers to fallow their fields."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\sustainable agriculture\\support\\yes.support",
+                "summary": "The discussion emphasizes the need for adaptive crop management in the Delta to mitigate climate variability, explore less water-intensive farming practices, and enhance ecological restoration while balancing agricultural viability and environmental sustainability."
+            },
+            {
+                "code_name": "Strategies\\Land Use & Management\\sustainable agriculture\\want to explore\\yes.explore",
+                "summary": "The discussion emphasizes the need to rethink crop choices and water usage in the San Joaquin Valley to improve water efficiency and support both agricultural viability and environmental sustainability, while also addressing the socioeconomic impacts on disadvantaged communities."
+            },
+            {
+                "code_name": "Strategies\\misc",
+                "summary": "The discussion emphasizes the need for comprehensive management strategies in the Central Valley to address erosion, saltwater intrusion, environmental justice, and the economic challenges of climate adaptation, particularly in relation to agriculture and water rights."
+            },
+            {
+                "code_name": "Strategies\\misc\\desalination",
+                "summary": "The discussion highlights the potential of desalination as a water source for California, particularly in Los Angeles, while also emphasizing its high costs compared to importing water and the need for more research and investment in this area."
+            },
+            {
+                "code_name": "Strategies\\misc\\desalination\\support\\yes.support",
+                "summary": "The speaker advocates for desalination as the best solution for water issues, suggesting that more research funding should be allocated to it rather than to other projects like the Delta plan."
+            },
+            {
+                "code_name": "Strategies\\misc\\desalination\\want to explore\\yes.explore",
+                "summary": "The speaker advocates for investing in desalination as a viable water solution despite its costs, suggesting that research in this area could yield better results than other projects."
+            },
+            {
+                "code_name": "Strategies\\misc\\HABs",
+                "summary": "The text discusses the increasing severity of harmful algal blooms (HABs) linked to climate change and salinity management, emphasizing the need for thorough analysis and improved water quality control to mitigate their negative impacts on ecosystems and local communities."
+            },
+            {
+                "code_name": "Strategies\\misc\\impact on native plants",
+                "summary": "The text emphasizes the need for thorough research and documentation on the effects of salinity on native species, particularly plants and waterfowl, in the interior Delta, advocating for higher water quality standards and a better understanding of the implications for both water supply and biodiversity."
+            },
+            {
+                "code_name": "Strategies\\misc\\impact on native plants\\want to explore\\yes.explore",
+                "summary": "The text emphasizes the need for thorough research on the effects of salinity on the survival of native plant species in the interior Delta."
+            },
+            {
+                "code_name": "Strategies\\misc\\Recycled Water & Waste Water treatment",
+                "summary": "The discussion highlights the importance of alternative water technologies like recycling, desalination, and stormwater capture in response to the ongoing drying trend in Southern California, emphasizing the need for improved efficiency in water usage."
+            },
+            {
+                "code_name": "Strategies\\misc\\salinity variability",
+                "summary": "The discussion explores the potential impacts of varying salinity levels in the Delta Islands Project over time and the need for localized understanding of salinity conditions to enhance habitat values and water quality management."
+            },
+            {
+                "code_name": "Strategies\\misc\\science communication",
+                "summary": "The author emphasizes the importance of effective science communication in public education about sea level rise and its impacts, advocating for collaborative efforts to engage communities in decision-making rather than relying solely on political discourse."
+            },
+            {
+                "code_name": "Strategies\\misc\\sources management",
+                "summary": "The discussion emphasizes the need for effective management strategies to address saltwater intrusion and salinity issues in California's water systems, focusing on vulnerability mitigation and the connection to public health, economic prosperity, ecosystems, and social justice."
+            },
+            {
+                "code_name": "Strategies\\misc\\sources management\\support\\yes.support",
+                "summary": "The text emphasizes the importance of managing vulnerability by relocating resources to less risky areas, as illustrated by a historical case involving Antioch and flood control strategies."
+            },
+            {
+                "code_name": "Strategies\\misc\\sources management\\want to explore\\yes.explore",
+                "summary": "The text emphasizes the need to address saltwater intrusion and plant life while considering both natural estuary environments and technological solutions for toxin removal and regulation."
+            },
+            {
+                "code_name": "Strategies\\modeling",
+                "summary": "The text emphasizes the need for improved forecasting and modeling in water management to assess the impacts of current policies and climate change, highlighting the importance of adaptive strategies and comprehensive analysis to address future challenges in the Delta ecosystem and water supply."
+            },
+            {
+                "code_name": "Strategies\\modeling\\drought intensity",
+                "summary": "The discussion emphasizes the need for improved modeling and planning for extended drought scenarios and sea level rise to ensure water supply reliability and habitat protection in vulnerable areas like the Delta."
+            },
+            {
+                "code_name": "Strategies\\modeling\\drought intensity\\support",
+                "summary": "The discussion highlights skepticism about the likelihood of a prolonged drought, with one participant emphasizing that even a single wet year won't alleviate the overall drought conditions."
+            },
+            {
+                "code_name": "Strategies\\modeling\\drought intensity\\support\\yes.support",
+                "summary": "The discussion emphasizes the need for realistic long-term planning and modeling to address the potential for extended droughts and their impact on water supply, particularly in light of climate change and the challenges faced by agricultural regions."
+            },
+            {
+                "code_name": "Strategies\\modeling\\drought intensity\\want to explore\\yes.explore",
+                "summary": "The speaker emphasizes the need for long-term planning in water management and drought response, suggesting that models should account for extended droughts and high-end sea level rise projections to ensure resilience in California's water supply systems."
+            },
+            {
+                "code_name": "Strategies\\modeling\\mapping & monitoring",
+                "summary": "A much broader and more robust network of water quality gauges is needed in the Delta to better understand localized ecological conditions and manage salinity and water quality effectively."
+            },
+            {
+                "code_name": "Strategies\\modeling\\mapping & monitoring\\support\\yes.support",
+                "summary": "The Department of Water Resources is enhancing its mapping efforts to monitor water quality and salinity sources, aiming for a comprehensive understanding of salt distribution in waterways through advanced mapping techniques."
+            },
+            {
+                "code_name": "Strategies\\modeling\\mapping & monitoring\\want to explore\\yes.explore",
+                "summary": "The Department of Water Resources is enhancing mapping efforts to better understand the sources and distribution of salts in waterways through advanced monitoring and a comprehensive 3-D approach to salinity management."
+            },
+            {
+                "code_name": "Strategies\\modeling\\model recommendations",
+                "summary": "The text discusses the need for improved water management modeling across various watersheds to better account for water demands, rights, and changing environmental conditions, emphasizing the importance of decision-making frameworks that could prevent crises rather than responding to them reactively."
+            },
+            {
+                "code_name": "Strategies\\modeling\\model recommendations\\support\\yes.support",
+                "summary": "The speaker advocates for a more conservative and watershed-specific approach to water management and modeling, suggesting that the Water Board should develop its own independent modeling capabilities to better address the complexities of local water systems."
+            },
+            {
+                "code_name": "Strategies\\modeling\\model recommendations\\want to explore\\yes.explore",
+                "summary": "The speaker advocates for a more conservative and watershed-specific approach to water management, emphasizing the need for improved modeling capabilities independent of existing federal projects to address the complexities of water demand and supply across various watersheds."
+            },
+            {
+                "code_name": "Strategies\\Policy",
+                "summary": "The discussion emphasizes the need for improved water management policies that balance environmental needs with existing water rights, along with the importance of more effective enforcement of regulations to ensure water quality and salinity standards in the Delta."
+            },
+            {
+                "code_name": "Strategies\\Policy\\community input",
+                "summary": "The speaker emphasizes the importance of engaging local communities, including tribal ones, to collaboratively address salinity issues by combining traditional knowledge with Western science in order to develop effective strategies and solutions."
+            },
+            {
+                "code_name": "Strategies\\Policy\\community input\\support\\yes.support",
+                "summary": "The speaker emphasizes the importance of engaging local and tribal communities to better understand the impacts of salinity on their livelihoods and to collaboratively develop comprehensive strategies that integrate both Western science and traditional knowledge for environmental management."
+            },
+            {
+                "code_name": "Strategies\\Policy\\community input\\want to explore\\yes.explore",
+                "summary": "The speaker emphasizes the importance of engaging local communities, especially tribal ones, to collaboratively address salinity issues by integrating Western science and traditional knowledge in agricultural and environmental strategies."
+            },
+            {
+                "code_name": "Strategies\\Policy\\delta boundaries",
+                "summary": "The speaker advocates for a broader and more inclusive understanding of the delta's historical and ecological significance, emphasizing the need for tribal perspectives and recognizing its impact on surrounding communities and ecosystems beyond the currently defined legal boundaries."
+            },
+            {
+                "code_name": "Strategies\\Policy\\delta boundaries\\want to explore\\yes.explore",
+                "summary": "The speaker advocates for a broader understanding and discussion of the delta's historical significance and its impact on communities, emphasizing the need to consider its extensive geographical roots rather than just the legal boundaries defined by the San Francisco Estuary Institute."
+            },
+            {
+                "code_name": "Strategies\\Policy\\Indigenous sovereignty",
+                "summary": "The discussion emphasizes the urgent need to reinstate tribal water rights and revamp the outdated water rights system to acknowledge Indigenous sovereignty and address the impacts of historical injustices in water access, particularly in regions like the Delta and San Joaquin Valley."
+            },
+            {
+                "code_name": "Strategies\\Policy\\Indigenous sovereignty\\support\\yes.support",
+                "summary": "The discussion emphasizes the need for the reinstatement and recognition of tribal water rights, highlighting the historical injustices faced by Indigenous communities in the Delta and advocating for an updated and equitable water rights system that reflects current realities and respects Indigenous sovereignty."
+            },
+            {
+                "code_name": "Strategies\\Policy\\Indigenous sovereignty\\want to explore\\yes.explore",
+                "summary": "The text emphasizes the need to revamp the outdated water rights system to better recognize tribal water rights and adapt to modern environmental and societal changes."
+            },
+            {
+                "code_name": "Strategies\\Policy\\regulation changes",
+                "summary": "AD and OV discuss various strategies for managing water resources, including changes in water rights, reduced exports, engineering solutions, green infrastructure, and regulatory modifications, agreeing that all options should be considered."
+            },
+            {
+                "code_name": "Strategies\\Policy\\regulation changes\\want to explore\\yes.explore",
+                "summary": "AD and OV discuss various strategies for managing water resources, emphasizing the need for comprehensive solutions including changes in water rights, reduced exports, engineering approaches, green infrastructure, and regulatory changes, with OV affirming that all options should be considered."
+            },
+            {
+                "code_name": "Strategies\\Policy\\standards change",
+                "summary": "The discussion emphasizes the need for science-based management of salinity standards in the Delta, advocating for careful consideration of water quality impacts and collaboration among water management entities, while expressing skepticism about relaxing regulations amidst ongoing drought conditions and potential ecological consequences."
+            },
+            {
+                "code_name": "Strategies\\Policy\\standards change\\support\\no.support",
+                "summary": "The speaker argues against prematurely changing salinity and water quality standards in the Delta, emphasizing the need for science-based decisions and rigorous testing before any alterations are made."
+            },
+            {
+                "code_name": "Strategies\\Policy\\standards change\\support\\yes.support",
+                "summary": "Jesse and I are using tribal ecological knowledge to improve water quality in the Delta by addressing pollutants and salinity management, but current discussions are lacking and need to focus on localized conditions and stringent water quality standards for meaningful progress."
+            },
+            {
+                "code_name": "Strategies\\Policy\\standards change\\want to explore\\yes.explore",
+                "summary": "The discussion emphasizes the need for tailored salinity standards and proactive drought management strategies to improve water quality in the Delta, while incorporating tribal ecological knowledge and addressing the complexities of localized conditions."
+            },
+            {
+                "code_name": "Strategies\\Policy\\tribal involvement",
+                "summary": "The text emphasizes the importance of engaging with communities, particularly tribal ones, to understand the impacts of salinity and to incorporate their traditional ecological knowledge into modern strategies for managing the Delta's environmental challenges."
+            },
+            {
+                "code_name": "Strategies\\Policy\\tribal involvement\\support\\yes.support",
+                "summary": "The text advocates for engaging with both tribal and local communities in the Delta to understand the impacts of salinity on their lifestyles and to incorporate their traditional knowledge into developing new strategies for environmental management."
+            },
+            {
+                "code_name": "Strategies\\Policy\\tribal involvement\\want to explore\\yes.explore",
+                "summary": "Engaging small Delta communities, particularly tribal ones, to share their traditional knowledge on salinity management can lead to collaborative strategies that adapt their experiences to contemporary agricultural practices."
+            },
+            {
+                "code_name": "Strategies\\Policy\\TUCP",
+                "summary": "During recent droughts, emergency powers allowed the Governor to enable temporary changes in water quality standards, resulting in the suspension of regulations that protect the Delta, ultimately prioritizing water exports over environmental concerns."
+            },
+            {
+                "code_name": "Strategies\\Policy\\TUCP\\support\\no.support",
+                "summary": "The Governor utilized emergency authority to allow the State Water Resource Control Board to temporarily adjust salinity standards during recent droughts, a decision made informally against my objections in 2015."
+            },
+            {
+                "code_name": "Strategies\\Policy\\voluntary agreement framework",
+                "summary": "The text expresses strong skepticism about the effectiveness of voluntary agreements for water management in California's Delta, arguing that they lack measurable benefits for endangered species, exclude essential stakeholders, and fail to address the critical need for sustainable water quality and availability amidst increasing environmental challenges."
+            },
+            {
+                "code_name": "Strategies\\Policy\\voluntary agreement framework\\support\\no.support",
+                "summary": "The speaker expresses strong skepticism about the effectiveness of voluntary agreements for environmental protection, arguing that they offer insufficient benefits for endangered species and exclude critical stakeholders, while emphasizing the need for mandatory restrictions and ultimately predicting inevitable water use reductions due to ongoing drought challenges."
+            },
+            {
+                "code_name": "Strategies\\Policy\\voluntary agreement framework\\support\\yes.support",
+                "summary": "Voluntary agreements show promise for addressing climate change, but significant actions are needed to prevent further dramatic impacts."
+            },
+            {
+                "code_name": "Strategies\\Policy\\water rights changes",
+                "summary": "The text discusses the unsustainable nature of California's water rights and management, emphasizing the need for reevaluation of water allocations, stricter regulations to maintain salinity and ecological balance, and potential reforms to prioritize public interest over entrenched private rights."
+            },
+            {
+                "code_name": "Strategies\\Policy\\water rights changes\\support\\no.support",
+                "summary": "The speaker argues against changes to water rights, emphasizing the importance of retaining riparian water rights for environmental benefits and suggesting that allowing storage of winter water for agricultural use could improve efficiency and reduce waste."
+            },
+            {
+                "code_name": "Strategies\\Policy\\water rights changes\\support\\yes.support",
+                "summary": "The discussion explores the challenges of water rights management in the Delta, emphasizing the need to reevaluate contracts, salinity standards, and the public interest in water use to ensure long-term sustainability and address over-subscription issues."
+            },
+            {
+                "code_name": "Strategies\\Policy\\water rights changes\\want to explore\\yes.explore",
+                "summary": "The discussion emphasizes the need for a reassessment of California's water rights and management strategies to ensure sustainable water use and better accommodate environmental needs, particularly regarding salinity and the rights of various stakeholders in the Delta."
+            }
+        ],
+        "code_names": 
+        [
+            "Strategies",
+            "Strategies\\Econ",
+            "Strategies\\Econ\\carbon market",
+            "Strategies\\Econ\\carbon market\\support\\yes.support",
+            "Strategies\\Econ\\carbon market\\want to explore\\yes.explore",
+            "Strategies\\Econ\\Water cost",
+            "Strategies\\Econ\\Water cost\\support\\yes.support",
+            "Strategies\\Econ\\Water cost\\want to explore\\yes.explore",
+            "Strategies\\flow alterations",
+            "Strategies\\flow alterations\\exports",
+            "Strategies\\flow alterations\\exports\\support\\no.support",
+            "Strategies\\flow alterations\\exports\\support\\yes.support",
+            "Strategies\\flow alterations\\exports\\want to explore\\yes.explore",
+            "Strategies\\flow alterations\\reduced demand",
+            "Strategies\\flow alterations\\reduced demand\\support\\yes.support",
+            "Strategies\\flow alterations\\reduced demand\\want to explore\\yes.explore",
+            "Strategies\\flow alterations\\reservoir operations & storage",
+            "Strategies\\flow alterations\\reservoir operations & storage\\support\\no.support",
+            "Strategies\\flow alterations\\reservoir operations & storage\\support\\yes.support",
+            "Strategies\\flow alterations\\reservoir operations & storage\\want to explore\\no.explore",
+            "Strategies\\flow alterations\\reservoir operations & storage\\want to explore\\yes.explore",
+            "Strategies\\flow alterations\\upstream management",
+            "Strategies\\flow alterations\\upstream management\\support\\yes.support",
+            "Strategies\\Green Infrastructure & Nature-based Solutions",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\marsh restoration",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\marsh restoration\\support\\yes.supportive",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\natural bathymetry",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\natural bathymetry\\support\\yes.support",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\natural bathymetry\\want it explored\\yes.explore",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\restoration(general)",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\restoration(general)\\support\\no.support",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\restoration(general)\\support\\yes.support",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\restoration(general)\\want it explored\\no.explore",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\restoration(general)\\want it explored\\yes.explore",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\subsidence reversal",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\subsidence reversal\\support\\yes.supportive",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\wet meadows",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\wet meadows\\support\\yes.support",
+            "Strategies\\Green Infrastructure & Nature-based Solutions\\wet meadows\\want it explored\\yes.explore",
+            "Strategies\\Hard Engineering",
+            "Strategies\\Hard Engineering\\barrier",
+            "Strategies\\Hard Engineering\\barrier\\support\\no.support",
+            "Strategies\\Hard Engineering\\barrier\\support\\yes.support",
+            "Strategies\\Hard Engineering\\barrier\\want it explored\\yes.explore",
+            "Strategies\\Hard Engineering\\dredge island for storage",
+            "Strategies\\Hard Engineering\\enclosed aqueducts",
+            "Strategies\\Hard Engineering\\enclosed aqueducts\\support\\no.support",
+            "Strategies\\Hard Engineering\\intake movement",
+            "Strategies\\Hard Engineering\\intake movement\\support\\yes.support",
+            "Strategies\\Hard Engineering\\intake movement\\want it explored\\yes.explore",
+            "Strategies\\Hard Engineering\\levees",
+            "Strategies\\Hard Engineering\\levees\\support\\yes.support",
+            "Strategies\\Hard Engineering\\levees\\want to explore\\yes.explore",
+            "Strategies\\Hard Engineering\\managed groundwater storage",
+            "Strategies\\Hard Engineering\\managed groundwater storage\\support",
+            "Strategies\\Hard Engineering\\managed groundwater storage\\support\\yes.support",
+            "Strategies\\Hard Engineering\\managed groundwater storage\\want to explore\\no.explore",
+            "Strategies\\Hard Engineering\\managed groundwater storage\\want to explore\\yes.explore",
+            "Strategies\\Hard Engineering\\operable gates",
+            "Strategies\\Hard Engineering\\operable gates\\support\\no.support",
+            "Strategies\\Hard Engineering\\operable gates\\support\\yes.support",
+            "Strategies\\Hard Engineering\\operable gates\\want it explored\\yes.explore",
+            "Strategies\\Hard Engineering\\san joaquin dredging",
+            "Strategies\\Hard Engineering\\tunnel-conveyance",
+            "Strategies\\Hard Engineering\\tunnel-conveyance\\support",
+            "Strategies\\Hard Engineering\\tunnel-conveyance\\support\\no.support",
+            "Strategies\\Hard Engineering\\tunnel-conveyance\\support\\yes.support",
+            "Strategies\\Hard Engineering\\tunnel-conveyance\\want it explored\\no.explore",
+            "Strategies\\Hard Engineering\\tunnel-conveyance\\want it explored\\yes.explore",
+            "Strategies\\Land Use & Management",
+            "Strategies\\Land Use & Management\\agricultural land retirement",
+            "Strategies\\Land Use & Management\\agricultural land retirement\\support\\yes.support",
+            "Strategies\\Land Use & Management\\agricultural land retirement\\want to explore\\yes.explore",
+            "Strategies\\Land Use & Management\\managed wetlands",
+            "Strategies\\Land Use & Management\\managed wetlands\\support\\no.support",
+            "Strategies\\Land Use & Management\\managed wetlands\\support\\yes.support",
+            "Strategies\\Land Use & Management\\managed wetlands\\want to explore\\no.explore",
+            "Strategies\\Land Use & Management\\managed wetlands\\want to explore\\yes.explore",
+            "Strategies\\Land Use & Management\\sustainable agriculture",
+            "Strategies\\Land Use & Management\\sustainable agriculture\\support\\no.support",
+            "Strategies\\Land Use & Management\\sustainable agriculture\\support\\yes.support",
+            "Strategies\\Land Use & Management\\sustainable agriculture\\want to explore\\yes.explore",
+            "Strategies\\misc",
+            "Strategies\\misc\\desalination",
+            "Strategies\\misc\\desalination\\support\\yes.support",
+            "Strategies\\misc\\desalination\\want to explore\\yes.explore",
+            "Strategies\\misc\\HABs",
+            "Strategies\\misc\\impact on native plants",
+            "Strategies\\misc\\impact on native plants\\want to explore\\yes.explore",
+            "Strategies\\misc\\Recycled Water & Waste Water treatment",
+            "Strategies\\misc\\salinity variability",
+            "Strategies\\misc\\science communication",
+            "Strategies\\misc\\sources management",
+            "Strategies\\misc\\sources management\\support\\yes.support",
+            "Strategies\\misc\\sources management\\want to explore\\yes.explore",
+            "Strategies\\modeling",
+            "Strategies\\modeling\\drought intensity",
+            "Strategies\\modeling\\drought intensity\\support",
+            "Strategies\\modeling\\drought intensity\\support\\yes.support",
+            "Strategies\\modeling\\drought intensity\\want to explore\\yes.explore",
+            "Strategies\\modeling\\mapping & monitoring",
+            "Strategies\\modeling\\mapping & monitoring\\support\\yes.support",
+            "Strategies\\modeling\\mapping & monitoring\\want to explore\\yes.explore",
+            "Strategies\\modeling\\model recommendations",
+            "Strategies\\modeling\\model recommendations\\support\\yes.support",
+            "Strategies\\modeling\\model recommendations\\want to explore\\yes.explore",
+            "Strategies\\Policy",
+            "Strategies\\Policy\\community input",
+            "Strategies\\Policy\\community input\\support\\yes.support",
+            "Strategies\\Policy\\community input\\want to explore\\yes.explore",
+            "Strategies\\Policy\\delta boundaries",
+            "Strategies\\Policy\\delta boundaries\\want to explore\\yes.explore",
+            "Strategies\\Policy\\Indigenous sovereignty",
+            "Strategies\\Policy\\Indigenous sovereignty\\support\\yes.support",
+            "Strategies\\Policy\\Indigenous sovereignty\\want to explore\\yes.explore",
+            "Strategies\\Policy\\regulation changes",
+            "Strategies\\Policy\\regulation changes\\want to explore\\yes.explore",
+            "Strategies\\Policy\\standards change",
+            "Strategies\\Policy\\standards change\\support\\no.support",
+            "Strategies\\Policy\\standards change\\support\\yes.support",
+            "Strategies\\Policy\\standards change\\want to explore\\yes.explore",
+            "Strategies\\Policy\\tribal involvement",
+            "Strategies\\Policy\\tribal involvement\\support\\yes.support",
+            "Strategies\\Policy\\tribal involvement\\want to explore\\yes.explore",
+            "Strategies\\Policy\\TUCP",
+            "Strategies\\Policy\\TUCP\\support\\no.support",
+            "Strategies\\Policy\\voluntary agreement framework",
+            "Strategies\\Policy\\voluntary agreement framework\\support\\no.support",
+            "Strategies\\Policy\\voluntary agreement framework\\support\\yes.support",
+            "Strategies\\Policy\\water rights changes",
+            "Strategies\\Policy\\water rights changes\\support\\no.support",
+            "Strategies\\Policy\\water rights changes\\support\\yes.support",
+            "Strategies\\Policy\\water rights changes\\want to explore\\yes.explore"
+        ],          
+        "participants": 45,
+        "total_answers": 1107
+    },
+    {
+        "question": 
+        [
+            "How would you describe decision-making regarding salinity management in the Delta?",
+            "Do you consider these processes equitable and fair? Why or why not?"
+        ],
+        "summaries": 
+        [
+            {
+                "code_name": "Governance\\Equitable and fair\\MISC\\IDK",
+                "summary": "It seems there is no text provided for summarization. Please provide the text you would like summarized."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No",
+                "summary": "The current water rights and management system in the Delta is criticized for its fairness and equity, as it heavily favors historical water rights holders and excludes marginalized communities from meaningful participation in decision-making processes."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\current water rights",
+                "summary": "The text critiques the current water rights system, arguing that it favors longstanding, heavily influenced users and creates inequity, hindering fairness in resource allocation amidst increasing scarcity and changing values."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\access",
+                "summary": "The text discusses the challenges of public accessibility and equitable participation in technical decision-making processes regarding California's water management, highlighting how disenfranchised communities, including Native Americans, struggle to engage effectively despite efforts by organizations to facilitate their involvement."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\access\\capacity",
+                "summary": "The involvement of Native Americans and disenfranchised communities in infrastructure discussions is critically limited, leading to their concerns being largely ignored in decision-making processes, despite efforts from organizations like Restore the Deltas to advocate for them."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\differing agendas",
+                "summary": "The diverse backgrounds and agendas of decision makers lead to inequity and a lack of cohesion."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\difficult to engage everyone affected",
+                "summary": "The speaker expresses concerns about the challenges of achieving equity and fairness in engaging all impacted communities in decisions related to the Delta due to the complexity and multitude of vested interests involved."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\lack of diversity",
+                "summary": "The goal is to achieve greater racial and gender diversity on boards and in directorships."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\lack of Tribal inclusion",
+                "summary": "The California Environmental Quality Act requires tribal consultation only at the final stages of project approval, which is seen as inequitable, as tribes should be involved from the beginning to address concerns about sacred lands and ensure meaningful participation."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\not transparent",
+                "summary": "The internal decision-making processes in water management are characterized by a lack of transparency and equity, with closed networks excluding impacted communities and undue influence from powerful agricultural interests."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\political influence",
+                "summary": "Water management in California is heavily influenced by political power and financial resources, leading to inequitable decision-making processes that often exclude public and environmental justice input."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\MISC\\standards breach",
+                "summary": "The State Water Board's decisions are influenced by political pressures and user group interests, leading to inequitable water management practices that prioritize special interests over environmental concerns."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\money",
+                "summary": "The water management system in California is criticized for its inequitable decision-making processes that favor established rights holders and financially powerful groups, while new values such as conservation and community involvement struggle to gain equal influence."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\No\\power",
+                "summary": "The water management decision-making process is heavily influenced by the Governor's office, sidelining disadvantaged communities and limiting equitable representation in favor of powerful agricultural interests."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\Yes",
+                "summary": "The discussion reflects on the recognition of societal benefits from resource distribution while acknowledging the inequities faced by indigenous peoples and the ecological impact, suggesting that improvements in equity could be achieved by removing existing constraints."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\Yes\\everyone heard",
+                "summary": "The speaker believes that fairness is achieved because all voices in the situation are being heard."
+            },
+            {
+                "code_name": "Governance\\Equitable and fair\\Yes\\MISC\\nobody ignored",
+                "summary": "The speaker believes that most groups’ inputs are being considered in discussions of equity, despite the presence of competing interests that are not always aligned."
+            }
+        ],        
+        "code_names": 
+        [
+            "Governance\\Equitable and fair\\MISC\\IDK",
+            "Governance\\Equitable and fair\\No",
+            "Governance\\Equitable and fair\\No\\current water rights",
+            "Governance\\Equitable and fair\\No\\MISC\\access",
+            "Governance\\Equitable and fair\\No\\MISC\\access\\capacity",
+            "Governance\\Equitable and fair\\No\\MISC\\differing agendas",
+            "Governance\\Equitable and fair\\No\\MISC\\difficult to engage everyone affected",
+            "Governance\\Equitable and fair\\No\\MISC\\lack of diversity",
+            "Governance\\Equitable and fair\\No\\MISC\\lack of Tribal inclusion",
+            "Governance\\Equitable and fair\\No\\MISC\\not transparent",
+            "Governance\\Equitable and fair\\No\\MISC\\political influence",
+            "Governance\\Equitable and fair\\No\\MISC\\standards breach",
+            "Governance\\Equitable and fair\\No\\money",
+            "Governance\\Equitable and fair\\No\\power",
+            "Governance\\Equitable and fair\\Yes",
+            "Governance\\Equitable and fair\\Yes\\everyone heard",
+            "Governance\\Equitable and fair\\Yes\\MISC\\nobody ignored"
+        ],
+        "participants": 43,
+        "total_answers": 90
+    },
+    {
+        "question": ["Who do you think is represented, and who is not?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Governance\\Not represented\\ag interests\\farmers",
+                "summary": "The speaker highlights the underrepresentation of small farmers and local communities in decision-making processes regarding environmental and agricultural issues in the Delta region, emphasizing the need for their voices to be included in discussions that impact their livelihoods and the ecosystem."
+            },
+            {
+                "code_name": "Governance\\Not represented\\environment",
+                "summary": "The text discusses the inadequacies of environmental representation in Delta water management, highlighting the dominance of agricultural and municipal interests while neglecting various affected communities, including environmental justice groups and Native American tribes."
+            },
+            {
+                "code_name": "Governance\\Not represented\\fishermen",
+                "summary": "The DWR focuses on meeting with water districts while neglecting input from fishermen, marinas, tribes, and disadvantaged communities, resulting in a lack of representation and consideration for those most affected by water management decisions."
+            },
+            {
+                "code_name": "Governance\\Not represented\\minority groups",
+                "summary": "Many marginalized groups, including tribal communities and people of color from impoverished backgrounds, lack a voice in discussions about their needs and rights, often overshadowed even by more established Indigenous voices in California."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\climate change worries\\drought",
+                "summary": "Delta residents are significantly concerned about climate change and drought, despite a lack of acknowledgment from local government and water district leaders."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\disadvantaged communities",
+                "summary": "The text discusses the advocacy for environmental justice and equitable representation of disadvantaged communities and tribes in decision-making processes affecting the estuary and Delta region, highlighting their exclusion from government planning despite being most impacted."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\drinking water issues",
+                "summary": "The text highlights that the concerns of those directly affected by basic drinking water issues have been overlooked."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\environmental justice communities",
+                "summary": "The emphasis is on prioritizing environmental justice for underrepresented communities and tribes in decision-making processes regarding the health of the Delta region, highlighting ongoing inequities and the need for greater community involvement."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\immigrants",
+                "summary": "Many marginalized groups, including tribal communities and people of color facing poverty, lack a voice in society while still seeking a better life in the country."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\local businesses",
+                "summary": "DWR's meetings are limited to water districts, excluding critical stakeholders like marinas, fishermen, tribes, social justice groups, public health advocates, and economic development organizations that are significantly affected by water policy changes."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\multi-faceted impacted communities",
+                "summary": "Communities affected by multiple environmental factors struggle to participate in relevant discussions due to compartmentalized meetings that fail to address their interconnected concerns."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\objectivity",
+                "summary": "It seems there is no text provided for me to summarize. Please share the text you'd like me to summarize."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\people in places without internet",
+                "summary": "Many communities in the district, particularly those without internet access and diverse tribal backgrounds, struggle with representation and lack the resources and knowledge to effectively advocate for their needs in complex issues like water quality."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\people who can't attend in-person",
+                "summary": "The process for addressing water resource issues is criticized for being slow, overly political, and lacking meaningful public participation, particularly for those unable to attend in person."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\public health workers",
+                "summary": "DWR is engaging with water districts but neglecting to involve marinas, fishermen, affected businesses, tribes, social justice groups, public health advocates, and economic development organizations in discussions about critical water changes."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\social justice groups",
+                "summary": "DWR is engaging only with water districts and excluding essential stakeholders like marinas, fishermen, tribes, and economic development groups that are significantly affected by water changes."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\the future user",
+                "summary": "The text emphasizes the critical need to consider the interests of future generations in water management decisions, as they will bear the consequences of today's actions without a voice in the planning process."
+            },
+            {
+                "code_name": "Governance\\Not represented\\MISC\\unaware",
+                "summary": "It seems there was no text provided for me to summarize. Please provide the text you would like summarized."
+            },
+            {
+                "code_name": "Governance\\Not represented\\recreation",
+                "summary": "The politically controlled management of the Delta primarily reflects the interests of the Governor and federal projects, neglecting the voices and concerns of disadvantaged communities, tribes, and recreational users who lack the resources and representation to influence decision-making."
+            },
+            {
+                "code_name": "Governance\\Not represented\\recreation\\MISC\\boaters",
+                "summary": "The speaker expresses concern that recreational boaters and local residents in Northern California, particularly those reliant on freshwater for farming, may lack representation in environmental discussions, especially regarding the potential impacts of saltwater intrusion on their livelihoods."
+            },
+            {
+                "code_name": "Governance\\Not represented\\residents",
+                "summary": "Local communities and disadvantaged groups in the Delta are significantly underrepresented in water management decisions, which are primarily influenced by powerful agricultural interests and state politics, leaving many residents and environmental concerns marginalized."
+            },
+            {
+                "code_name": "Governance\\Not represented\\Tribes",
+                "summary": "The creation of the California Indian Water Commission aimed to provide a voice for Indigenous tribes in water resource discussions, addressing their historical exclusion and advocating for environmental justice, yet challenges persist in gaining equitable representation and influence in decision-making processes."
+            },
+            {
+                "code_name": "Governance\\Represented\\agriculture",
+                "summary": "The discussion highlights the significant political and economic power wielded by large agricultural and water interests in California, which often overshadows the voices of smaller farmers and marginalized communities affected by water management decisions, resulting in an inequitable system that favors well-funded stakeholders."
+            },
+            {
+                "code_name": "Governance\\Represented\\environment",
+                "summary": "The planning process for adapting to climate change is heavily skewed towards environmental interests, often at the expense of underrepresented smaller stakeholders like farmers and agricultural interests."
+            },
+            {
+                "code_name": "Governance\\Represented\\existing water rights",
+                "summary": "The text discusses the significant power and influence of senior water right holders, particularly those with pre-1914 water rights, in determining water management decisions despite the lack of transparency in the system."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\Bureau of Reclamation",
+                "summary": "The management of water resources is heavily influenced by the powerful Department of Water Resources and the Bureau of Reclamation, which prioritize financial interests and client consultations in shaping urban and agricultural development."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\business",
+                "summary": "Water-related interests, including agriculture and business, have historically held significant lobbying power influencing demand from various users."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\corporate",
+                "summary": "Please provide the text you would like summarized."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\developers",
+                "summary": "The text discusses the conflict between political and economic interests in water use for development versus environmental concerns, highlighting the various stakeholders involved, including scientists, local government, farmers, and environmentalists."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\direct access",
+                "summary": "It seems that you haven't provided any text for me to summarize. Please provide the text you would like me to summarize, and I'll be glad to help!"
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\EJ",
+                "summary": "The speaker expresses optimism about the Bay Delta plan's progress, noting the water board's increased commitment to environmental justice and collaboration with communities and tribes, driven by recent equity initiatives."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\exporters",
+                "summary": "The text discusses how the water contractors' interests and state and federal project demands prioritize water exports over Delta water quality, leading to negative impacts on local water conditions."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\irrigation districts",
+                "summary": "DWR is engaging in discussions with the agricultural community and irrigation districts."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\lawyers",
+                "summary": "It looks like there was no text provided for me to summarize. Please share the text you'd like me to summarize."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\municipal",
+                "summary": "The Water Forum highlights municipal water contractors' involvement in the planning process, which is heavily influenced by large agricultural and water interests, often sidelining the concerns of smaller, less represented communities."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\native tribes",
+                "summary": "Native American tribes have historically been excluded from water resource decision-making, but efforts to give them a voice have led to their participation in the California Water Commission, advocating for equity in the system and challenging the dominance of agricultural interests."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\public health",
+                "summary": "Environmental justice advocates, including public health and social justice groups, are critical of the failure to address Delta water quality and access issues, pushing for more inclusive and equitable planning in water resource decisions."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\recreation",
+                "summary": "The inclusion of recreational water users, such as boating communities, is highlighted as essential in water resource planning for the Delta region to balance environmental, agricultural, and recreational needs."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\local government",
+                "summary": "Scientists and various stakeholders, including local government, farmers, developers, and environmentalists, actively participate in discussions regarding environmental impact, particularly with a focus on environmental justice in recent years."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\municipal water interests",
+                "summary": "The text discusses the representation in California's water policy, highlighting that while entrenched agricultural and municipal interests hold significant power, underrepresented groups, such as environmental justice communities and Native American tribes, face challenges in gaining equitable influence, necessitating long-term efforts to include them in decision-making processes."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\NGO community",
+                "summary": "The NGO community has strong representation."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\politically powerful",
+                "summary": "The text highlights the significant political influence and inequities in California's water management, where powerful agricultural and municipal interests dominate decision-making, often sidelining the needs of marginalized communities and tribes in the face of development pressures."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\regulatory agencies",
+                "summary": "Water users, particularly those with financial resources including agriculture, regulatory agencies, and developers, are well-represented in discussions about water supply and quality, alongside scientists and increasingly engaged environmentalists focused on environmental justice."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\residential demand",
+                "summary": "The text discusses various water demands from residential, agricultural, and industrial users."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\residents",
+                "summary": "The speaker expresses optimism about the Bay Delta plan, noting improved responsiveness to environmental justice and tribal needs by the water board, driven by community pressure and recent initiatives."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\scientists",
+                "summary": "The text discusses the involvement of various stakeholders, including scientists, local government, farmers, developers, and environmentalists, in addressing environmental issues with a focus on equity in recent years."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\South Delta",
+                "summary": "South Delta has limited influence but still has the chance to provide input."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\State government",
+                "summary": "The discussion highlights a perceived imbalance in water management decisions, where state agencies prioritize their interests over regional needs in the Delta, pushing out environmental groups and limiting local control in favor of a top-down regulatory approach."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\State government\\DWR",
+                "summary": "The Department of Water Resources and the US Bureau of Reclamation hold significant power in water management decisions, heavily influencing urban and agricultural development through their consultations with contracted water clients."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\Tribes",
+                "summary": "The speaker expresses optimism about recent improvements in environmental justice and tribal representation in decision-making processes by agencies, noting significant progress in inclusivity and collaboration with community members."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\tributary groups",
+                "summary": "Certain influential groups exist within tributary districts, holding significant power."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\money",
+                "summary": "The text argues that decision-making in water management is heavily influenced by financially powerful corporations and agricultural interests, leaving disadvantaged communities and environmental priorities underrepresented."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\Southern California",
+                "summary": "The speaker expresses concern that decisions about water management in California favor southern interests, leaving northern residents without control over their water resources and highlighting an inequitable representation in policy-making influenced by powerful agricultural and urban water interests."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\urban delta",
+                "summary": "The speaker believes that while outreach efforts aim to involve various groups in discussions about water supply and quality in the Delta, the representation and voices of those already connected through existing systems may suffice, minimizing the need for additional representatives."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\water agencies and districts",
+                "summary": "The discussion highlights the ongoing inequities in California's water management processes, emphasizing that major water districts and agricultural interests dominate decision-making, while marginalized groups such as tribes and environmental justice organizations remain underrepresented and struggle to influence outcomes despite growing public participation."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\water agencies and districts\\Metropolitan Water District",
+                "summary": "The text argues that large urban water districts and major stakeholders are well-represented in water policy discussions, while smaller stakeholders, environmental justice communities, and tribes remain underrepresented."
+            },
+            {
+                "code_name": "Governance\\Represented\\MISC\\white",
+                "summary": "The management of California's water and Delta resources is predominantly controlled by affluent, older white men."
+            }
+        ],
+        "code_names":
+        [
+            "Governance\\Not represented\\ag interests\\farmers",
+            "Governance\\Not represented\\environment",
+            "Governance\\Not represented\\fishermen",
+            "Governance\\Not represented\\minority groups",
+            "Governance\\Not represented\\MISC\\climate change worries\\drought",
+            "Governance\\Not represented\\MISC\\disadvantaged communities",
+            "Governance\\Not represented\\MISC\\drinking water issues",
+            "Governance\\Not represented\\MISC\\environmental justice communities",
+            "Governance\\Not represented\\MISC\\immigrants",
+            "Governance\\Not represented\\MISC\\local businesses",
+            "Governance\\Not represented\\MISC\\multi-faceted impacted communities",
+            "Governance\\Not represented\\MISC\\objectivity",
+            "Governance\\Not represented\\MISC\\people in places without internet",
+            "Governance\\Not represented\\MISC\\people who can't attend in-person",
+            "Governance\\Not represented\\MISC\\public health workers",
+            "Governance\\Not represented\\MISC\\social justice groups",
+            "Governance\\Not represented\\MISC\\the future user",
+            "Governance\\Not represented\\MISC\\unaware",
+            "Governance\\Not represented\\recreation",
+            "Governance\\Not represented\\recreation\\MISC\\boaters",
+            "Governance\\Not represented\\residents",
+            "Governance\\Not represented\\Tribes",
+            "Governance\\Represented\\agriculture",
+            "Governance\\Represented\\environment",
+            "Governance\\Represented\\existing water rights",
+            "Governance\\Represented\\MISC\\Bureau of Reclamation",
+            "Governance\\Represented\\MISC\\business",
+            "Governance\\Represented\\MISC\\corporate",
+            "Governance\\Represented\\MISC\\developers",
+            "Governance\\Represented\\MISC\\direct access",
+            "Governance\\Represented\\MISC\\EJ",
+            "Governance\\Represented\\MISC\\exporters",
+            "Governance\\Represented\\MISC\\irrigation districts",
+            "Governance\\Represented\\MISC\\lawyers",
+            "Governance\\Represented\\MISC\\local government",
+            "Governance\\Represented\\MISC\\municipal water interests",
+            "Governance\\Represented\\MISC\\NGO community",
+            "Governance\\Represented\\MISC\\politically powerful",
+            "Governance\\Represented\\MISC\\regulatory agencies",
+            "Governance\\Represented\\MISC\\residential demand",
+            "Governance\\Represented\\MISC\\residents",
+            "Governance\\Represented\\MISC\\scientists",
+            "Governance\\Represented\\MISC\\South Delta",
+            "Governance\\Represented\\MISC\\State government",
+            "Governance\\Represented\\MISC\\State government\\DWR",
+            "Governance\\Represented\\MISC\\Tribes",
+            "Governance\\Represented\\MISC\\tributary groups",
+            "Governance\\Represented\\money",
+            "Governance\\Represented\\Southern California",
+            "Governance\\Represented\\urban delta",
+            "Governance\\Represented\\water agencies and districts",
+            "Governance\\Represented\\water agencies and districts\\Metropolitan Water District",
+            "Governance\\Represented\\white"
+        ],        
+        "participants": 42,
+        "total_answers": 313
+    },
+    {
+        "question": ["How do you think decision making could be improved?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Governance\\Improvement\\MISC\\accessibility",
+                "summary": "The text emphasizes the need for accessible laws and regulations regarding California's water system, advocating for a culturally diverse understanding that integrates education to make water a fundamental part of every Californian's daily experience."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\allow change",
+                "summary": "The speaker advocates for a gradual transition to allow natural systems to function without excessive manipulation, suggesting a controlled approach to managing salinity and freshwater inflow."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\better data",
+                "summary": "Improving water quality in the Delta requires comprehensive data collection across all seasons."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\check&balance",
+                "summary": "It seems there is no text provided for summarization. Please provide the text you would like me to summarize."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\community-driven planning",
+                "summary": "The text advocates for community-driven planning that engages local residents in decision-making processes to utilize their lived experiences and knowledge."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\compensation",
+                "summary": "Engaging knowledgeable individuals and providing compensation for their participation is crucial in decision-making processes, particularly for community advocates like farmers who may face time constraints."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\decision-making independence",
+                "summary": "The text discusses concerns over the political influence on State Water Board decisions, suggesting that regulatory capture by special interest groups undermines environmental standards and fairness."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\decrease Delta reliance",
+                "summary": "Implementing water recycling could alleviate pressure on the Delta and prove beneficial in the long run."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\decrease Delta reliance\\options to create water",
+                "summary": "The author advocates for exploring solutions that generate water, rather than solely relying on pipelines to transport it."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\earlier engagement",
+                "summary": "Improved communication and early engagement between decision-makers, scientists, and community stakeholders are essential for effective policy development and informed decision-making."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\education",
+                "summary": "The text advocates for integrating comprehensive water education into California's school curriculum and public outreach to promote equitable engagement and awareness of the political processes surrounding water management."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\elected officials",
+                "summary": "We must elect leaders who are genuinely invested in understanding issues and providing adequate resources to prevent silos and conflicts between agencies."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\follow laws",
+                "summary": "The speaker emphasizes the importance of adhering to laws and regulations for effective problem-solving, arguing that reliance on voluntary agreements lacks necessary leverage to address issues comprehensively."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\holistic approach",
+                "summary": "The system should be re-evaluated as an entire ecosystem rather than merely a collection of engineering challenges."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\interest-based thinking",
+                "summary": "The text discusses the challenges of aligning diverse interests among various stakeholders in the Delta, highlighting the struggle of smaller players against powerful entities that dominate decision-making."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\introspective future consideration",
+                "summary": "The text suggests that decision-makers should consider the long-term impact of their choices on future generations, particularly regarding environmental issues like water quality and recreation, by envisioning how their actions will be judged by future descendants."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\JPA",
+                "summary": "The text expresses skepticism about the feasibility of creating joint powers authorities or collaborative organizations to address regional recreational and environmental issues, citing historical resistance to sharing authority among existing agencies."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\leverage",
+                "summary": "The speaker argues that adhering to the law and utilizing leverage is essential for effectively solving problems, as relying solely on voluntary agreements often leads to inadequate solutions."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\listen to science",
+                "summary": "Effective policy requires prioritizing scientific evidence over political expediency, involving a diverse range of voices and possibly public voting to ensure informed decision-making."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\more environmental representation",
+                "summary": "The speaker emphasizes the need for greater representation for in-Delta residents and environmentalists in discussions about freshwater access and its impact on the local ecosystem."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\more in-Delta representation",
+                "summary": "The speaker advocates for better representation of Delta residents and environmentalists in decision-making processes concerning freshwater flows and the ecological impacts on the region."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\reducing barriers",
+                "summary": "The text discusses the need to reduce barriers to beneficial restoration efforts and suggests that an update on the science of existing and necessary flows is required for better accounting."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\regional and state partnerships",
+                "summary": "The text emphasizes the importance of regional partnerships to ensure sustainable and equitable water supply that meets both local and statewide needs in California."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\simplification",
+                "summary": "The speaker emphasizes the importance of breaking down complex government processes into simpler, accessible elements and advocating for transparency and clarity to foster public trust and participation, particularly in water policy issues."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\speaking to the right people",
+                "summary": "Agencies often engage with community leaders who lack knowledge about environmental issues, making it crucial to consult the right stakeholders and provide adequate funding for meaningful engagement."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\sped up timelines",
+                "summary": "It has the potential to be completed more quickly."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\updated science",
+                "summary": "Improving communication and early engagement between decision-makers, scientists, and community organizations is essential for effective policy development and environmental restoration."
+            },
+            {
+                "code_name": "Governance\\Improvement\\MISC\\voting on ballot",
+                "summary": "Any project exceeding 1 billion dollars should require voter approval, emphasizing the need for sound science and diverse public input to make informed political decisions free from the influence of monetary interests."
+            },
+            {
+                "code_name": "Governance\\Improvement\\more voices",
+                "summary": "True equity and equality in decision-making require inclusive representation and active listening to diverse stakeholder groups to ensure that all voices are heard, despite existing legal challenges."
+            },
+            {
+                "code_name": "Governance\\Improvement\\transparency",
+                "summary": "Improving decision-making in government requires increased transparency and accessibility of data, allowing for broader public participation and understanding of the processes that affect communities."
+            }
+        ],             
+        "code_names": 
+        [
+            "Governance\\Improvement\\MISC\\accessibility",
+            "Governance\\Improvement\\MISC\\allow change",
+            "Governance\\Improvement\\MISC\\better data",
+            "Governance\\Improvement\\MISC\\check&balance",
+            "Governance\\Improvement\\MISC\\community-driven planning",
+            "Governance\\Improvement\\MISC\\compensation",
+            "Governance\\Improvement\\MISC\\decision-making independence",
+            "Governance\\Improvement\\MISC\\decrease Delta reliance",
+            "Governance\\Improvement\\MISC\\decrease Delta reliance\\options to create water",
+            "Governance\\Improvement\\MISC\\earlier engagement",
+            "Governance\\Improvement\\MISC\\education",
+            "Governance\\Improvement\\MISC\\elected officials",
+            "Governance\\Improvement\\MISC\\follow laws",
+            "Governance\\Improvement\\MISC\\holistic approach",
+            "Governance\\Improvement\\MISC\\interest-based thinking",
+            "Governance\\Improvement\\MISC\\introspective future consideration",
+            "Governance\\Improvement\\MISC\\JPA",
+            "Governance\\Improvement\\MISC\\leverage",
+            "Governance\\Improvement\\MISC\\listen to science",
+            "Governance\\Improvement\\MISC\\more environmental representation",
+            "Governance\\Improvement\\MISC\\more in-Delta representation",
+            "Governance\\Improvement\\MISC\\reducing barriers",
+            "Governance\\Improvement\\MISC\\regional and state partnerships",
+            "Governance\\Improvement\\MISC\\simplification",
+            "Governance\\Improvement\\MISC\\speaking to the right people",
+            "Governance\\Improvement\\MISC\\sped up timelines",
+            "Governance\\Improvement\\MISC\\updated science",
+            "Governance\\Improvement\\MISC\\voting on ballot",
+            "Governance\\Improvement\\more voices",
+            "Governance\\Improvement\\transparency"
+        ],
+        "participants": 35,
+        "total_answers": 66
+    },
+    {
+        "question": ["What specific people, stakeholders, and vulnerable communities do you think we should contact with respect to this study?"],
+        "summaries": 
+        [
+            {
+                "code_name": "Governance\\Contacts\\ag interests\\farmers",
+                "summary": "Jeff Klein is a major farmer in the Delta, encouraging collaboration among local communities, historical groups, and environmental organizations to support family farms."
+            },
+            {
+                "code_name": "Governance\\Contacts\\ag interests\\MISC\\farm bureaus",
+                "summary": "Contacting the San Joaquin County Farm Bureau is recommended as they have water experts available."
+            },
+            {
+                "code_name": "Governance\\Contacts\\ag interests\\MISC\\farm workers",
+                "summary": "The text emphasizes the importance of engaging with farm workers and food-insecure populations in the Delta, highlighting their vulnerability to agricultural changes and the potential for farming to facilitate economic mobility."
+            },
+            {
+                "code_name": "Governance\\Contacts\\communities of color",
+                "summary": "The statement emphasizes a broader perspective on the experiences and needs of communities of color."
+            },
+            {
+                "code_name": "Governance\\Contacts\\disadvantaged communities",
+                "summary": "The text discusses the challenges faced by underserved and disadvantaged communities, including seasonal farm workers and those experiencing food insecurity, highlighting the need for their involvement in discussions on tribal and environmental justice."
+            },
+            {
+                "code_name": "Governance\\Contacts\\fishermen",
+                "summary": "APSARA represents the significant Southeast Asian fishing community in Stockton, focusing on their interests and needs."
+            },
+            {
+                "code_name": "Governance\\Contacts\\fishermen\\MISC\\commercial fishing industry",
+                "summary": "The commercial fishing industry feels neglected in the decision-making process and demands greater engagement and representation."
+            },
+            {
+                "code_name": "Governance\\Contacts\\fishermen\\MISC\\subsistence fishers",
+                "summary": "The text discusses the lack of organized communication and collaboration among different cultural groups, such as Lao, Hmong, and Filipino communities, involved in sustenance fishing."
+            },
+            {
+                "code_name": "Governance\\Contacts\\individual or group",
+                "summary": "The text provides a comprehensive list of individuals, organizations, and tribes involved in various aspects of water resource management and environmental justice in the Delta region, emphasizing the importance of collaboration and community engagement in addressing water-related challenges."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\CBOs",
+                "summary": "The Council has compiled a list of Community-Based Organizations (CBOs)."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\elected officials",
+                "summary": "The speaker emphasizes the importance of engaging with various local community groups, farmers, and elected leaders to foster collaboration."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\environmental advocates",
+                "summary": "The speaker emphasizes the importance of engaging with local communities, historical groups, and major environmental organizations to address environmental issues collaboratively."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\environmental justice",
+                "summary": "The text emphasizes the need for increased participation of tribal and environmental justice communities, particularly those underserved, in discussions with various local and environmental groups."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\export interests",
+                "summary": "The speaker emphasizes the need for dialogue with export interests regarding the insufficiency of water in their system, urging them to address the implications of drought on water obligations."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\historical community groups",
+                "summary": "The speaker emphasizes the importance of engaging with various local community groups, farmers, and elected leaders for collaboration and communication."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\nonprofits",
+                "summary": "Stockton nonprofits are collaborating with Delta EJ and other organizations."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\public health advocates",
+                "summary": "Public health advocates work to promote health initiatives and policies that improve community well-being and prevent disease."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\reclamation districts",
+                "summary": "Reclamation districts are key decision-makers in agricultural areas, but engaging other stakeholders in meetings is challenging."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\resource conservation districts",
+                "summary": "The speaker emphasizes the importance of engaging with local farmers, community groups, and environmental organizations in discussions."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\Southern California",
+                "summary": "The author emphasizes the need for awareness among Southern California residents about the water issues affecting the Delta, particularly in Southeast LA communities."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\unhoused communities",
+                "summary": "The text discusses the challenges faced by unhoused communities living near waterways."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\water agencies",
+                "summary": "Engaging with individual Delta water agencies and contractors is crucial for effective water management."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\water quality coalitions",
+                "summary": "Water quality coalitions work collaboratively to address and improve water quality issues in specific regions by involving stakeholders and implementing best management practices."
+            },
+            {
+                "code_name": "Governance\\Contacts\\MISC\\young people",
+                "summary": "It's beneficial to consider the perspectives of younger individuals who are focused on education."
+            },
+            {
+                "code_name": "Governance\\Contacts\\recreationists",
+                "summary": "Recreational Boaters of California (RBOC) is an organization representing the interests of recreational boating groups in California."
+            },
+            {
+                "code_name": "Governance\\Contacts\\residents",
+                "summary": "Engaging with various local community groups and residents around the Delta is essential to understand their diverse interests and awareness regarding water management and environmental issues."
+            },
+            {
+                "code_name": "Governance\\Contacts\\Tribes",
+                "summary": "The text highlights the importance of engaging with various tribal communities and indigenous groups in the Delta region, emphasizing their unique perspectives on environmental justice and waterway management."
+            }
+        ],        
+        "code_names": 
+        [
+            "Governance\\Contacts\\ag interests\\farmers",
+            "Governance\\Contacts\\ag interests\\MISC\\farm bureaus",
+            "Governance\\Contacts\\ag interests\\MISC\\farm workers",
+            "Governance\\Contacts\\communities of color",
+            "Governance\\Contacts\\disadvantaged communities",
+            "Governance\\Contacts\\fishermen",
+            "Governance\\Contacts\\fishermen\\MISC\\commercial fishing industry",
+            "Governance\\Contacts\\fishermen\\MISC\\subsistence fishers",
+            "Governance\\Contacts\\individual or group",
+            "Governance\\Contacts\\MISC\\CBOs",
+            "Governance\\Contacts\\MISC\\elected officials",
+            "Governance\\Contacts\\MISC\\environmental advocates",
+            "Governance\\Contacts\\MISC\\environmental justice",
+            "Governance\\Contacts\\MISC\\export interests",
+            "Governance\\Contacts\\MISC\\historical community groups",
+            "Governance\\Contacts\\MISC\\nonprofits",
+            "Governance\\Contacts\\MISC\\public health advocates",
+            "Governance\\Contacts\\MISC\\reclamation districts",
+            "Governance\\Contacts\\MISC\\resource conservation districts",
+            "Governance\\Contacts\\MISC\\Southern California",
+            "Governance\\Contacts\\MISC\\unhoused communities",
+            "Governance\\Contacts\\MISC\\water agencies",
+            "Governance\\Contacts\\MISC\\water quality coalitions",
+            "Governance\\Contacts\\MISC\\young people",
+            "Governance\\Contacts\\recreationists",
+            "Governance\\Contacts\\residents",
+            "Governance\\Contacts\\Tribes"
+        ],        
+        "participants": 33,
+        "total_answers": 249
+    }
+]
