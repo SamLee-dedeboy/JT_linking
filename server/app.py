@@ -9,7 +9,7 @@ CORS(app)
 
 # Set the directory path and define a function to access files
 dirname = os.path.dirname(__file__)
-relative_path = lambda filename: os.path.join(dirname, filename)
+relative_path = lambda filename: os.path.join(dirname, 'data', filename)
 
 @app.route("/test/")
 def test():
