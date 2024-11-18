@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Summaries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-size: 1.1em;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #summaries {
+            margin-top: 20px;
+        }
+        .summary {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interview Summaries</h1>
+        <label for="question">Enter a Question:</label>
+        <input type="text" id="question" name="question" placeholder="Enter your question here">
+        <button id="submitBtn">Get Summaries</button>
+        <div id="summaries"></div>
+    </div>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const question = document.getElementById('question').value;
+
+            // Check if the input field is empty
+            if (!question) {
+                alert('Please enter a question!');
+                return;
+            }
+
+            // Send the POST request to the Flask API
+            fetch('http://127.0.0.1:5000/codes/question/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Clear any previous summaries
+                const summariesDiv = document.getElementById('summaries');
+                summariesDiv.innerHTML = '';
+
+                if (data.summaries && data.summaries.length > 0) {
+                    // Display summaries
+                    data.summaries.forEach(summary => {
+                        const summaryDiv = document.createElement('div');
+                        summaryDiv.classList.add('summary');
+                        summaryDiv.textContent = JSON.stringify(summary, null, 2);  // Convert the summary to a string
+                        summariesDiv.appendChild(summaryDiv);
+                    });
+                } else {
+                    // No summaries found for the question
+                    summariesDiv.innerHTML = '<p>No summaries found for the given question.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while fetching the summaries.');
+            });
+        });
+    </script>
+</body>
+</html>
