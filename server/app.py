@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template
 from flask_cors import CORS
 import json
 import os
@@ -30,7 +30,7 @@ def get_codes_overview():
             "participants": entry.get("participants"),
             "total_answers": entry.get("total_answers")
         })
-    return jsonify(overview)
+    return overview
 
 @app.route("/codes/question/", methods=["POST"])
 def get_summaries():
@@ -39,7 +39,7 @@ def get_summaries():
         data = json.load(f)
     
     # Retrieve the question from the request data
-    question = request.json.get("question", "")
+    question = request.json["question"]
     summaries = []
     
     # Find summaries for the provided question
@@ -48,7 +48,11 @@ def get_summaries():
             summaries.extend(entry.get("summaries", []))
             break
     
-    return jsonify({"question": question, "summaries": summaries})
+    return {"question": question, "summaries": summaries}
+
+@app.route("/")
+def index():
+    return render_template('front-end_test.html')  # Serve the HTML file
 
 if __name__ == "__main__":
     app.run(debug=True)
