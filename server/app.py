@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 from flask_cors import CORS
 import json
 import os
@@ -7,15 +7,12 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-# Set the directory path and define a function to access files
 dirname = os.path.dirname(__file__)
-relative_path = lambda filename: os.path.join(dirname, "data", filename)
+relative_path = lambda filename: os.path.join(dirname, filename)
 
-
-@app.route("/test/")
-def test():
-    return "Hello Delta"
-
+# @app.route("/test/")
+# def test():
+#     return "Hello Delta"
 
 @app.route("/codes/overview/")
 def get_codes_overview():
@@ -55,10 +52,11 @@ def get_summaries():
 
     return {"question": question, "summaries": summaries}
 
-
 # @app.route("/")
 # def index():
 #     return render_template('front-end_test.html')  # Serve the HTML file
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
