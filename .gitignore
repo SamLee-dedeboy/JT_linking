@@ -185,7 +185,7 @@ dist-ssr
 *.sln
 *.sw?
 
-
+server/raw_data/*
 server/data/*.json
 server/internal_data/*
 request_log.txt

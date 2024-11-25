@@ -25,9 +25,7 @@ def get_codes_overview():
     data = json.load(open(relative_path("data/interview_codes_and_summary.json"), "r"))
 
     # reverse index by Demographics, Values, Drivers, Governance, and Strategy
-    # categories = ["Demographics", "Values", "Drivers", "Governance", "Strategy"]
     questions_by_category = defaultdict(list)
-    answers_by_category = defaultdict(list)
     for question_data in data:
         category_codes = list(
             set([code_name.split("\\")[0] for code_name in question_data["code_names"]])
@@ -41,18 +39,6 @@ def get_codes_overview():
             }
         )
 
-    # Extract the overview
-    # overview = []
-    # for entry in data:
-    #     overview.append(
-    #         {
-    #             "question": entry.get("question", []),
-    #             "code_names": entry.get("code_names", []),
-    #             "participants": entry.get("participants"),
-    #             "total_answers": entry.get("total_answers"),
-    #             "questions_by_category": questions_by_categories,
-    #         }
-    #     )
     return {
         "questions": questions_by_category,
     }
