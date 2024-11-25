@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -188,3 +187,6 @@ dist-ssr
 
 
 server/data/*.json
+server/internal_data/*
+request_log.txt
+api_key
