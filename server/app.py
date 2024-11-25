@@ -2,6 +2,9 @@ from flask import Flask, request
 from flask_cors import CORS
 import json
 import os
+from collections import defaultdict
+from openai import OpenAI
+import GPTUtils.prompts as prompts
 
 # Initialize the Flask app and CORS
 app = Flask(__name__)
@@ -9,48 +12,89 @@ CORS(app)
 
 dirname = os.path.dirname(__file__)
 relative_path = lambda filename: os.path.join(dirname, filename)
+client = OpenAI(api_key=open("api_key").read(), timeout=10)
 
 # @app.route("/test/")
 # def test():
 #     return "Hello Delta"
 
+
 @app.route("/codes/overview/")
 def get_codes_overview():
     # Load data from JSON file
-    with open(relative_path("interview_codes_and_summary.json"), "r") as f:
-        data = json.load(f)
+    data = json.load(open(relative_path("data/interview_codes_and_summary.json"), "r"))
 
-    # Extract the overview
-    overview = []
-    for entry in data:
-        overview.append(
+    # reverse index by Demographics, Values, Drivers, Governance, and Strategy
+    # categories = ["Demographics", "Values", "Drivers", "Governance", "Strategy"]
+    questions_by_category = defaultdict(list)
+    answers_by_category = defaultdict(list)
+    for question_data in data:
+        category_codes = list(
+            set([code_name.split("\\")[0] for code_name in question_data["code_names"]])
+        )
+        assert len(category_codes) == 1
+        category_code = category_codes[0]
+        questions_by_category[category_code].append(
             {
-                "question": entry.get("question", []),
-                "code_names": entry.get("code_names", []),
-                "participants": entry.get("participants"),
-                "total_answers": entry.get("total_answers"),
+                "questions": question_data["question"],
+                "summaries": question_data["summaries"],
             }
         )
-    return overview
+
+    # Extract the overview
+    # overview = []
+    # for entry in data:
+    #     overview.append(
+    #         {
+    #             "question": entry.get("question", []),
+    #             "code_names": entry.get("code_names", []),
+    #             "participants": entry.get("participants"),
+    #             "total_answers": entry.get("total_answers"),
+    #             "questions_by_category": questions_by_categories,
+    #         }
+    #     )
+    return {
+        "questions": questions_by_category,
+    }
 
 
 @app.route("/codes/question/", methods=["POST"])
-def get_summaries():
-    # Load data from JSON file
-    with open(relative_path("interview_codes_and_summary.json"), "r") as f:
-        data = json.load(f)
+def find_answers():
+    user_question = request.json["question"]
+    category_rqs = json.load(open("data/category_rqs.json"))
+    applicable_categories = prompts.gpt_applicable_categories(
+        client, user_question, category_rqs
+    )
+    all_summaries = json.load(open("data/all_summaries.json"))
+    filtered_summaries = [
+        s
+        for s in all_summaries
+        if s["code_name"].split("\\")[0] in applicable_categories
+    ]
+    direct_answer_indices = prompts.gpt_filter_direct_answers(
+        client, user_question, filtered_summaries
+    )
+    direct_answers = [filtered_summaries[i] for i in direct_answer_indices]
+    return json.dumps(direct_answers)
 
-    # Retrieve the question from the request data
-    question = request.json["question"]
-    summaries = []
 
-    # Find summaries for the provided question
-    for entry in data:
-        if question in entry.get("question", []):
-            summaries.extend(entry.get("summaries", []))
-            break
+# def get_summaries():
+#     # Load data from JSON file
+#     with open(relative_path("data/interview_codes_and_summary.json"), "r") as f:
+#         data = json.load(f)
 
-    return {"question": question, "summaries": summaries}
+#     # Retrieve the question from the request data
+#     question = request.json["question"]
+#     summaries = []
+
+#     # Find summaries for the provided question
+#     for entry in data:
+#         if question in entry.get("question", []):
+#             summaries.extend(entry.get("summaries", []))
+#             break
+
+#     return {"question": question, "summaries": summaries}
+
 
 # @app.route("/")
 # def index():
@@ -58,5 +102,3 @@ def get_summaries():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
