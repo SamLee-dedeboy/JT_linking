@@ -1,8 +1,11 @@
 <script lang="ts">
   import { server_address, categories } from "constants";
   import { onMount } from "svelte";
-  let questions_data: Record<string, any[]> | undefined = undefined;
-  let selected_category = categories[0];
+  import SearchInput from "lib/SearchInput.svelte";
+  let questions_data: any[] | undefined = $state(undefined);
+  let answers: { code_name: string; summary: string }[] | undefined =
+    $state(undefined);
+  $inspect(answers);
   async function fetchOverview() {
     try {
       const response = await fetch(server_address + "/codes/overview/");
@@ -20,56 +23,64 @@
   });
 </script>
 
-<div class="overview-container flex flex-col gap-y-2">
-  <div class="flex absolute left-0 top-0 gap-x-4 p-1">
-    {#each categories as category}
-      <button
-        class="px-1 py-0.5 outline outline-2 outline-gray-400 rounded italic bg-gray-100 hover:bg-gray-300"
-        class:active={selected_category === category}
-        on:click={() => (selected_category = category)}
-      >
-        {category}
-      </button>
-    {/each}
-  </div>
+<div
+  class="overview-container flex flex-col gap-y-2 relative overflow-auto p-2"
+>
   <div
     class="font-bold italic text-[3rem] text-gray-700 flex justify-center items-center"
   >
     Category Overview
   </div>
-  {#if questions_data}
-    <div class="flex flex-col gap-y-4">
-      <div class="flex flex-1 gap-x-3">
-        <div
-          class="category flex-1 transition-all min-h-[8rem] overflow-auto cursor-pointer flex justify-center items-center outline outline-2 outline-gray-400 rounded shadow-md"
-          tabindex="-1"
-        >
-          <span
-            class="font-semibold pointer-events-none italic text-[2rem] text-gray-600"
-            >{selected_category}</span
-          >
-        </div>
-        <div
-          class="questions flex-1 justify-center flex flex-col divide-y divide-black"
-        >
-          {#each questions_data[selected_category] as { questions, summaries }}
-            <div class="flex flex-col">
-              {#each questions as question}
-                <p>{question}</p>
-              {/each}
-            </div>
-            <div class="answers flex-1 justify-center flex flex-col pl-4">
-              {#each summaries as summary}
-                <p>{summary.code_name.replace(`${selected_category}\\`, "")}</p>
-              {/each}
-            </div>
-          {/each}
-        </div>
+  <div class="flex gap-x-3">
+    <div class="flex-1 flex-col gap-y-2">
+      <div class="shadow-[0px_0px_1px_1px_#a3a3a3] rounded">
+        <SearchInput searchDone={(d) => (answers = d)}></SearchInput>
       </div>
+      <span class="italic"> Example Questions: </span>
+      {#if questions_data}
+        <div class="flex flex-col gap-y-4 italic">
+          <div class="flex flex-1 gap-x-3">
+            <div
+              class="questions flex-1 justify-center flex flex-col divide-y divide-black"
+            >
+              {#each questions_data as question_obj}
+                <button
+                  class="flex flex-col hover:bg-gray-300 px-1 italic gap-x-2 py-1"
+                  onclick={() => {
+                    console.log("Clicked", question_obj);
+                    answers = question_obj.summaries;
+                  }}
+                >
+                  <div class="w-[4.5rem] flex shrink-0">
+                    <span
+                      class="outline outline-0 text-gray-500 outline-gray-400 rounded text-xs h-fit w-fit"
+                      >{question_obj.category}</span
+                    >
+                  </div>
+                  <div class="text-left text-gray-700">
+                    {question_obj.question}
+                  </div>
+                </button>
+              {/each}
+            </div>
+          </div>
+        </div>
+      {/if}
     </div>
-  {:else}
-    <p>No data available to display.</p>
-  {/if}
+    <!-- answers -->
+    <div class="bg-white flex-1 px-1">
+      {#if answers}
+        {#each answers as answer}
+          <div class="p-2 rounded">
+            <div class="code_name">{answer.code_name}</div>
+            <div class="summary">{answer.summary}</div>
+          </div>
+        {/each}
+      {:else}
+        <p>No data available to display.</p>
+      {/if}
+    </div>
+  </div>
 </div>
 
 <style lang="postcss">

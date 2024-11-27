@@ -1,7 +1,7 @@
 <script lang="ts">
   import { server_address } from "constants";
-  let question = "";
-  let summaries: { code_name: string; summary: string }[] = [];
+  let { searchDone } = $props();
+  let question = $state("");
   let errorMessage = "";
   async function fetchSummaries() {
     if (!question) {
@@ -18,14 +18,14 @@
         body: JSON.stringify({ question: question }),
       });
 
-      const data = await response.json();
+      const data: { code_name: string; summary: string }[] =
+        await response.json();
       console.log("Data:", data);
       // If summaries are found, display them
       if (data && data.length > 0) {
-        summaries = data;
+        searchDone(data);
         errorMessage = ""; // Clear any previous error messages
       } else {
-        summaries = [];
         errorMessage = "No summaries found for the given question.";
       }
     } catch (error) {
@@ -35,23 +35,21 @@
   }
 </script>
 
-<div class="flex gap-x-0">
-  <div class="bg-gray-100 p-2 rounded flex gap-x-2 shrink-0">
-    <img src="search.svg" alt="search" class="w-8 h-8" />
-    <textarea
-      id="question"
-      bind:value={question}
-      class="px-1 max-h-[5rem]"
-      placeholder="Enter your question here"
-    ></textarea>
-    <button
-      on:click={fetchSummaries}
-      class="shrink-0 p-2 bg-green-200 rounded text-lg outline-gray-300 outline-1 outline hover:bg-green-300 hover:shadow-lg"
-    >
-      <img src="arrow-right.svg" alt="search" />
-    </button>
-  </div>
-  {#if errorMessage}
+<div class="bg-gray-100 p-2 rounded flex gap-x-2 items-center">
+  <img src="search.svg" alt="search" class="w-8 h-8" />
+  <textarea
+    id="question"
+    bind:value={question}
+    class="px-1 grow min-h-[2rem] max-h-[10rem] h-fit"
+    placeholder="Enter your question here"
+  ></textarea>
+  <button
+    onclick={fetchSummaries}
+    class="shrink-0 p-2 bg-green-200 max-h-[2rem] rounded outline-gray-300 outline-1 outline hover:bg-green-300 hover:shadow-lg flex items-center"
+  >
+    <img src="arrow-right.svg" alt="search" />
+  </button>
+  <!-- {#if errorMessage}
     <p class="error">{errorMessage}</p>
   {/if}
 
@@ -66,7 +64,7 @@
     {:else if !errorMessage}
       <p>No data available to display.</p>
     {/if}
-  </div>
+  </div> -->
 </div>
 
 <style>

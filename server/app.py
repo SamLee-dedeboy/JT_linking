@@ -25,32 +25,35 @@ def get_codes_overview():
     data = json.load(open(relative_path("data/interview_codes_and_summary.json"), "r"))
 
     # reverse index by Demographics, Values, Drivers, Governance, and Strategy
-    questions_by_category = defaultdict(list)
+    example_questions = []
     for question_data in data:
         category_codes = list(
             set([code_name.split("\\")[0] for code_name in question_data["code_names"]])
         )
         assert len(category_codes) == 1
         category_code = category_codes[0]
-        questions_by_category[category_code].append(
+        example_questions.append(
             {
-                "questions": question_data["question"],
+                "category": category_code,
+                "question": question_data["question"][:-1],
                 "summaries": question_data["summaries"],
             }
         )
 
     return {
-        "questions": questions_by_category,
+        "questions": example_questions,
     }
 
 
 @app.route("/codes/question/", methods=["POST"])
 def find_answers():
     user_question = request.json["question"]
+    print("User question: ", user_question)
     category_rqs = json.load(open("data/category_rqs.json"))
     applicable_categories = prompts.gpt_applicable_categories(
         client, user_question, category_rqs
     )
+    print("Applicable categories: ", applicable_categories)
     all_summaries = json.load(open("data/all_summaries.json"))
     filtered_summaries = [
         s
@@ -61,6 +64,7 @@ def find_answers():
         client, user_question, filtered_summaries
     )
     direct_answers = [filtered_summaries[i] for i in direct_answer_indices]
+    print(direct_answers)
     return json.dumps(direct_answers)
 
 
