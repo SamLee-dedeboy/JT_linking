@@ -68,6 +68,19 @@ def find_answers():
     return json.dumps(direct_answers)
 
 
+@app.route("/summer_discussion/overview/", methods=["GET"])
+def get_summer_institute_overview():
+    data = json.load(open("data/summer_institute_discussion.json"))
+    return data
+
+
+@app.route("/keywords/", methods=["GET"])
+def get_keywords():
+    data = json.load(open("data/keywords.json"))
+    data_as_dict = {k["name"]: k["description"] for k in data}
+    return data_as_dict
+
+
 # def get_summaries():
 #     # Load data from JSON file
 #     with open(relative_path("data/interview_codes_and_summary.json"), "r") as f:
