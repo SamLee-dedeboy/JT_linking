@@ -64,3 +64,27 @@ def multithread_embeddings(client, texts):
             pbar.update(1)
     concurrent.futures.wait(futures)
     return [future.result() for future in futures]
+
+
+def multithread_prompts(
+    client,
+    prompts,
+    model="gpt-4o-mini",
+    temperature=0.5,
+    format=None,
+    seed=None,
+):
+    l = len(prompts)
+    # results = np.zeros(l)
+    with tqdm(total=l) as pbar:
+        executor = concurrent.futures.ThreadPoolExecutor(max_workers=100)
+        futures = [
+            executor.submit(
+                request_gpt, client, prompt, model, temperature, format, seed
+            )
+            for prompt in prompts
+        ]
+        for _ in concurrent.futures.as_completed(futures):
+            pbar.update(1)
+    concurrent.futures.wait(futures)
+    return [future.result() for future in futures]

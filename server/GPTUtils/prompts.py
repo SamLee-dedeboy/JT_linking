@@ -63,3 +63,68 @@ def gpt_filter_direct_answers(client, user_question, summaries):
     response = query.request_gpt(client, prompt, model="gpt-4o-mini", format="json")
     response = json.loads(response)["filtered_summaries_indices"]
     return response
+
+
+def get_relevant_summer_notes(client, data, question, codes):
+    first_level_subtopics = [
+        {
+            "parent": node["name"],
+            "subtopic": child["name"],
+        }
+        for node in data
+        for child in node["children"]
+    ]
+    list_of_subtopics_str = "\n".join(
+        [
+            f"{i+1}: {s['parent'] + ': ' + s['subtopic']}"
+            for i, s in enumerate(first_level_subtopics)
+        ]
+    )
+    prompts = []
+    for code in codes:
+        answer = code["code_name"] + ": " + code["summary"]
+        system_prompt = """You are a system that helps users find relevant discussion notes from a discussion notes document.
+        The document content is a list of discussion notes, as follows: {list_of_subtopics_str} \n
+        The user will give you a question and their answer to the question. The user wants to know if their answer might have been discussed in the document. 
+        You need to determine which note is relevant to the question and their answer, and explain why.
+        Reply with the following JSON format:
+        {{
+            relevant_notes: [
+                {{
+                    "index": (int) index of the note,
+                    "explanation": "explanation of why the note is relevant"
+                }},
+                ...
+            ]
+        }}
+        """.format(
+            list_of_subtopics_str=list_of_subtopics_str
+        )
+        user_prompt = f"""Question: {question}\n\n Answer:\n {answer}."""
+        prompt = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ]
+        prompts.append(prompt)
+    responses = query.multithread_prompts(
+        client, prompts, model="gpt-4o-mini", format="json"
+    )
+    responses = [json.loads(response)["relevant_notes"] for response in responses]
+    res = {}
+    for code_index, code_responses in enumerate(responses):
+        code = codes[code_index]["code_name"]
+        for response in code_responses:
+            if code not in res:
+                res[code] = []
+            res[code].append(
+                {
+                    "title": first_level_subtopics[int(response["index"]) - 1][
+                        "parent"
+                    ],
+                    "discussion": first_level_subtopics[int(response["index"]) - 1][
+                        "subtopic"
+                    ],
+                    "explanation": response["explanation"],
+                }
+            )
+    return res

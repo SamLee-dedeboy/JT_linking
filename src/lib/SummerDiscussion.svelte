@@ -1,22 +1,49 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { server_address } from "constants";
+  import type {
+    tSummaryData,
+    tSummerDiscussionDataByCode,
+    tSummerDiscussion,
+  } from "types";
 
-  let { keywords }: { keywords: Record<string, string> } = $props();
-  let summer_discussion_data: any[] | undefined = $state(undefined);
-  let hide_full: boolean[] = $state([]);
-  function fetchSummerDiscussion() {
-    fetch(server_address + "/summer_discussion/overview/")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Summer Discussion Data:", data);
-        summer_discussion_data = data;
-        hide_full = summer_discussion_data?.map(() => true) || [];
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
+  type SummerDiscussionProps = {
+    keywords: Record<string, string>;
+    summer_discussion_data: tSummerDiscussionDataByCode | undefined;
+    selected_code: tSummaryData | undefined;
+  };
+  let {
+    keywords,
+    summer_discussion_data = undefined,
+    selected_code = undefined,
+  }: SummerDiscussionProps = $props();
+
+  let target_discussions_grouped = $derived.by(() => {
+    if (summer_discussion_data === undefined) return undefined;
+    if (selected_code === undefined) return undefined;
+    const discussions = summer_discussion_data[selected_code.code_name];
+    const discussions_by_title = discussions.reduce((acc, discussion) => {
+      if (acc[discussion.title] === undefined) {
+        acc[discussion.title] = [];
+      }
+      acc[discussion.title].push(discussion);
+      return acc;
+    }, {});
+    return discussions_by_title;
+  });
+
+  //   function fetchSummerDiscussion() {
+  //     fetch(server_address + "/summer_discussion/overview/")
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log("Summer Discussion Data:", data);
+  //         summer_discussion_data = data;
+  //         hide_full = summer_discussion_data?.map(() => true) || [];
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error:", error);
+  //       });
+  //   }
 
   function truncate_if_flag(arr, flag, max_length = 3) {
     if (flag) {
@@ -27,7 +54,7 @@
   }
 
   onMount(() => {
-    fetchSummerDiscussion();
+    // fetchSummerDiscussion();
   });
 </script>
 
@@ -37,30 +64,27 @@
   >
     Summer Institute Discussion Notes
   </div>
-  {#if summer_discussion_data}
-    {#each summer_discussion_data as discussion_obj, topic_index}
-      {@const truncated_subtopics = truncate_if_flag(
-        discussion_obj.children,
-        hide_full[topic_index],
-      )}
+  {#if target_discussions_grouped}
+    {#each Object.keys(target_discussions_grouped) as title, topic_index}
+      {@const notes: tSummerDiscussion[] = target_discussions_grouped[title]}
       <div class="root-topic p-2">
         <div
           class="root-header font-semibold italic text-[1.5rem] text-gray-600"
         >
-          {discussion_obj.name}
+          {title}
         </div>
         <div
           class="flex flex-col gap-y-1 flex-wrap outline outline-2 outline-gray-500 rounded p-1 shadow-lg"
         >
-          {#each truncated_subtopics as subtopic, subtopic_index}
+          {#each notes as note, note_index}
             {@const regex = new RegExp(
               `\\b(${Array.from(Object.keys(keywords)).join("|")})\\b`,
               "gi",
             )}
-            {@const parts = subtopic.name.split(regex).filter(Boolean)}
-            <div>
+            {@const parts = note.discussion.split(regex).filter(Boolean)}
+            <div class="note-item hover:bg-gray-300 relative">
               <span>
-                {subtopic_index + 1}.
+                {note_index + 1}.
               </span>
               {#each parts as part, part_index}
                 {#if part.match(regex)}
@@ -79,9 +103,14 @@
                   <span>{part}</span>
                 {/if}
               {/each}
+              <div
+                class="note-explanation bg-yellow-100 p-1 outline outline-2 outline-gray-600 hidden absolute z-10 max-w-[40%] min-w-[15rem] shadow-lg left-[3rem] text-gray-800 font-medium italic pointer-events-none"
+              >
+                {note.explanation}
+              </div>
             </div>
           {/each}
-          {#if truncated_subtopics.length < discussion_obj.children.length}
+          <!-- {#if truncated_subtopics.length < discussion_obj.children.length}
             <div
               tabindex="0"
               role="button"
@@ -102,7 +131,7 @@
             >
               Show Less
             </div>
-          {/if}
+          {/if} -->
         </div>
         <div></div>
       </div>
@@ -113,5 +142,8 @@
 <style lang="postcss">
   .highlighted-keyword:has(.keyword-clickable:active) .keyword-tooltip {
     @apply opacity-100;
+  }
+  .note-item:hover > .note-explanation {
+    display: block;
   }
 </style>

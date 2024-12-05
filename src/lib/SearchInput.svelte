@@ -1,38 +1,6 @@
 <script lang="ts">
-  import { server_address } from "constants";
-  let { searchDone } = $props();
   let question = $state("");
-  let errorMessage = "";
-  async function fetchSummaries() {
-    if (!question) {
-      errorMessage = "Please enter a question!";
-      return;
-    }
-
-    try {
-      const response = await fetch(server_address + "/codes/question/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question: question }),
-      });
-
-      const data: { code_name: string; summary: string }[] =
-        await response.json();
-      console.log("Data:", data);
-      // If summaries are found, display them
-      if (data && data.length > 0) {
-        searchDone(data);
-        errorMessage = ""; // Clear any previous error messages
-      } else {
-        errorMessage = "No summaries found for the given question.";
-      }
-    } catch (error) {
-      errorMessage = "An error occurred while fetching the summaries.";
-      console.error("Error:", error);
-    }
-  }
+  let { question_entered } = $props();
 </script>
 
 <div class="bg-gray-100 p-2 rounded flex gap-x-2 items-center">
@@ -44,7 +12,7 @@
     placeholder="Enter your question here"
   ></textarea>
   <button
-    onclick={fetchSummaries}
+    onclick={() => question_entered(question)}
     class="shrink-0 p-2 bg-green-200 max-h-[2rem] rounded outline-gray-300 outline-1 outline hover:bg-green-300 hover:shadow-lg flex items-center"
   >
     <img src="arrow-right.svg" alt="search" />

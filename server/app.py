@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
 import os
@@ -14,9 +14,10 @@ dirname = os.path.dirname(__file__)
 relative_path = lambda filename: os.path.join(dirname, filename)
 client = OpenAI(api_key=open("api_key").read(), timeout=10)
 
-# @app.route("/test/")
-# def test():
-#     return "Hello Delta"
+
+@app.route("/test/")
+def test():
+    return "Hello Delta"
 
 
 @app.route("/codes/overview/")
@@ -68,10 +69,56 @@ def find_answers():
     return json.dumps(direct_answers)
 
 
+@app.route("/codes/content/", methods=["POST"])
+def find_content():
+    try:
+        request_data = request.get_json()
+        if not request_data:
+            return jsonify({"error": "Invalid request: No data provided"}), 400
+
+        selected_category = request_data.get("selectedCategory")
+        selected_scenario = request_data.get("selectedScenario")
+
+        if not selected_category or not selected_scenario:
+            return (
+                jsonify({"error": "Invalid request: Missing category or scenario"}),
+                400,
+            )
+
+        data_file_path = relative_path("data/workbook_mappings.json")
+        with open(data_file_path, "r") as file:
+            data = json.load(file)
+
+        results = []
+        category_data = data.get(selected_category, [])
+        for entry in category_data:
+            if len(entry) > 2 and entry[2] == selected_scenario:
+                results.append({"value1": entry[0], "value2": entry[1]})
+
+        return jsonify({"results": results})
+    except FileNotFoundError:
+        return jsonify({"error": "Data file not found"}), 500
+    except json.JSONDecodeError:
+        return jsonify({"error": "Failed to decode JSON data"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route("/summer_discussion/overview/", methods=["GET"])
 def get_summer_institute_overview():
     data = json.load(open("data/summer_institute_discussion.json"))
     return data
+
+
+@app.route("/summer_discussion/question/", methods=["POST"])
+def get_summer_institute_question():
+    question = request.json["question"]
+    codes = request.json["codes"]
+    data = json.load(open("data/summer_institute_discussion.json"))
+    relevant_summaries = prompts.get_relevant_summer_notes(
+        client, data, question, codes
+    )
+    return relevant_summaries
 
 
 @app.route("/keywords/", methods=["GET"])
@@ -80,28 +127,6 @@ def get_keywords():
     data_as_dict = {k["name"]: k["description"] for k in data}
     return data_as_dict
 
-
-# def get_summaries():
-#     # Load data from JSON file
-#     with open(relative_path("data/interview_codes_and_summary.json"), "r") as f:
-#         data = json.load(f)
-
-#     # Retrieve the question from the request data
-#     question = request.json["question"]
-#     summaries = []
-
-#     # Find summaries for the provided question
-#     for entry in data:
-#         if question in entry.get("question", []):
-#             summaries.extend(entry.get("summaries", []))
-#             break
-
-#     return {"question": question, "summaries": summaries}
-
-
-# @app.route("/")
-# def index():
-#     return render_template('front-end_test.html')  # Serve the HTML file
 
 if __name__ == "__main__":
     app.run(debug=True)

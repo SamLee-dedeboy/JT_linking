@@ -2,10 +2,21 @@
   import { server_address, categories } from "constants";
   import { onMount } from "svelte";
   import SearchInput from "lib/SearchInput.svelte";
+  import type { tSummaryData } from "types";
+  type QuestionInputProps = {
+    question_entered: Function;
+    code_selected: Function;
+    answers: tSummaryData[] | undefined;
+    loading_answers: boolean;
+  };
+  let {
+    question_entered,
+    code_selected,
+    answers = undefined,
+    loading_answers = false,
+  }: QuestionInputProps = $props();
   let questions_data: any[] | undefined = $state(undefined);
-  let answers: { code_name: string; summary: string }[] | undefined =
-    $state(undefined);
-  $inspect(answers);
+
   async function fetchOverview() {
     try {
       const response = await fetch(server_address + "/codes/overview/");
@@ -34,7 +45,7 @@
   <div class="flex gap-x-3">
     <div class="flex-1 flex-col gap-y-2">
       <div class="shadow-[0px_0px_1px_1px_#a3a3a3] rounded">
-        <SearchInput searchDone={(d) => (answers = d)}></SearchInput>
+        <SearchInput {question_entered}></SearchInput>
       </div>
       <span class="italic"> Example Questions: </span>
       {#if questions_data}
@@ -69,12 +80,17 @@
     </div>
     <!-- answers -->
     <div class="bg-white flex-1 px-1">
-      {#if answers}
+      {#if loading_answers}
+        <div>Loading...</div>
+      {:else if answers}
         {#each answers as answer}
-          <div class="p-2 rounded">
+          <button
+            class="p-2 rounded hover:bg-gray-300 text-left"
+            onclick={() => code_selected(answer)}
+          >
             <div class="code_name">{answer.code_name}</div>
             <div class="summary">{answer.summary}</div>
-          </div>
+          </button>
         {/each}
       {:else}
         <p>No data available to display.</p>
