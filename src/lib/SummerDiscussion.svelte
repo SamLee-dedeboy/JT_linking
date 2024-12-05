@@ -21,6 +21,8 @@
   let target_discussions_grouped = $derived.by(() => {
     if (summer_discussion_data === undefined) return undefined;
     if (selected_code === undefined) return undefined;
+    if (summer_discussion_data[selected_code.code_name] === undefined)
+      return [];
     const discussions = summer_discussion_data[selected_code.code_name];
     const discussions_by_title = discussions.reduce((acc, discussion) => {
       if (acc[discussion.title] === undefined) {

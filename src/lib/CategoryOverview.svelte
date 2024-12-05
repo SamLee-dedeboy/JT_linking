@@ -4,18 +4,40 @@
   import SearchInput from "lib/SearchInput.svelte";
   import type { tSummaryData } from "types";
   type QuestionInputProps = {
-    question_entered: Function;
+    answer_updated: Function;
     code_selected: Function;
-    answers: tSummaryData[] | undefined;
     loading_answers: boolean;
   };
   let {
-    question_entered,
+    answer_updated,
     code_selected,
-    answers = undefined,
     loading_answers = false,
   }: QuestionInputProps = $props();
   let questions_data: any[] | undefined = $state(undefined);
+  let answers: tSummaryData[] | undefined = $state(undefined);
+
+  async function fetchSummaries(question) {
+    console.log("Question:", question);
+    loading_answers = true;
+    try {
+      const response = await fetch(server_address + "/codes/question/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question: question }),
+      });
+
+      answers = await response.json();
+      console.log("Summary Data:", answers);
+      answer_updated(question, answers);
+      loading_answers = false;
+      // If summaries are found, display them
+    } catch (error) {
+      console.error("Error:", error);
+      loading_answers = false;
+    }
+  }
 
   async function fetchOverview() {
     try {
@@ -45,7 +67,7 @@
   <div class="flex gap-x-3">
     <div class="flex-1 flex-col gap-y-2">
       <div class="shadow-[0px_0px_1px_1px_#a3a3a3] rounded">
-        <SearchInput {question_entered}></SearchInput>
+        <SearchInput question_entered={fetchSummaries}></SearchInput>
       </div>
       <span class="italic"> Example Questions: </span>
       {#if questions_data}
@@ -60,6 +82,7 @@
                   onclick={() => {
                     console.log("Clicked", question_obj);
                     answers = question_obj.summaries;
+                    answer_updated(question_obj.question, answers);
                   }}
                 >
                   <div class="w-[4.5rem] flex shrink-0">
