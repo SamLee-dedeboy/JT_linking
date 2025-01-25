@@ -4,6 +4,7 @@
   import CategoryOverview from "lib/CategoryOverview.svelte";
   import WorkbookOverview from "lib/WorkbookOverview.svelte";
   import SummerDiscussion from "lib/SummerDiscussion.svelte";
+  import ScenarioOverview from "lib/ScenarioOverview.svelte";
   import type { tSummaryData, tSummerDiscussionDataByCode } from "types";
   let keywords = $state({});
   let answers: tSummaryData[] | undefined = $state(undefined);
@@ -18,6 +19,7 @@
   async function fetchSummerNotes(question, codes) {
     console.log("Question:", question, "Codes:", codes);
     loading_notes = true;
+    return;
     try {
       const response = await fetch(
         server_address + "/summer_discussion/question/",
@@ -56,15 +58,20 @@
 
 <main class="w-[100vw] h-[100vh] max-h-[100vh] p-2 flex">
   <div class="flex-1 flex flex-col">
-    <CategoryOverview
+    <ScenarioOverview {selected_code}></ScenarioOverview>
+    <!-- <CategoryOverview
       answer_updated={fetchSummerNotes}
       code_selected={(code) => (selected_code = code)}
       {loading_answers}
-    ></CategoryOverview>
-    <WorkbookOverview></WorkbookOverview>
+    ></CategoryOverview> -->
+    <!-- <WorkbookOverview></WorkbookOverview> -->
   </div>
-  <div class="flex-1">
-    <SummerDiscussion {keywords} {summer_discussion_data} {selected_code}
+  <!-- <div class="flex-1">
+    <SummerDiscussion
+      {keywords}
+      {summer_discussion_data}
+      {selected_code}
+      {loading_notes}
     ></SummerDiscussion>
-  </div>
+  </div> -->
 </main>

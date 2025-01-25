@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import SearchInput from "lib/SearchInput.svelte";
   import type { tSummaryData } from "types";
+  import CodeTreeMap from "./CodeTreeMap.svelte";
   type QuestionInputProps = {
     answer_updated: Function;
     code_selected: Function;
@@ -62,7 +63,7 @@
   <div
     class="font-bold italic text-[3rem] text-gray-700 flex justify-center items-center"
   >
-    Category Overview
+    Interview Overview
   </div>
   <div class="flex gap-x-3">
     <div class="flex-1 flex-col gap-y-2">
@@ -102,19 +103,25 @@
       {/if}
     </div>
     <!-- answers -->
-    <div class="bg-white flex-1 px-1">
+    <div class="bg-white flex-1 px-1 flex flex-col max-h-[80vh]">
       {#if loading_answers}
         <div>Loading...</div>
       {:else if answers}
-        {#each answers as answer}
-          <button
-            class="p-2 rounded hover:bg-gray-300 text-left"
-            onclick={() => code_selected(answer)}
-          >
-            <div class="code_name">{answer.code_name}</div>
-            <div class="summary">{answer.summary}</div>
-          </button>
-        {/each}
+        <div class="flex flex-col overflow-y-auto max-h-[50%]">
+          {#each answers as answer}
+            <button
+              class="p-2 rounded hover:bg-gray-300 text-left"
+              onclick={() => code_selected(answer)}
+            >
+              <div class="code_name">{answer.code_name}</div>
+              <div class="summary">{answer.summary}</div>
+              <div class="occurrences">{answer.occurrences}</div>
+            </button>
+          {/each}
+        </div>
+        <div class="grow flex">
+          <CodeTreeMap codes={answers}></CodeTreeMap>
+        </div>
       {:else}
         <p>No data available to display.</p>
       {/if}

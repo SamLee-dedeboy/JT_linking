@@ -190,3 +190,4 @@ server/data/*.json
 server/internal_data/*
 request_log.txt
 api_key
+experiments

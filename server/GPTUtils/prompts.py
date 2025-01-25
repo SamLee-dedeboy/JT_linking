@@ -87,6 +87,8 @@ def get_relevant_summer_notes(client, data, question, codes):
         The document content is a list of discussion notes, as follows: {list_of_subtopics_str} \n
         The user will give you a question and their answer to the question. The user wants to know if their answer might have been discussed in the document. 
         You need to determine which note is relevant to the question and their answer, and explain why.
+        In the explanation, explain three things: 1. What the note might suggest about the discussion; 2. why the note is relevant to the question; 3. How the note relates to the user's answer.
+        Do not use 'the user' in your response.
         Reply with the following JSON format:
         {{
             relevant_notes: [

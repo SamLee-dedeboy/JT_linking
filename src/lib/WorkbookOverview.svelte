@@ -35,6 +35,11 @@
 </script>
 
 <div class="flex flex-col gap-y-2">
+  <div
+    class="font-bold italic text-[3rem] text-gray-700 flex justify-center items-center"
+  >
+    Workbook Results
+  </div>
   <div class="flex gap-x-4">
     <select bind:value={selectedScenario} class="capitalize">
       <option value="" disabled selected>Select Scenario</option>
@@ -70,11 +75,14 @@
 {#if results.length > 0}
   <div class="results">
     <h3>Results</h3>
-    <ul>
+    <div class="divide-y flex flex-col">
       {#each results as { value1, value2 }}
-        <li>{value1} - {value2}</li>
+        <div class="flex flex-col">
+          <div class="italic text-gray-500">{value2}</div>
+          <div>{value1}</div>
+        </div>
       {/each}
-    </ul>
+    </div>
   </div>
 {/if}
 

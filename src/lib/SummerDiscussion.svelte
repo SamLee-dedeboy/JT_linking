@@ -11,11 +11,13 @@
     keywords: Record<string, string>;
     summer_discussion_data: tSummerDiscussionDataByCode | undefined;
     selected_code: tSummaryData | undefined;
+    loading_notes: boolean;
   };
   let {
     keywords,
     summer_discussion_data = undefined,
     selected_code = undefined,
+    loading_notes = false,
   }: SummerDiscussionProps = $props();
 
   let target_discussions_grouped = $derived.by(() => {
@@ -66,7 +68,9 @@
   >
     Summer Institute Discussion Notes
   </div>
-  {#if target_discussions_grouped}
+  {#if loading_notes}
+    <div>Loading...</div>
+  {:else if target_discussions_grouped}
     {#each Object.keys(target_discussions_grouped) as title, topic_index}
       {@const notes: tSummerDiscussion[] = target_discussions_grouped[title]}
       <div class="root-topic p-2">
@@ -84,7 +88,7 @@
               "gi",
             )}
             {@const parts = note.discussion.split(regex).filter(Boolean)}
-            <div class="note-item hover:bg-gray-300 relative">
+            <div class="note-item hover:bg-gray-300 relative cursor-default">
               <span>
                 {note_index + 1}.
               </span>

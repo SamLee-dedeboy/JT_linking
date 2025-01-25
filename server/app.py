@@ -20,10 +20,47 @@ def test():
     return "Hello Delta"
 
 
+@app.route("/scenarios/")
+def get_scenarios():
+    data = json.load(open(relative_path("data/scenarios.json")))
+    return data
+
+
+@app.route("/scenarios/codes_manual/", methods=["POST"])
+def get_scenario_codes_manual():
+    scenario = request.json["scenario"]
+    data = json.load(open(relative_path("data/scenario_codes_manual.json")))
+    code_freq = json.load(open(relative_path("data/code_freq.json")))
+    if scenario in data:
+        codes = data[scenario]
+        code_w_freq = [
+            {
+                "code_name": code,
+                "occurrences": code_freq.get(code, 0),
+            }
+            for code in codes
+        ]
+        return code_w_freq
+    else:
+        return []
+
+
+@app.route("/scenarios/connection/", methods=["POST"])
+def get_scenario_connection():
+    code = request.json["code"]
+    data = json.load(open(relative_path("data/code_to_scenarios.json")))
+    if code in data:
+        return data[code]
+    else:
+        return []
+
+
 @app.route("/codes/overview/")
 def get_codes_overview():
     # Load data from JSON file
-    data = json.load(open(relative_path("data/interview_codes_and_summary.json"), "r"))
+    data = json.load(
+        open(relative_path("data/interview_codes_and_summary_w_freq.json"), "r")
+    )
 
     # reverse index by Demographics, Values, Drivers, Governance, and Strategy
     example_questions = []
@@ -65,7 +102,6 @@ def find_answers():
         client, user_question, filtered_summaries
     )
     direct_answers = [filtered_summaries[i] for i in direct_answer_indices]
-    print(direct_answers)
     return json.dumps(direct_answers)
 
 
