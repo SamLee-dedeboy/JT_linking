@@ -15,18 +15,22 @@ export class CodeTreeMapRenderer {
     }
     
     update(data) {
+        console.log({data})
         const svg = d3.select(`#${this.svgId}`)
         svg.selectAll("g").remove()
         const root = d3.treemap()
-            .tile(d3.treemapBinary)
+            // .tile(d3.treemapBinary)
+            .tile(d3.treemapSquarify)
             .size([this.width, this.height])
+            .paddingOuter(1)
             .padding(1)
             .round(true)
             (d3.hierarchy(data)
             .sum(d => d.data?.occurrences ||0)
             .sort((a, b) => b.value - a.value))
         const format = d3.format(",d");
-        const sub_categories = data.children.map(d => d.id.split("/").at(-1))
+        // const sub_categories = data.children.map(d => d.id.split("/").at(-1))
+        const sub_categories = ["Drivers", "Strategies", "Value", "Governance"]
         const color = d3.scaleOrdinal(sub_categories, d3.schemeTableau10);
         this.render(root.children, color, format)
 
@@ -60,7 +64,7 @@ export class CodeTreeMapRenderer {
                                     .attr("stroke-width", 2)
                             })
                             .on("mouseout", function() {
-                                d3.select(this).attr("fill-opacity", 0.6)
+                                d3.select(this).attr("fill-opacity", 0.4)
                                 .attr("stroke", "none")
                             })
                             .on("click", function(e, d) {

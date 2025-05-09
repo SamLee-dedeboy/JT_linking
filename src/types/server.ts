@@ -26,3 +26,8 @@ export type tScenarioConnection = {
         explanation: string,
     }[]
 }
+export type tMessage = {
+    render_content: string,
+    content: string,
+    source: string
+}

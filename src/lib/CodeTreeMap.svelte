@@ -20,6 +20,7 @@
     const root = d3.stratify().path((d) => d.code_name.replaceAll("\\", "/"))(
       codes,
     );
+    console.log("root: ", root);
     treemap_renderer.update(root);
   });
 </script>
