@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import glob
 from flask_cors import CORS
 import json
 import os
@@ -62,6 +63,40 @@ def get_scenario_codes_manual():
         }
     else:
         return []
+
+
+@app.route("/mental_model/results/", methods=["GET"])
+def get_mm_results():
+    all_MMs = defaultdict(int)
+    code_book = json.load(open(relative_path("data/MMs/all_codes.json")))
+
+    parent_code_dict = {}  # from code to parent code
+    for code in code_book:
+        code_name = code["name"]
+        parent_code = code["parent"]
+        if parent_code != "N/A":
+            parent_code_dict[code_name] = parent_code
+        else:
+            parent_code_dict[code_name] = code_name
+    for participant_MM_file in glob.glob(relative_path("data/MMs/participants/*.json")):
+        participant_MM = json.load(open(participant_MM_file))
+        participant_MM = list(filter(lambda x: x["mentioned"], participant_MM))
+        participant_MM = list(filter(lambda x: x["impact"], participant_MM))
+        participant_MM = list(
+            filter(
+                lambda x: x["logical_connection"] == "Good"
+                and x["significance"] == "Good"
+                and x["relevance"] == "Good",
+                participant_MM,
+            )
+        )
+        # code_names = set([c["code_name"] for c in participant_MM])
+        code_names = set(
+            [parent_code_dict[c["code_name"]] for c in participant_MM]
+        )  # keep only the parent code
+        for c in code_names:
+            all_MMs[c] += 1
+    return all_MMs
 
 
 # @app.route("/scenarios/connection/", methods=["POST"])

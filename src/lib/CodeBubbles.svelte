@@ -81,6 +81,7 @@
     if (bubble.data.scenario_children.length === 0) {
       return;
     }
+    tooltip.style.display = "none";
     const _code_dict = codes.reduce((acc, code) => {
       acc[code.name] = code;
       return acc;
@@ -142,7 +143,7 @@
     class="tooltip absolute hidden bg-gray-100 outline-2 outline-gray-400 outline rounded p-2 z-10 w-[25rem] text-sm font-mono"
   >
     {#if selected_bubble}
-      <BubbleTooltip bubble={selected_bubble}></BubbleTooltip>
+      <BubbleTooltip bubble={selected_bubble} {handleExpand}></BubbleTooltip>
     {/if}
   </div>
   <svg id={svgId} class="w-full h-full"></svg>

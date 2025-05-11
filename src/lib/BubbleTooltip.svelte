@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { bubble } = $props();
+  let { bubble, handleExpand } = $props();
   import { server_address } from "constants";
   import { bubble_color, setOpacity } from "constants/colors";
 
@@ -50,8 +50,14 @@
     </span>
     participants mentioned this in the interview.
   </p>
-  <p class="bg-slate-300 px-2 py-1 rounded">
-    A summary of the participants responses:
+  <span>
+    <button
+      class="font-semibold bg-slate-300 px-1 py-0.5 rounded shadow-md"
+      onclick={() => handleExpand(bubble)}>Expand</button
+    > to see more details.
+  </span>
+  <p class="bg-slate-300 px-2 py-1 rounded mt-2">
+    Summary of the participants responses:
   </p>
   <p
     class="text-slate-700 text-sm bg-gray-200 mx-1 px-2 py-1 rounded shadow-md"

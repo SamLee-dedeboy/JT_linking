@@ -12,7 +12,7 @@
   >
     Just Transitions
   </div>
-  <div class="flex gap-x-2">
+  <div class="flex gap-x-2 grow">
     <div class="flex flex-[2_2_0%] flex-col">
       <MentalModels></MentalModels>
     </div>
