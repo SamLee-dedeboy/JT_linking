@@ -1,8 +1,11 @@
 import asyncio
+import io
+import json
 from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_agentchat.messages import TextMessage
 from autogen_core import CancellationToken
+from openai import OpenAI
 
 
 def init_model(model: str, api_key: str, temperature: float = 1):
@@ -47,6 +50,106 @@ def messages_reformat(messages: list):
 def add_message(message: str, source: str, messages: list[TextMessage]):
     messages.append(TextMessage(content=message, source=source))
     return messages
+
+
+import base64
+
+
+# Function to encode the image
+def encode_image(image):
+    return base64.b64encode(image.read()).decode("utf-8")
+
+
+def transcribe_mental_model(image_data, api_key: str = None) -> str:
+    """
+    Sends a hand-drawn mental model image to OpenAI's Vision API and returns a bullet list of nodes.
+
+    Parameters:
+        image_path (str): Path to the image file.
+        api_key (str): Your OpenAI API key. If None, it uses the key from the environment variable.
+
+    Returns:
+        str: A bullet list of nodes from the mental model.
+    """
+
+    # Read and encode the image as base64
+    # base64_image = encode_image(image)
+    # header, encoded = image_data.split(',', 1)
+    # base64_image = base64.b64decode(encoded)
+    header, encoded = image_data.split(",", 1)
+    binary_data = base64.b64decode(encoded)
+
+    # Create a file-like object from binary data
+    image_stream = io.BytesIO(binary_data)
+    base64_image = encode_image(image_stream)
+
+    client = OpenAI(api_key=api_key)
+    # Prepare the message to GPT-4 with Vision
+    response = client.responses.create(
+        model="gpt-4o",
+        input=[
+            {
+                "role": "system",
+                "content": "You are a helpful assistant that extracts node labels from visual mental models.",
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "input_text",
+                        "text": (
+                            "Please transcribe the node labels in this hand-drawn mental model diagram. "
+                            "Output only a clean list of the node labels separated by semicolon, no extra commentary."
+                        ),
+                    },
+                    {
+                        "type": "input_image",
+                        "image_url": f"data:image/jpeg;base64,{base64_image}",
+                    },
+                ],
+            },
+        ],
+    )
+
+    return response.output_text
+
+
+def code_classification(node, codebook, api_key):
+    """
+    Classifies the given code using the provided codebook.
+
+    Parameters:
+        code (str): The code to classify.
+        codebook (dict): A dictionary mapping codes to their classifications.
+
+    Returns:
+        str: The classification of the code.
+    """
+    code_book_str = json.dumps(codebook, ensure_ascii=False)
+    prompts = [
+        {
+            "role": "system",
+            "content": """You are a research assistant. You are given a codebook, and the user will give you a label. Your task is to classify the label according to the codebook.
+            Here is the codebook:
+            {code_book_str}
+            Reply with the codes that best match the label. Do not return an empty list.
+            Reply with the following JSON format:
+            {{
+                "matched_codes": str[]
+            }}
+            """.format(
+                code_book_str=code_book_str
+            ),
+        },
+        {"role": "user", "content": "label: {node}".format(node=node)},
+    ]
+    client = OpenAI(api_key=api_key)
+    response = client.responses.create(
+        model="gpt-4o",
+        input=prompts,
+        text={"format": {"type": "json_object"}},
+    )
+    return response.output_text
 
 
 async def main() -> None:

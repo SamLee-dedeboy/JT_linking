@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import glob
+import random
 from flask_cors import CORS
 import json
 import os
@@ -9,13 +10,21 @@ from openai import OpenAI
 import GPTUtils.prompts as prompts
 import AutoGenUtils.query as query
 
-# Initialize the Flask app and CORS
-app = Flask(__name__)
-CORS(app)
-
 dirname = os.path.dirname(__file__)
 relative_path = lambda filename: os.path.join(dirname, filename)
 client = OpenAI(api_key=open("api_key").read(), timeout=10)
+
+# Initialize the Flask app and CORS
+UPLOAD_FOLDER = relative_path("/upload/mental_model_sketches")
+ALLOWED_EXTENSIONS = set(["txt", "pdf", "png", "jpg", "jpeg", "gif"])
+app = Flask(__name__)
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+CORS(app)
+
+
+def save_json(data, filename):
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 @app.route("/test/")
@@ -288,6 +297,54 @@ def get_keywords():
     data = json.load(open("data/keywords.json"))
     data_as_dict = {k["name"]: k["description"] for k in data}
     return data_as_dict
+
+
+@app.route("/mental_model/transcribe/", methods=["POST"])
+def transcribe_MM():
+    codebook = json.load(
+        open(relative_path("data/all_codes.json"), "r", encoding="utf-8")
+    )
+    all_code_names = [code["name"] for code in codebook]
+    # image_data = request.json["image"]
+    data = request.get_json()
+    image_data = data.get("image")
+    api_key = open(relative_path("api_key")).read().strip()
+    response = query.transcribe_mental_model(image_data, api_key=api_key)
+    nodes = response.split(";")
+    codes = []
+    for node in nodes:
+        node = node.strip()
+        try:
+            if node.lower() in ["salinity", "salinity management"]:
+                continue
+            response = query.code_classification(node, codebook, api_key=api_key)
+            response = json.loads(response)["matched_codes"]
+            print(node, response)
+            response = list(filter(lambda x: x in all_code_names, response))
+            codes.append({"node": node, "codes": response})
+        except Exception as e:
+            print(f"Error processing node {node}: {e}")
+            continue
+    id = random.randint(0, 100000)
+    existing_files = [
+        file.split("/")[-1].split(".")[0]
+        for file in glob.glob(relative_path("data/exhibition/*.json"))
+    ]
+    while id in existing_files:
+        id = random.randint(0, 100000)
+    save_json(codes, relative_path(f"data/exhibition/{id}.json"))
+    return codes
+
+
+@app.route("/mental_model/exhibition/", methods=["GET"])
+def get_exhibition_MM():
+    files = glob.glob(relative_path("data/exhibition/*.json"))
+    exhibition_MMs = []
+    for file in files:
+        with open(file, "r") as f:
+            data = json.load(f)
+            exhibition_MMs.append(data)
+    return exhibition_MMs
 
 
 def remove_duplicates(codes):

@@ -30,5 +30,5 @@
 
 <div class="flex flex-col grow">
   <div class="">Mental Models</div>
-  <svg id={svgId} class="w-full h-full"></svg>
+  <svg id={svgId} class="grow"></svg>
 </div>

@@ -12,16 +12,52 @@ export class MentalModelRenderer {
 
     init() {
         const svg = d3.select(`#${this.svgId}`)
+        const regions = svg.append("g").attr("class", "region")
         const bubble_group = svg.append("g").attr("class", "bubble_group")
         const labels_group = svg.append("g").attr("class", "labels_group")
         const contour_path_group = svg.append("g").attr("class", "contour-path-group")
         this.width = +svg.node().getBoundingClientRect().width
         this.height = +svg.node().getBoundingClientRect().height
         svg.attr("viewBox", `0 0 ${this.width} ${this.height}`)
+        regions.append("rect").attr("class", "top_region")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", this.width)
+        .attr("height", this.height/2)
+        .attr("fill", "oklch(98.2% 0.018 155.826)")
+      regions.append("rect").attr("class", "bottom_region")
+        .attr("x", 0)
+        .attr("y", this.height/2)
+        .attr("width", this.width)
+        .attr("height", this.height/2)
+        .attr("fill", "oklch(98.7% 0.022 95.277)")
+      regions.append("text").attr("class", "top_region_label")
+        .attr("x", this.width/2)
+        .attr("y", 10)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "hanging")
+        .attr("font-size", 20)
+        .attr("font-style", "italic")
+        .attr("fill", "oklch(45.3% 0.124 130.933)")
+        .attr("pointer-events", "none")
+        .attr("font-family", "monospace")
+        .text("Impacts Salinity")
+      regions.append("text").attr("class", "bottom_region_label")
+        .attr("x", this.width/2)
+        .attr("y", this.height - 10)
+        .attr("text-anchor", "middle")
+        .attr("font-style", "italic")
+        .attr("dominant-baseline", "bottom")
+        .attr("font-size", 20)
+        .attr("fill", "oklch(41.4% 0.112 45.904)")
+        .attr("pointer-events", "none")
+        .attr("font-family", "monospace")
+        .text("Impacted by Salinity")
     }
 
     update(_nodes_data: Record<string, number>, callback=(d)=>{}) {
         console.log("mental model data", JSON.parse(JSON.stringify(_nodes_data)));
+        _nodes_data["Salinity"] = 0;
         const nodes = Object.entries(_nodes_data)
         const svg = d3.select(`#${this.svgId}`)
         const bubble_group = svg.select("g.bubble_group")
@@ -32,6 +68,7 @@ export class MentalModelRenderer {
             .join(
               enter => enter.append("circle")
                 .attr("class", "bubble")
+                .classed("is_center", d => d[0] === "Salinity")
                 .attr("fill", "lightgray")
                 .attr("fill-opacity", 0.8)
                 .attr("cursor", "pointer")
@@ -48,7 +85,7 @@ export class MentalModelRenderer {
                 .attr("cy", (d) => d.y || this.height/2)
                 .attr("r", 0)
                 .transition().duration(300).delay(300)
-                .attr("r", d => d.r = radiusScale(d[1])),
+                .attr("r", d => d.r = d[0] === "Salinity"? radiusScale(50): radiusScale(d[1])),
               update => update.transition().duration(100)
                 .attr("cx", (d) => d.x || this.width/2)
                 .attr("cy", (d) => d.y || this.height/2),
@@ -62,7 +99,7 @@ export class MentalModelRenderer {
             .attr("y", (d) => d.y)
             .attr("text-anchor", "middle")
             .attr("dominant-baseline", "middle")
-            .attr("font-size", (d) => fontScale(d[1]))
+            .attr("font-size", (d) => d[0] === "Salinity"? fontScale(50) : fontScale(d[1]))
             .attr("fill", "black")
             .attr("pointer-events", "none")
             .each(function(d) {
@@ -74,8 +111,9 @@ export class MentalModelRenderer {
                 .attr("dominant-baseline", "middle")
                 .attr("x", d.x)
                 .attr("y", d.y)
-                .attr("dy", "-0.6em")
+                .attr("dy", (d) => d[0] === "Salinity"? 0: "-0.6em")
                 .attr("font-family", "monospace")
+              if (d[0] === "Salinity") return
               text.append("tspan")
                 .text(d => `(${d[1]})`)
                 .attr("text-anchor", "middle")
@@ -112,7 +150,13 @@ export class MentalModelRenderer {
                   0 + radiusScale(d[1]) + 5, // 5 is for the label
                   this.height - radiusScale(d[1]) - 5,
                 ])),
-            );
+            ).classed("is_top", d => d.is_top = d.y < this.height/2)
+            .classed("is_bottom", d => d.is_bottom = d.y > this.height/2)
+          circles.filter((d) => d[0] === "Salinity")
+            .classed("is_top", false)
+            .classed("is_bottom", false)
+            .attr("cx", (d) => d.x = this.width/2)
+            .attr("cy", (d) => d.y = this.height/2)
           node_labels
             .selectAll("tspan")
             .attr("x", (d) => d.x)
