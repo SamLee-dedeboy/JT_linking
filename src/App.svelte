@@ -10,9 +10,9 @@
   let show_past_MM = $state(true);
 </script>
 
-<main class="w-[100vw] h-[100vh] p-2 flex flex-col gap-x-2">
+<main class="w-[100vw] h-[100vh] p-2 flex flex-col gap-x-2 bg-[#253439]">
   <div
-    class="font-bold italic text-[2.5rem] text-orange-900 bg-orange-50 pl-4 flex items-center uppercase"
+    class="jt-section-title text-[2.5rem] text-[#253439] bg-[#7ed957] pl-4 flex items-center uppercase"
   >
     Just Transitions
   </div>
@@ -21,7 +21,7 @@
       <div class="flex flex-1 flex-col">
         {#if show_past_MM}
           <div class="flex flex-col gap-2 grow">
-            <div class="text-lg font-bold">Past Mental Models</div>
+            <div class="text-lg font-bold text-white">Past Mental Models</div>
             <PastExhibitionMMs></PastExhibitionMMs>
           </div>
         {:else}

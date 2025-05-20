@@ -1,4 +1,5 @@
 import * as d3 from "d3"
+import { parse } from "svelte/compiler";
 
 type NodeData = {
   node: string;
@@ -32,65 +33,79 @@ export class ExhibitionMMRenderer {
           .attr("y", 0)
           .attr("width", this.width)
           .attr("height", this.height/2)
-          .attr("fill", "oklch(98.2% 0.018 155.826)")
+          .attr("fill", "#cccccc")
+          .attr("opacity", 0.1)
         regions.append("rect").attr("class", "bottom_region")
           .attr("x", 0)
           .attr("y", this.height/2)
           .attr("width", this.width)
           .attr("height", this.height/2)
-          .attr("fill", "oklch(98.7% 0.022 95.277)")
+          .attr("fill", "#ffffff")
+          .attr("opacity", 0.1)
         regions.append("text").attr("class", "top_region_label")
+          .classed("jt-body-3", true)
           .attr("x", this.width/2)
           .attr("y", 10)
           .attr("text-anchor", "middle")
           .attr("dominant-baseline", "hanging")
           .attr("font-size", 20)
-          .attr("font-style", "italic")
-          .attr("fill", "oklch(45.3% 0.124 130.933)")
+          .attr("fill", "#a2bffd")
           .attr("pointer-events", "none")
           .attr("font-family", "monospace")
           .text("Impacts Salinity")
         regions.append("text").attr("class", "bottom_region_label")
+          .classed("jt-body-3", true)
           .attr("x", this.width/2)
           .attr("y", this.height - 10)
           .attr("text-anchor", "middle")
-          .attr("font-style", "italic")
           .attr("dominant-baseline", "bottom")
           .attr("font-size", 20)
-          .attr("fill", "oklch(41.4% 0.112 45.904)")
+          .attr("fill", "#0088AD")
           .attr("pointer-events", "none")
-          .attr("font-family", "monospace")
+          // .attr("font-family", "")
           .text("Impacted by Salinity")
         svg.append("circle")
           .attr("class", "bubble")
           .classed("is_center", true)
-          .attr("fill", "oklch(95.6% 0.045 203.388)")
-          .attr("stroke", "oklch(82.8% 0.111 230.318)")
-          .attr("stroke-width", 2)
+          // .attr("fill", "oklch(95.6% 0.045 203.388)")
+          .attr("fill", "#74b1d2")
+          .attr("filter", "drop-shadow(0px 0px 1.5px rgba(255, 255, 255, 1))")
+          .attr("stroke", "#26414b")
+          // .attr("stroke", "#5d8397")
+          .attr("stroke-width", 6)
           .attr("cx", this.width/2)
           .attr("cy", this.height/2)
           .attr("r", 80)
         svg.append("text")
           .attr("class", "bubble_label")
+          .classed("jt-body-3", true)
           .attr("x", this.width/2)
           .attr("y", this.height/2)
           .attr("text-anchor", "middle")
           .attr("dominant-baseline", "middle")
-          .attr("font-size", 20)
+          .attr("font-size", 21)
           .attr("pointer-events", "none")
-          .attr("font-family", "monospace")
+          // .attr('fill', "#253439")
+          // .attr('fill', "#eeeeee")
+          .attr("fill", "#2c4b56")
           .text("Salinity")
     }
 
     update(_node_data: NodeData[], callback=(d)=>{}) {
         let node_data = JSON.parse(JSON.stringify(_node_data))
+        node_data.push({
+          node: "Salinity",
+          r: 80,
+          x: this.width/2, 
+          y: this.height/2,
+        })
         console.log("transcribed data", JSON.parse(JSON.stringify(node_data)));
         const svg = d3.select(`#${this.svgId}`)
         const bubble_group = svg.select("g.bubble_group")
         // const radiusScale = d3.scaleSqrt().domain([0, d3.max(nodes, d => d[1])]).range([10, 50])
         // const fontScale = d3.scaleSqrt().domain([0, d3.max(nodes, d => d[1])]).range([10, 15])
         const r = 60
-        const font_size = 15
+        const font_size = 18
         const self = this
 
         const circles = bubble_group.selectAll("circle")
@@ -114,7 +129,7 @@ export class ExhibitionMMRenderer {
                 .attr("cy", (d) => d.y || this.height/2)
                 .attr("r", 0)
                 .transition().duration(300).delay(300)
-                .attr("r", r),
+                .attr("r", (d) => d.r = d.r || r),
               update => update.transition().duration(100)
                 .attr("cx", (d) => d.x || this.width/2)
                 .attr("cy", (d) => d.y || this.height/2),
@@ -124,15 +139,17 @@ export class ExhibitionMMRenderer {
             .data(node_data, (d) => d.node)
             .join("text")
             .attr("class", "bubble_label")
-            .attr("x", (d) => d.x)
-            .attr("y", (d) => d.y)
+            .classed("jt-body-2", true)
+            .attr("x", (d) => d.x = 0)
+            .attr("y", (d) => d.y = 0)
             .attr("text-anchor", "middle")
             .attr("dominant-baseline", "middle")
             .attr("font-size", font_size)
-            .attr("fill", "black")
+            .attr("fill", "white")
             .attr("pointer-events", "none")
-            .attr("font-family", "monospace")
+            // .attr("font-family", "monospace")
             .text(d => d.node)
+            .call(wrap, r * 2)
         const links = svg.select("g.links_group").selectAll("line")
             .data(node_data, (d) => d.node)
             .join("line")
@@ -153,9 +170,8 @@ export class ExhibitionMMRenderer {
         // .force("parent_y", d3.forceY((d) => d.parent_y).strength(0.1))
         .force("center", d3.forceCenter(this.width / 2, this.height / 2).strength(0.05))
         .force("charge", forceNode.distanceMin(20))
-        .force("collide", d3.forceCollide(r))
+        .force("collide", d3.forceCollide((d) => 1.15 * d.r))
         .on("tick", () => {
-          let node_categories = {}
           circles
             .attr(
               "cx",
@@ -169,8 +185,8 @@ export class ExhibitionMMRenderer {
               "cy",
               (d) =>
                 (d.y = clip(d.y, [
-                  0 + r + 5, // 5 is for the label
-                  this.height - r - 5,
+                  0 + r + 30, // 30 is for the label
+                  this.height - r - 30,
                 ])),
             )
             .each(function(d) {
@@ -179,14 +195,19 @@ export class ExhibitionMMRenderer {
               self.handleUpdateNodeCategory(d.node, is_top, is_bottom)
               d3.select(this).classed("is_top", is_top).classed("is_bottom", is_bottom)
             })
+          circles.filter(d => d.node === "Salinity")
+            .attr("cx", (d) => d.x = self.width/2)
+            .attr("cy", (d) => d.y = self.height/2)
           node_labels
-            // .selectAll("tspan")
+            .selectAll("tspan")
+            .classed("is_top_text", d => d.is_top = d.y < this.height/2)
+            .classed("is_bottom_text", d => d.is_bottom = d.y > this.height/2)
             .attr("x", (d) => d.x)
-            .attr("y", (d) => d.y);
+            .attr("y", (d) => d.y)
           links.attr("x1", (d) => d.x)
             .attr("y1", (d) => d.y)
-            .classed("is_top", d => d.is_top = d.y < this.height/2)
-            .classed("is_bottom", d => d.is_bottom = d.y > this.height/2)
+            .classed("is_top", d => d.y < this.height/2)
+            .classed("is_bottom", d => d.y > this.height/2)
         //   this.updateContour(bubble_data)
         })
         .on("end", () => {
@@ -240,3 +261,51 @@ function dragended(event, simulation, nodes) {
 function clip(x, range) {
     return Math.max(Math.min(x, range[1]), range[0]);
   }
+
+  // text longer than `width` will be in next line
+function wrap(text, width) {
+  text.each(function (d, i) {
+      let text = d3.select(this)
+      let words = text.text().split(/[\s-]+/).reverse(),
+          word,
+          line: any[] = [],
+          lineNumber = 0,
+          lineHeight = 1.1, // ems
+          x = d.x,
+          y = d.y,
+          dy = 0, //parseFloat(text.attr("dy")),
+          tspan = text.text(null)
+              .append("tspan")
+              .attr("x", x)
+              .attr("y", y)
+              .attr("dy", dy + "em")
+              .attr("text-anchor", "bottom")
+              .attr("dominant-baseline", "central")
+        while (word = words.pop()) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node()!.getComputedTextLength() > width && line.length > 1) {
+              line.pop();
+              tspan.text(line.join(" "));
+              line = [word];
+              tspan = text.append("tspan")
+                  .attr("x", x)
+                  .attr("y", y)
+                  .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                  .attr("dominant-baseline", "central")
+                  .text(word);
+          }
+        }
+        const line_num = text.selectAll("tspan").nodes().length
+        console.log("line_num", line_num, d.node)
+        if(line_num > 1) {
+          const offset = lineHeight * (line_num - 1) / 2
+          text.selectAll("tspan").attr("dy", function() {
+            const dy = parseFloat(d3.select(this).attr("dy"))
+            console.log("dy", dy, offset)
+            return dy - offset + "em"
+          })
+          // text.selectAll("tspan").attr("dy", parseFloat(y) - em_to_px / 2 * lineHeight * (line_num - 1) / 2)
+        }
+  });
+}

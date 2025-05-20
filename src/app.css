@@ -1,11 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/src/assets/proximanova/proximanova_regular.ttf') format('truetype');
+  /* font-weight: 900; */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/src/assets/proximanova/proximanova_black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 * {
   box-sizing: border-box;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Playfair Display";
   line-height: 1.5;
   font-weight: 400;
 
@@ -48,6 +64,20 @@ h1 {
   padding: 2em;
 }
 
+.jt-section-title {
+ font-family: 'Hammersmith One';
+ /* font-size: 22px; */
+}
+.jt-body-1 {
+  font-family: "Playfair Display";
+}
+.jt-body-2 {
+  font-family: "Proxima Nova";
+}
+.jt-body-3 {
+  font-family: "Proxima Nova";
+  font-weight: 900;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
