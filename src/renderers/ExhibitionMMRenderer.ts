@@ -132,8 +132,9 @@ export class ExhibitionMMRenderer {
                 .attr("r", (d) => d.r = d.r || r),
               update => update.transition().duration(100)
                 .attr("cx", (d) => d.x || this.width/2)
-                .attr("cy", (d) => d.y || this.height/2),
-              exit => exit.transition().duration(300).attr("r", 0).remove()
+                .attr("cy", (d) => d.y || this.height/2)
+                .attr("r", (d) => d.r = d.r || r),
+              // exit => exit.transition().duration(300).attr("r", 0).remove()
             )
         const node_labels = svg.select("g.labels_group").selectAll("text")
             .data(node_data, (d) => d.node)
@@ -297,12 +298,10 @@ function wrap(text, width) {
           }
         }
         const line_num = text.selectAll("tspan").nodes().length
-        console.log("line_num", line_num, d.node)
         if(line_num > 1) {
           const offset = lineHeight * (line_num - 1) / 2
           text.selectAll("tspan").attr("dy", function() {
             const dy = parseFloat(d3.select(this).attr("dy"))
-            console.log("dy", dy, offset)
             return dy - offset + "em"
           })
           // text.selectAll("tspan").attr("dy", parseFloat(y) - em_to_px / 2 * lineHeight * (line_num - 1) / 2)

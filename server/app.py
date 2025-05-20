@@ -299,12 +299,21 @@ def get_keywords():
     return data_as_dict
 
 
+@app.route("/codebook/")
+def get_codebook():
+    codebook = json.load(
+        open(relative_path("data/all_codes.json"), "r", encoding="utf-8")
+    )
+    return codebook
+
+
 @app.route("/mental_model/transcribe/", methods=["POST"])
 def transcribe_MM():
     codebook = json.load(
         open(relative_path("data/all_codes.json"), "r", encoding="utf-8")
     )
     all_code_names = [code["name"] for code in codebook]
+    parent_dict = {code["name"]: code["parent"] for code in codebook}
     # image_data = request.json["image"]
     data = request.get_json()
     image_data = data.get("image")
@@ -321,6 +330,13 @@ def transcribe_MM():
             response = json.loads(response)["matched_codes"]
             print(node, response)
             response = list(filter(lambda x: x in all_code_names, response))
+            response = [
+                {
+                    "code": r,
+                    "parent": parent_dict[r],
+                }
+                for r in response
+            ]
             codes.append({"node": node, "codes": response})
         except Exception as e:
             print(f"Error processing node {node}: {e}")
@@ -333,7 +349,18 @@ def transcribe_MM():
     while id in existing_files:
         id = random.randint(0, 100000)
     save_json(codes, relative_path(f"data/exhibition/{id}.json"))
-    return codes
+    return {"codes": codes, "id": id}
+
+
+@app.route("/mental_model/update/", methods=["POST"])
+def update_MM():
+    data = request.get_json()
+    id = data.get("id")
+    codes = data.get("codes")
+    if not id or not codes:
+        return {"error": "Invalid input"}, 400
+    save_json(codes, relative_path(f"data/exhibition/{id}.json"))
+    return {"message": "Mental model updated successfully"}
 
 
 @app.route("/mental_model/exhibition/", methods=["GET"])
