@@ -21,7 +21,9 @@
       <div class="flex flex-1 flex-col">
         {#if show_past_MM}
           <div class="flex flex-col gap-2 grow">
-            <div class="text-lg font-bold text-white">Past Mental Models</div>
+            <div class="jt-section-title text-center text-[1.5rem] text-white">
+              Past Mental Models
+            </div>
             <PastExhibitionMMs></PastExhibitionMMs>
           </div>
         {:else}

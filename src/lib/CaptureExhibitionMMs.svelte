@@ -64,13 +64,17 @@
   }
 
   function sort_by_type(a, b) {
-    if (a.is_top && !b.is_top) {
+    const a_is_top = node_categories[a.node]?.is_top || false;
+    const b_is_top = node_categories[b.node]?.is_top || false;
+    const a_is_bottom = node_categories[a.node]?.is_bottom || false;
+    const b_is_bottom = node_categories[b.node]?.is_bottom || false;
+    if (a_is_top && b_is_top) {
+      return 0;
+    } else if (a_is_bottom && b_is_bottom) {
+      return 0;
+    } else if (a_is_top && b_is_bottom) {
       return -1;
-    } else if (!a.is_top && b.is_top) {
-      return 1;
-    } else if (a.is_bottom && !b.is_bottom) {
-      return -1;
-    } else if (!a.is_bottom && b.is_bottom) {
+    } else if (a_is_bottom && b_is_top) {
       return 1;
     }
   }
@@ -94,14 +98,13 @@
 </script>
 
 <div class="grow flex flex-col gap-2">
-  <div>Exhibition Mental Models</div>
+  <div class="jt-section-title text-center text-[1.5rem] text-white">
+    Exhibition Mental Models
+  </div>
 
-  <div class="flex grow gap-x-2">
+  <div class="flex grow gap-x-2 mt-1">
     <div class="flex flex-col grow w-[65%] relative">
-      <div
-        class="flex grow relative p-[0.35rem]"
-        class:loading-canvas={loading}
-      >
+      <div class="flex grow relative" class:loading-canvas={loading}>
         <!-- <svg id={svgId} class="grow outline-2 outline outline-gray-200"></svg> -->
         <ExhibitionMmBubbles
           svgId="capture-mm-svg"
@@ -112,7 +115,7 @@
       </div>
       <div class="flex gap-x-1 mt-2">
         <button
-          class="h-fit w-max shrink-0 flex flex-col gap-1 items-center py-1 px-2 font-mono rounded outline-2 outline outline-slate-200 bg-slate-100 hover:bg-slate-200"
+          class="h-fit w-max shrink-0 flex flex-col gap-1 items-center py-1 px-2 rounded outline-2 outline outline-slate-200 bg-slate-100 hover:bg-slate-200"
           onclick={() => {
             const video: any = document.getElementById("video");
             const canvas: any = document.getElementById("canvas");
@@ -130,17 +133,17 @@
     </div>
     <div class="w-[35%] grow relative">
       <div class="absolute left-0 right-0 top-0 bottom-0 overflow-auto pr-3">
-        <div class="flex flex-col gap-2 p-0.5">
+        <div class="flex flex-col gap-2 px-1">
           {#each nodes
             .filter((n) => n.node !== "Salinity")
             .sort(sort_by_type) as node}
             <div
-              class="flex flex-col border-l-8 border-slate-300 py-1 px-1 rounded shadow-[0_0_3px_0_rgba(0,0,0,0.2)]"
+              class="jt-body-2 flex flex-col outline outline-2 outline-[#0b1012] border-l-8 border-slate-300 bg-gray-200 py-1 px-1 rounded"
               class:is_top={node_categories[node.node]?.is_top || false}
               class:is_bottom={node_categories[node.node]?.is_bottom || false}
             >
-              <div class="font-mono mb-1 px-1">{node.node}</div>
-              <div class="flex flex-col gap-1 px-1 text-sm">
+              <div class="mb-1 px-1 text-slate-800 text-lg">{node.node}</div>
+              <div class="flex flex-col gap-1 px-1">
                 {#each node.codes as code}
                   <div class="code px-1 py-1 rounded">
                     {code}
@@ -174,6 +177,18 @@
     }
     100% {
       background-position: 200% 150%;
+    }
+  }
+  .is_top {
+    border-color: #a2bffd;
+    & .code {
+      @apply bg-slate-300;
+    }
+  }
+  .is_bottom {
+    border-color: oklch(52% 0.105 223.128);
+    & .code {
+      @apply bg-slate-300;
     }
   }
 </style>

@@ -32,7 +32,7 @@
   });
 </script>
 
-<svg id={svgId} class="grow outline-2 outline outline-gray-200"></svg>
+<svg id={svgId} class="grow outline-2 outline-dotted outline-[#7ed957]"></svg>
 
 <style lang="postcss">
   :global(.loading) {
@@ -40,23 +40,12 @@
     transform-origin: center;
   }
   :global(.is_top) {
-    @apply border-lime-300;
-    fill: oklch(93.8% 0.127 124.321);
-    stroke: oklch(84.1% 0.238 128.85);
-    & .code {
-      @apply bg-slate-200;
-    }
+    fill: #a2bffd;
+    stroke: #a2bffd;
   }
   :global(.is_bottom) {
-    @apply border-yellow-400;
-    fill: oklch(94.5% 0.129 101.54);
-    stroke: oklch(85.2% 0.199 91.936);
-    & .code {
-      @apply bg-yellow-50;
-    }
-  }
-
-  .pulse {
+    fill: oklch(52% 0.105 223.128);
+    stroke: oklch(52% 0.105 223.128);
   }
 
   @keyframes pulse {
