@@ -21,22 +21,17 @@
   });
 </script>
 
-<div class="flex grow overflow-y-auto relative">
-  <div
-    class="absolute top-1 left-0 right-0 flex flex-wrap justify-around gap-2"
-  >
-    {#each mental_models as mental_model, index}
-      <div class="flex w-[28rem] h-[40rem]">
-        <ExhibitionMmBubbles
-          svgId={`mental_model_svg_${index}`}
-          nodes={mental_model}
-          loading={false}
-          handleUpdateNodeCategory={() => {}}
-        />
-      </div>
-    {/each}
+{#each mental_models as mental_model, index}
+  <div class="flex w-[20rem] h-[26rem]">
+    <ExhibitionMmBubbles
+      svgId={`mental_model_svg_${index}`}
+      nodes={mental_model}
+      loading={false}
+      stateless={false}
+      handleUpdateNodeCategory={() => {}}
+    />
   </div>
-</div>
+{/each}
 
 <style lang="postcss">
 </style>

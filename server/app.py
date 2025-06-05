@@ -76,9 +76,9 @@ def get_scenario_codes_manual():
 
 @app.route("/mental_model/results/", methods=["GET"])
 def get_mm_results():
-    all_MMs = defaultdict(int)
-    code_book = json.load(open(relative_path("data/MMs/all_codes.json")))
-
+    all_MMs = defaultdict(list)
+    code_book = json.load(open(relative_path("data/all_codes.json")))
+    all_codes = [code["name"] for code in code_book]
     parent_code_dict = {}  # from code to parent code
     for code in code_book:
         code_name = code["name"]
@@ -87,24 +87,33 @@ def get_mm_results():
             parent_code_dict[code_name] = parent_code
         else:
             parent_code_dict[code_name] = code_name
-    for participant_MM_file in glob.glob(relative_path("data/MMs/participants/*.json")):
+    for participant_MM_file in glob.glob(relative_path("data/MMs/*.json")):
+        participant_id = participant_MM_file.split("/")[-1].split(".")[0]
         participant_MM = json.load(open(participant_MM_file))
+        participant_MM = list(
+            filter(lambda x: x["code_name"] in all_codes, participant_MM)
+        )
         participant_MM = list(filter(lambda x: x["mentioned"], participant_MM))
         participant_MM = list(filter(lambda x: x["impact"], participant_MM))
         participant_MM = list(
             filter(
                 lambda x: x["logical_connection"] == "Good"
                 and x["significance"] == "Good"
-                and x["relevance"] == "Good",
+                and x["relevance"] == "Good"
+                and x["inference"] == "Good"
+                and x["interpretation"] == "Good"
+                and x["preciseness"] == "Good",
                 participant_MM,
             )
         )
         # code_names = set([c["code_name"] for c in participant_MM])
-        code_names = set(
-            [parent_code_dict[c["code_name"]] for c in participant_MM]
-        )  # keep only the parent code
+        # code_names = set(
+        #     [parent_code_dict[c["code_name"]] for c in participant_MM]
+        # )  # keep only the parent code
+        code_names = set([c["code_name"] for c in participant_MM])
         for c in code_names:
-            all_MMs[c] += 1
+            # all_MMs[c] += 1
+            all_MMs[c].append(participant_id)
     return all_MMs
 
 
@@ -304,6 +313,11 @@ def get_codebook():
     codebook = json.load(
         open(relative_path("data/all_codes.json"), "r", encoding="utf-8")
     )
+    # code_dict = {code["name"]: code for code in codebook}
+    # for code in codebook:
+    #     if code["parent"] != "N/A":
+    #         code["type"] = code_dict[code["parent"]]["type"]
+    # save_json(codebook, relative_path("data/all_codes_typed.json"))
     return codebook
 
 
@@ -318,38 +332,59 @@ def transcribe_MM():
     data = request.get_json()
     image_data = data.get("image")
     api_key = open(relative_path("api_key")).read().strip()
-    response = query.transcribe_mental_model(image_data, api_key=api_key)
-    nodes = response.split(";")
+    transcription_response = query.transcribe_mental_model(image_data, api_key=api_key)
+    # nodes, links = collect_graph(response)
+    node_labels = [response["node_label"] for response in transcription_response]
     codes = []
-    for node in nodes:
-        node = node.strip()
-        try:
-            if node.lower() in ["salinity", "salinity management"]:
-                continue
-            response = query.code_classification(node, codebook, api_key=api_key)
-            response = json.loads(response)["matched_codes"]
-            print(node, response)
-            response = list(filter(lambda x: x in all_code_names, response))
-            response = [
-                {
-                    "code": r,
-                    "parent": parent_dict[r],
-                }
-                for r in response
-            ]
-            codes.append({"node": node, "codes": response})
-        except Exception as e:
-            print(f"Error processing node {node}: {e}")
+    code_responses = query.multithread_code_classification(
+        node_labels, codebook, api_key=api_key
+    )
+    for response, node_w_classification in zip(code_responses, transcription_response):
+        node = node_w_classification["node_label"]
+        classification = node_w_classification["classification"]
+        if node.lower() in ["salinity", "salinity management", "delta salinity"]:
             continue
-    id = random.randint(0, 100000)
+        response = json.loads(response)["matched_codes"]
+        print(node, response)
+        response = list(filter(lambda x: x in all_code_names, response))
+        response = [
+            {
+                "code": r,
+                "parent": parent_dict[r],
+            }
+            for r in response
+        ]
+        codes.append(
+            {"node": node, "classification": classification, "codes": response}
+        )
+    # for node in nodes:
+    #     node = node.strip()
+    #     try:
+    #         response = query.code_classification(node, codebook, api_key=api_key)
+    #         response = json.loads(response)["matched_codes"]
+    #         print(node, response)
+    #         response = list(filter(lambda x: x in all_code_names, response))
+    #         response = [
+    #             {
+    #                 "code": r,
+    #                 "parent": parent_dict[r],
+    #             }
+    #             for r in response
+    #         ]
+    #         codes.append({"node": node, "codes": response})
+    #     except Exception as e:
+    #         print(f"Error processing node {node}: {e}")
+    #         continue
+    # id = random.randint(0, 100000)
     existing_files = [
         file.split("/")[-1].split(".")[0]
         for file in glob.glob(relative_path("data/exhibition/*.json"))
     ]
-    while id in existing_files:
-        id = random.randint(0, 100000)
+    id = len(existing_files)
+    # while id in existing_files:
+    #     id = random.randint(0, 100000)
     save_json(codes, relative_path(f"data/exhibition/{id}.json"))
-    return {"codes": codes, "id": id}
+    return {"id": id, "codes": codes}
 
 
 @app.route("/mental_model/update/", methods=["POST"])
@@ -372,6 +407,26 @@ def get_exhibition_MM():
             data = json.load(f)
             exhibition_MMs.append(data)
     return exhibition_MMs
+
+
+def collect_graph(response):
+    node_list = set()
+    link_list = set()
+    for line in response.split("\n"):
+        (src, dst) = line.strip().replace("(", "").replace(")", "").split(", ")
+        src = src.strip()
+        dst = dst.strip()
+        if src.lower() in ["salinity", "salinity management", "delta salinity"]:
+            src = "salinity"
+        if dst.lower() in ["salinity", "salinity management", "delta salinity"]:
+            dst = "salinity"
+        node_list.add(src)
+        node_list.add(dst)
+        link_list.add((src, dst))
+
+    node_list = list(node_list)
+    link_list = list(link_list)
+    return node_list, link_list
 
 
 def remove_duplicates(codes):

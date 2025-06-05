@@ -4,35 +4,63 @@
   let {
     svgId,
     nodes,
+    // links = undefined,
     loading = false,
+    stateless = true,
     handleUpdateNodeCategory = () => {},
+    handleClickNode = () => {},
   }: {
     svgId: string;
-    nodes: any[];
+    nodes?: { node: string; classification: string }[];
+    // links?: [string, string][];
+    stateless?: boolean;
     loading: boolean;
+    handleClickNode?: Function;
     handleUpdateNodeCategory?: Function;
   } = $props();
 
   let bubble_renderer: ExhibitionMMRenderer = new ExhibitionMMRenderer(
-    svgId,
-    () => {},
+    handleClickNode,
+    handleUpdateNodeCategory,
   );
+
+  let init_done = false;
+
   $effect(() => {
     bubble_renderer.updateLoading(loading);
   });
 
   $effect(() => {
-    bubble_renderer.update(nodes);
+    if (!stateless && nodes && init_done) {
+      console.log("ExhibitionMMBubbles nodes updated stateless", nodes);
+      bubble_renderer.update_node_classification(nodes);
+      bubble_renderer.update(nodes);
+    }
   });
+  export function update_node_classification(
+    nodes: { node: string; classification: string }[],
+  ) {
+    console.log("ExhibitionMMBubbles update_node_classification called", nodes);
+    bubble_renderer.update_node_classification(nodes);
+  }
+  export function update(nodes: any[], links = undefined) {
+    console.log("ExhibitionMMBubbles update called", nodes);
+    bubble_renderer.update(nodes, links);
+  }
 
   onMount(() => {
-    bubble_renderer.init(handleUpdateNodeCategory);
-    console.log("ExhibitionMMBubbles mounted", nodes);
-    bubble_renderer.update(nodes);
+    bubble_renderer.init(svgId);
+    init_done = true;
+    if (!stateless && nodes) {
+      bubble_renderer.update_node_classification(nodes);
+      bubble_renderer.update(nodes);
+    }
+    // console.log("ExhibitionMMBubbles mounted", nodes);
+    // bubble_renderer.update(nodes, links);
   });
 </script>
 
-<svg id={svgId} class="grow outline-2 outline-dotted outline-[#7ed957]"></svg>
+<svg id={svgId} class="grow outline-0 outline-dotted outline-[#7ed957]"></svg>
 
 <style lang="postcss">
   :global(.loading) {
