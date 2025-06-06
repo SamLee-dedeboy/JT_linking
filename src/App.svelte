@@ -5,12 +5,37 @@
   import CaptureExhibitionMMs from "lib/CaptureExhibitionMMs.svelte";
   import PastExhibitionMMs from "lib/PastExhibitionMMs.svelte";
   import type { tSummaryData, tScenarioData } from "types";
+  import { onMount } from "svelte";
   let selected_scenario: tScenarioData | undefined = $state(undefined);
   let mode = $state("capture"); // "MM" or "capture"
   let show_past_MM = $state(true);
+
+  function toggleFullScreen(video) {
+    if (!document.fullscreenElement) {
+      // If the document is not in full screen mode
+      // make the video full screen
+      video.requestFullscreen();
+    } else {
+      // Otherwise exit the full screen
+      document.exitFullscreen?.();
+    }
+  }
+  onMount(() => {
+    const video = document.getElementById("page");
+
+    // On pressing ENTER call toggleFullScreen method
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        toggleFullScreen(video);
+      }
+    });
+  });
 </script>
 
-<main class="w-[100vw] h-[100vh] p-2 flex flex-col gap-x-2 bg-[#253439]">
+<main
+  id="page"
+  class="w-[100vw] h-[100vh] p-2 flex flex-col gap-x-2 bg-[#253439]"
+>
   <div
     tabindex="0"
     role="button"
