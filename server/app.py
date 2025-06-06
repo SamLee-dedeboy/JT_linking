@@ -321,6 +321,14 @@ def get_codebook():
     return codebook
 
 
+@app.route("/codebook/parent_tsne/", methods=["GET"])
+def get_codebook_parent_tsne():
+    parent_code_tsne = json.load(
+        open(relative_path("data/code_tsne_1d.json"), "r", encoding="utf-8")
+    )
+    return parent_code_tsne
+
+
 @app.route("/mental_model/transcribe/", methods=["POST"])
 def transcribe_MM():
     codebook = json.load(

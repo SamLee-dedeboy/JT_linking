@@ -9,6 +9,7 @@
     showCodeTooltip,
   );
   let codebook: any = $state([]);
+  let code_tsne: Record<string, number> = $state({});
   let parent_dict = $derived(
     codebook.reduce((acc, code) => {
       acc[code.name] = code.parent;
@@ -47,7 +48,7 @@
         }, {});
         console.log("Mental Models:", render_data);
         // Process the data as needed
-        bubble_renderer.update(render_data, codebook);
+        bubble_renderer.update(render_data, codebook, code_tsne);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -76,17 +77,35 @@
         console.error("Error:", error);
       });
   }
+
+  function fetchCodeTsne() {
+    fetch(`${server_address}/codebook/parent_tsne/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("TSNE Data:", data);
+        code_tsne = data;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
   onMount(() => {
     fetchCodebook();
+    fetchCodeTsne();
     bubble_renderer.init();
   });
 </script>
 
-<div class="grow">
+<div id="MM" class="grow">
   <!-- <div class="jt-section-title text-center text-[1.5rem] text-white">
     Interview Mental Models
   </div> -->
-  <svg id={svgId} class="w-[55rem] h-full"></svg>
+  <svg id={svgId} class="w-full h-full"></svg>
 
   {#if server_data && selected_code}
     <div

@@ -45,18 +45,18 @@ export class MentalModelRenderer {
           .attr("fill", "#a2bffd")
           .attr("pointer-events", "none")
           .attr("font-family", "monospace")
-          .text("Impacts Salinity")
+          .text("Factors Impacting Salinity")
         regions.append("text").attr("class", "bottom_region_label")
           .classed("jt-body-3", true)
           .attr("x", this.width/2)
-          .attr("y", this.height - 10)
+          .attr("y", this.height - 15)
           .attr("text-anchor", "middle")
           .attr("dominant-baseline", "bottom")
           .attr("font-size", 20)
           .attr("fill", "#0088AD")
           .attr("pointer-events", "none")
           // .attr("font-family", "")
-          .text("Impacted by Salinity")
+          .text("Factors Impacted by Salinity")
         svg.append("circle")
           .attr("class", "bubble")
           .classed("is_center", true)
@@ -82,9 +82,93 @@ export class MentalModelRenderer {
           // .attr('fill', "#eeeeee")
           .attr("fill", "#2c4b56")
           .text("Salinity")
+
+        // top line
+        svg.append("defs")
+          .append("marker")
+          .attr("id", "arrowhead")
+          .attr("viewBox", "0 0 10 10")
+          .attr("refX", 10)
+          .attr("refY", 5)
+          .attr("markerWidth", 6)
+          .attr("markerHeight", 6)
+          .attr("orient", "auto")
+          .append("path")
+          .attr("d", "M 0 0 L 10 5 L 0 10 Z")
+          .attr("fill", "#a2bffd");
+        
+        svg.append("line")
+          .attr("x1", 0)
+          .attr("y1", 5)
+          .attr("x2", this.width)
+          .attr("y2", 5)
+          .attr("stroke", "#a2bffd")
+          .attr("stroke-width", 2)
+          .attr("marker-end", "url(#arrowhead)");
+          // Add label "Natural" at the start of the line
+          svg.append("text")
+            .classed("jt-body-3", true)
+            .attr("x", 5) // Slightly offset from the start of the line
+            .attr("y", 25) // Position below the line
+            .attr("text-anchor", "start")
+            .attr("font-size", 18)
+            .attr("fill", "#a2bffd")
+            .text("Natural");
+          
+          // Add label "Human" at the end of the line
+          svg.append("text")
+            .classed("jt-body-3", true)
+            .attr("x", this.width - 5) // Slightly offset from the end of the line
+            .attr("y", 25) // Position below the line
+            .attr("text-anchor", "end")
+            .attr("font-size", 18)
+            .attr("fill", "#a2bffd")
+            .text("Human");
+
+
+            // bottom line
+        svg.append("defs")
+          .append("marker")
+          .attr("id", "arrowhead-bot")
+          .attr("viewBox", "0 0 10 10")
+          .attr("refX", 10)
+          .attr("refY", 5)
+          .attr("markerWidth", 6)
+          .attr("markerHeight", 6)
+          .attr("orient", "auto")
+          .append("path")
+          .attr("d", "M 0 0 L 10 5 L 0 10 Z")
+          .attr("fill", "#0088AD");
+            svg.append("line")
+            .attr("x1", 0)
+            .attr("y1", this.height - 5)
+            .attr("x2", this.width)
+            .attr("y2", this.height - 5)
+            .attr("stroke", "#0088AD")
+            .attr("stroke-width", 2)
+            .attr("marker-end", "url(#arrowhead-bot)");
+            // Add label "Natural" at the start of the line
+            svg.append("text")
+              .classed("jt-body-3", true)
+              .attr("x", 5) // Slightly offset from the start of the line
+              .attr("y", this.height - 15) // Position below the line
+              .attr("text-anchor", "start")
+              .attr("font-size", 18)
+              .attr("fill", "#0088AD")
+              .text("Natural");
+            
+            // Add label "Human" at the end of the line
+            svg.append("text")
+              .classed("jt-body-3", true)
+              .attr("x", this.width - 5) // Slightly offset from the end of the line
+              .attr("y", this.height - 15) // Position below the line
+              .attr("text-anchor", "end")
+              .attr("font-size", 18)
+              .attr("fill", "#0088AD")
+              .text("Human");
     }
 
-    update(_nodes_data: Record<string, number>, codebook: any[], callback=(d)=>{}) {
+    update(_nodes_data: Record<string, number>, codebook: any[], code_tsne: Record<string, number>, callback=(d)=>{}) {
         const nodes_data = Object.entries(_nodes_data)
         const node_types = codebook.reduce((acc, item) => {
             acc[item.name] = item.type
@@ -120,14 +204,16 @@ export class MentalModelRenderer {
                 .on("click", (e, d) => {
                     this.handleClick(d)
                 })
-                .attr("cx", (d) => d.x = this.width/2)
+                // .attr("cx", (d) => d.x = this.width/2)
+                .attr("cx", (d) => d.x = code_tsne[d[0]] * this.width || this.width/2)
                 .attr("cy", (d) => d.y = classification_force_position_y[node_types[d[0]]] || this.height*center)
                 .attr("r", 0)
                 .transition().duration(300).delay(300)
                 .attr("r", d => d.r = d[0] === "Salinity"? 80: radiusScale(d[1])),
                 // .attr("r", d => d.r = d[0] === "Salinity"?  50: radiusScale(d[1])),
               update => update.transition().duration(100)
-                .attr("cx", (d) => d.x || this.width/2)
+                // .attr("cx", (d) => d.x || this.width/2)
+                .attr("cx", (d) => d.x = code_tsne[d[0]] * this.width || this.width/2)
                 .attr("cy", (d) => d.y = classification_force_position_y[node_types[d[0]]] || this.height*center)
                 .attr("r", d => d.r = d[0] === "Salinity"? 80: radiusScale(d[1])),
               exit => exit.transition().duration(300).attr("r", 0).remove()
@@ -197,6 +283,7 @@ export class MentalModelRenderer {
         // .alphaMin(0.8)
         // .force("parent_x", d3.forceX((d) => d.parent_x).strength(0.1))  
         // .force("parent_y", d3.forceY((d) => d.parent_y).strength(0.1))
+        .force("tsne_x", d3.forceX((d) => code_tsne[d[0]] * this.width || this.width/2).strength(0.1))
         .force("clf_y", d3.forceY((d) => classification_force_position_y[node_types[d[0]]] || this.height * center).strength(0.08))
         .force("center_x", d3.forceX(this.width/2).strength(0.02))
         .force("center_y", d3.forceY(this.height*center).strength(0.01))
